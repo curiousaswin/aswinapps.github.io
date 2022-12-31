@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="FQMd4EN57iou4sl_-K4B7ZVCzUC7A0x17FIl_gn2WkE" />
+    <link rel = "icon" href = 
+"https://goodapps.w3spaces.com/AswinIcon.png"
+		type = "image/x-icon">
+    <title>Aswin's Good Apps</title>
+    <style>
+       
+
+        #loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 130px;
+  height: 130px;
+  margin: -76px 0 0 -76px;
+ 
+
+}
+
+
+    </style>
+           <script type="text/javascript" src="//cdn.tectite.com/formval-v17.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-223753011-1"> </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script src="https://kit.fontawesome.com/3e2a93553e.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="myFunction()" oncontextmenu="return false"> 
+    <script>
+   
+document.onkeydown = function(e) {
+    if(e.keyCode == 123) {
+     return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+     return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+     return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+     return false;
+    }
+
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
+     return false;
+    }      
+ }
+
+        function myFunction() {
+  myVar = setTimeout(showPage, 2000);
+console.log(localStorage.getItem("Name"));
+
+   document.getElementById('p1').innerHTML = "Hello "+localStorage.getItem("Name")+"!";
+   if(document.getElementById('p1').innerHTML == "Hello null!"){
+       document.getElementById('p1').innerHTML = "Not Logged In."
+   } else{
+        document.getElementById("signup2").style.display = "none" ;
+     document.getElementById("login1").style.display = "none" ;
+   }
+}   
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+ document.getElementById('goonthetrack').style.display='none';
+ document.getElementById('nextstep').style.display="none";
+
+
+
+}
+function validate(){
+    if(   document.getElementById("text1").value == "aswinemail@google.com"
+       && document.getElementById("text2").value == "aswinwebsitepass" )
+    {
+          document.getElementById("p1").innerHTML = "Hello Aswin";
+   document.getElementById('goonthetrack').style.display='block';
+     document.getElementById("signup2").style.display = "none" ;
+     document.getElementById("login1").style.display = "none" ;
+     localStorage.setItem("Name", "Aswin");
+    
+      
+    }
+    else if(   document.getElementById("text1").value == "sathyaemail@aswin.com"
+       && document.getElementById("text2").value == "sathyasaccount01" )
+       {
+          document.getElementById("p1").innerHTML = "Hello Sathya!";
+   document.getElementById('goonthetrack').style.display='block';
+     document.getElementById("signup2").style.display = "none" ;
+     document.getElementById("login1").style.display = "none" ;
+      localStorage.setItem("Name", "Sathya");
+    }
+   
+   else if(document.getElementById("text1").value == "arulvelmail@aswin.com"
+   &&  document.getElementById("text2").value == "skar$SP50zxcvArulaccount")
+   {
+     document.getElementById("p1").innerHTML = "Hello Arulvel!";
+   document.getElementById('goonthetrack').style.display='block';
+     document.getElementById("signup2").style.display = "none" ;
+     document.getElementById("login1").style.display = "none" ;
+     localStorage.setItem("Name", "Arulvel");
+}
+
+else if(document.getElementById("text1").value == "mine@3478"
+   &&  document.getElementById("text2").value == "mine@3478")
+   {
+   document.getElementById("p1").innerHTML = "Hello Shreyan!";
+    document.getElementById('goonthetrack').style.display='block';
+   document.getElementById("login1").style.display = "none" ;
+   document.getElementById("signup2").style.display = "none" ;
+   localStorage.setItem("Name", "Shreyan");
+}
+else if(document.getElementById("text1").value == "arnrcatr@gmail.com"
+   &&  document.getElementById("text2").value == "Number1")
+   {
+   document.getElementById("p1").innerHTML = "Hello Arun R!";
+    document.getElementById('goonthetrack').style.display='block';
+   document.getElementById("login1").style.display = "none" ;
+   document.getElementById("signup2").style.display = "none" ;
+   localStorage.setItem("Name", "Arun R");
+}
+else if(document.getElementById("text1").value == "callely400@millardps.org"
+   &&  document.getElementById("text2").value == "newy6782")
+   {
+   document.getElementById("p1").innerHTML = "Hello Connor Allely!";
+    document.getElementById('goonthetrack').style.display='block';
+   document.getElementById("login1").style.display = "none" ;
+   document.getElementById("signup2").style.display = "none" ;
+   localStorage.setItem("Name", "Connor Allely");
+}
+else if(document.getElementById("text1").value == "sbairagya920@millardps.org"
+   &&  document.getElementById("text2").value == "newv5342")
+   {
+   document.getElementById("p1").innerHTML = "Hello Sreeja Bairagya!";
+    document.getElementById('goonthetrack').style.display='block';
+   document.getElementById("login1").style.display = "none" ;
+   document.getElementById("signup2").style.display = "none" ;
+   localStorage.setItem("Name", "Sreeja Bairagya");
+}
+else
+    {
+        alert( "validation failed" );
+         document.getElementById("fail").style.display = "block" ;
+    }
+}
+function signup() {
+	var mail= document.getElementById('mail').value;
+	var pass= document.getElementById('pass').value;
+	var name= document.getElementById('name').value;
+	var doc = new jsPDF();
+	
+	doc.text(20,20,'This is (c) Aswin');
+  doc.text(30,30,'This should be emailed to aswin.arulvel@gmail.com only');
+	doc.addPage();
+	doc.text(20,10,name);
+	doc.text(20,20,mail);
+	doc.text(20,30,pass);
+	doc.save('Test.pdf');
+	
+}
+function nextstep(){
+    document.getElementById('nextstep').style.display="block";
+} 
+function accountmenu(){
+    document.getElementById('myList').style.display="block";
+}
+//redisgned filter
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#appname tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+   function requestFullScreen(element) {
+    // Supports most browsers and their versions.
+    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
+
+    if (requestMethod) { // Native full screen.
+        requestMethod.call(element);
+    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+        var wscript = new ActiveXObject("WScript.Shell");
+        if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+        }
+    }
+}
+
+function makeFullScreen() {
+    document.getElementsByTagName("iframe")[0].className = "fullScreen";
+    var elem = document.getElementById('count');
+    requestFullScreen(elem);
+}
+function makeFullScreenphonics() {
+    document.getElementsByTagName("iframe")[0].className = "fullScreen";
+    var elem = document.getElementById('phonics');
+    requestFullScreen(elem);
+}
+function makeFullScreenlowerupper() {
+    document.getElementsByTagName("iframe")[0].className = "fullScreen";
+    var elem = document.getElementById('lowerUpper');
+    requestFullScreen(elem);
+}
+function makeFullScreenfb() {
+    document.getElementsByTagName("iframe")[0].className = "fullScreen";
+    var elem = document.getElementById('fb');
+    requestFullScreen(elem);
+}
+    </script>
+    
+    	<div class="spinner-border text-warning" id="loader"></div>
+
+		
+		<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAK_HgtPBXsgqMtqtjC3Rn9Fav2IKPUWXA",
+    authDomain: "aswin-s-good-apps.firebaseapp.com",
+    projectId: "aswin-s-good-apps",
+    storageBucket: "aswin-s-good-apps.appspot.com",
+    messagingSenderId: "886485066534",
+    appId: "1:886485066534:web:0987294088bf27382a57e7"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+		
+<ul class="nav nav-tabs" >
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home"><i class="fa fa-home"></i>Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu1"><i class="material-icons">widgets</i>Good Apps</a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" data-toggle="tab" id="login1"  href="#menu2"><i class="fas fa-sign-in-alt"></i>Login</a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" data-toggle="tab" id="signup2"  href="#menu3"><i class="fas fa-user-plus"></i>Sign Up</a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" data-toggle="tab" id="signup2"  href="#quiz"><i class="fa-solid fa-circle-question"></i>Quizzes(New)</a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" data-toggle="tab" id="signup2"  href="#docs"><i class="fa-solid fa-file"></i>Docs(New)</a>
+    </li>
+    </ul>
+    <ul class="nav nav-tabs" style="justify-content:right;">
+    <li class="nav-item" style="text-align:right;">
+        <button id="p1" type="button" style="background-color:white;" onclick="localStorage.clear();alert('done');" class="nav-link"> Not Logged In
+        </button>
+    </li>
+     </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <h3>HOME</h3>
+      <p>Welcome to Aswin.</p><h5>
+          Our Mission
+      </h5>
+      <p> Our mission is to give you the best experience for free so that you don't have to pay for anything. </p>
+      <h5>
+          Why you Should Sign Up
+      </h5>
+      <p> You should sign up to get a more personalized experience and to get the best possible experience of all.</p>
+      <div class="jumbotron">
+          <h5><i class="fa fa-bell" aria-hidden="true"> </i>Notifications</h5><span class="small font-italic">Updated as of 11/13/22 </span>
+          <ul>
+ 
+  <li>Aswin's Facts has started to receive articles</li>
+  <li>Aswin's MasterSlide's tag is now Beta.</li>
+  <li>Aswin's Stories now has a reading list you could save it in! <a href="https://goodapps.w3spaces.com">Go check it out! </a></li>
+  <li>We are creating a game called Word Scrambler. The link will come here soon because it's in development. But it is accessible via Aswin's Games.</li>
+          </ul>
+      </div>
+    </div>
+    <div id="menu1" class="container tab-pane fade"><br>
+      <h3>Good Apps</h3>
+     <input type="text" id="myInput" class="form-control" placeholder="Search Apps...">
+      <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>App Name</th>
+        <th>Description</th>
+        <th>App Status</th>
+        <th>Send Feedback</th>
+        <th>Version</th>
+        
+      </tr>
+    </thead>
+    <tbody  id="appname">
+      <tr>
+        <td><a href="https://goodapps.w3spaces.com/aswin_tutorials.html">Aswin's Tutorials</a></td>
+        <td>A simple app for learning things.</td>
+        <td>Beta</td>
+        <td><a href="https://forms.gle/KC7KuzvVc9rky54WA">Feedback for Aswin Tutorials</a></td>
+        <td><a data-toggle="modal" href="#versiontutorial">V.3.0</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://goodapps.w3spaces.com/aswin_stories.html">Aswin's Stories</a></td>
+        <td>A simple app for reading stories. Some stories come along with videos too.</td>
+        <td>Beta</td>
+        <td><a href="https://forms.gle/nuJzgyASVd43DHjK8">Feedback for Aswin's Stories</a></td>
+        <td><a data-toggle="modal" href="#versionstories">V.4.1</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://goodapps.w3spaces.com/aswin_sentences.html">Aswin's Sentences</a></td>
+        <td>A simple app for looking at sentence examples for each word.</td>
+        <td>Stable</td>
+        <td>Coming Soon</td>
+        <td><a data-toggle="modal" href="#versionsentences">V.1.9</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://goodapps.w3spaces.com/aswingames.html">Aswin's Games</a></td>
+    <td>A simple app for looking at games along with learning games.</td>    
+        <td>Stable</td>
+        <td>Coming Soon</td>
+         <td><a data-toggle="modal" href="#versiongames">V.3.1</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://goodapps.w3spaces.com/calculater.html">Aswin's Calculator</a></td>
+        <td>A app for calculating equations, along with fractions and percents.</td>
+        <td>Stable</td>
+        <td>Coming Soon</td>
+        <td><a data-toggle="modal" href="#versioncalculator">V.2.5</a></td>
+      </tr>
+            <tr>
+        <td><a href="https://goodapps.w3spaces.com/docs.html">Aswin's Writer</a></td>
+        <td>An app for doing writing things and formating them, and downloading it.</td>
+        <td>Stable</td>
+        <td>Coming Soon</td>
+        <td><a data-toggle="modal" href="#versionwriter">V.3.2</a></td>
+      </tr>
+       <tr>
+        <td><a href="https://goodapps.w3spaces.com/code.html">Aswin's Code Editor</a></td>
+        <td> An app for editing HTML code.</td>
+        <td>Stable</td>
+        <td><a href="https://forms.gle/erMpKWpGgdkraqXJ8">Give feedback for Aswin's Code Editor</a></td>
+         <td><a data-toggle="modal" href="#versioncode">V.2.99</a></td>
+      </tr>
+       <tr>
+        <td><a href="https://goodapps.w3spaces.com/dictonary.html">Aswin's Dictionary</a></td>
+        <td>An app for finding the definition of words.</td>
+        <td>Stable</td>
+        <td>Coming Soon</td>
+        <td><a data-toggle="modal" href="#versiondictionary">V.2.0</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://goodapps.w3spaces.com/ultradirector.html"> Aswin's Ultra Director </a></td>
+        <td>An app for doing video editing.</td>
+        <td>Under Development</td>
+        <td>Coming Soon</td>
+         <td><a data-toggle="modal" href="#versionultra">V.2.9</a></td>
+      </tr>
+         <tr>
+        <td><a href="https://goodapps.w3spaces.com/starcollage.html">Aswin's Star Collage</a></td>
+       <td>An app for creating collages.</td>
+        <td>Stable</td>
+        <td><a href="https://forms.gle/AabU8fHyKGsb1Mxn9">Send Feedback for Star Collage</a></td>
+        <td><a data-toggle="modal" href="#versionstar">V.3.5</a></td>
+      </tr>
+       <tr>
+        <td><a href="https://goodapps.w3spaces.com/facts.html">Aswin's Facts</a></td>
+        <td>An app for looking up facts and history kind of stuff.</td>
+        <td>Beta</td>
+        <td>Coming Soon</td>
+        <td><a data-toggle="modal" href="#versionfacts">V.1.0</a></td>
+      </tr>
+         <tr>
+        <td><a href="https://goodapps.w3spaces.com/tablecalc.html">Aswin's TableCalc</a></td>
+        <td>An app for adding text in multiple text boxes and then downloading them.</td>
+        <td>Under Development</td>
+        <td>Coming Soon</td>
+        <td><a data-toggle="modal" href="#versiontablecalc">V.2.9</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://goodapps.w3spaces.com/masterslides.html">Aswin's MasterSlide </a></td>
+        <td>An app for creating slideshows with templates and then presenting them.</td>
+        <td>Beta</td>
+        <td><td><a data-toggle="modal" href="#versionmasterslides">V.4.09</a></td></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+ 
+    
+    <div id="menu2" class="container tab-pane fade"><br>
+      <h3>Login</h3>
+   
+        
+   <label for="text1">Enter your Email</label>
+      <input type="email"  placeholder="your email adress" class="form-control " id="text1">
+      <label for="text2">Enter your Password</label>
+      <input type="password" placeholder="your password" class="form-control"  id="text2">
+      <button type="button" class="form-control" onclick="validate()">
+          
+        Login
+    </button>
+        <div class="alert alert-success" id="goonthetrack">
+        <p>You have succesfuly logged in.</p>
+    </div>
+    </div>
+    <div id="menu3" class="container tab-pane fade"><br>
+      <h3>Sign UP</h3>
+
+<form id="fs-frm" name="registration-form" accept-charset="utf-8" action="https://formspree.io/f/mpzboeok" method="post">
+  <fieldset id="fs-frm-inputs">
+    <label for="full-name">Full Name</label><br>
+    <input type="text" class="form-control"  name="name" id="full-name" placeholder="First or and Last Name" required=""><br>
+    <label for="email-address">Email Address</label><br>
+    <input type="email" class="form-control" name="email" id="email-address" placeholder="Your Email Address" required=""><br>
+    <label for="password">Password</label><br>
+    <input type="password" class="form-control" name="password" id="password" placeholder="Password" required=""><br>
+     <div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="confirm" name="check" value="checked" required>
+    <label for="confirm" class="custom-control-label">By Signing up, you agree to the terms of service.</label>
+   </div>
+ 
+    
+  </fieldset>
+   <center><p>Your account will be created within 7 days of signing up. If not, please contact us.</p></center>
+  <input type="submit" class="form-control" style="background-color:blue;color:white;" value="Sign Up!">
+ 
+</form>
+
+
+          
+    </div>
+    <div id="docs" class="container tab-pane fade">
+        <h2>Docs(New)</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="https://sites.google.com/view/masterslidedocs/docs-home?authuser=0">Aswin's MasterSlide Docs</a></li>
+        </ul>
+    </div>
+       <div id="quiz" class="container tab-pane fade"><br>
+      <h3>Quizzes(New)</h3>
+<div class="container">
+ 
+  <br>
+  <!-- Nav pills -->
+  <ul class="nav nav-pills flex-column" style="display:flex; margin: -20px;z-index:1;"  role="tablist">
+   <li class="nav-item " style="display:flex;">
+      <a class="nav-link active" data-toggle="pill" width="50%" href="#science">Science</a>
+    </li>
+    <li class="nav-item"  style="display:flex;">
+      <a class="nav-link" data-toggle="pill" href="#math">Math</a>
+    </li>
+    <li class="nav-item"  style="display:flex;">
+      <a class="nav-link" data-toggle="pill" href="#english" >English</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content" style="text-align:center;display:flex;margin-top: -150px;">
+    <div id="science" class="container tab-pane active"><br>
+      <h3>Science</h3>
+      <p>No Current Tutorials</p>
+    </div>
+    <div id="math" class="container tab-pane fade"><br>
+       <h3>Math</h3>
+      <h4><u>Preschool</u></h4>
+      <center><table >
+          <tr >
+              <td style="border:2px solid gray;" >
+                  <iframe id="count" src="https://docs.google.com/forms/d/e/1FAIpQLSd8z9OcFBhihI61lqFjGBFwD9p6wDPOpTYvqsZ0NJTWdpNAaw/viewform?embedded=true" width="100" height="100" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe><br>
+             <center> Counting<br></center>
+              <button type="btn" onclick="makeFullScreen()" class="btn btn-primary">Start Quiz</button>
+            </td>
+              <td style="border:2px solid gray;" >
+                  <iframe id="fb" src="https://aswinarulvel.wixsite.com/mysite/" width="100" height="100" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe><br>
+             <center> Find Big/Small One<br></center>
+              <button type="btn" onclick="makeFullScreenfb()" class="btn btn-primary">Start Quiz</button>
+            </td>
+          </tr>
+      </table></center>
+    </div>
+    <div id="english" class="container tab-pane fade"><br>
+      <h3>English</h3>
+      <h4><u>Preschool</u></h4>
+      <center><table >
+          <tr>
+              <td style="border:2px solid gray;">
+                  <iframe id="phonics" src="https://docs.google.com/forms/d/e/1FAIpQLSfYiJ9knEcAbbWIpp3w3zz9DTthHGH9a8x5PuW5f8D3BbJx-w/viewform?embedded=true" width="100" height="100" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe><br>
+             <center> Phonics<br></center>
+              <button type="btn" onclick="makeFullScreenphonics()" class="btn btn-primary">Start Quiz</button>
+            </td>
+            <td style="border:2px solid gray;">
+                  <iframe id="lowerUpper" src="https://aswinarulvel.wixsite.com/mysite/awesome" width="100" height="100" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe><br>
+             <center> LowerCase and UpperCase<br></center>
+              <button type="btn" onclick="makeFullScreenlowerupper()" class="btn btn-primary">Start Quiz</button>
+            </td>
+          </tr>
+      </table></center>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+    
+    
+<div class="modal fade" id="versiontutorial" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin Tutorials</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app to create tutorials.</td>
+        <td>Tutorials</td>
+         <td>Oct. 2019</td>
+      </tr>
+      <tr>
+        <td>1.4</td>
+        <td>Added a loader symbol</td>
+        <td>Loader</td>
+        <td>Feb. 2020</td>
+      </tr>
+      <tr>
+        <td>2.0</td>
+        <td>New Loader</td>
+        <td>New loader using bootstrap</td>
+        <tD>Dec. 2021</tD>
+      </tr>
+       <tr>
+        <td>2.5</td>
+        <td>Tutorials are Categerized.</td>
+        <td>Adds New Pills to Categerize the section.</td>
+        <td>Jan.2022</td>
+      </tr>
+      <tr>
+        <td>3.0</td>
+        <td>Fixes slow loading problem which exceeds 17 seconds. Now it is 3 seconds.</td>
+        <td>Has buttons to open the iframe.</td>
+        <td>Mar. 2022</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="modal fade" id="versionmasterslides" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin's MasterSlide</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app to create presentations.</td>
+        <td>Presentations.</td>
+         <td>Jul.9 2022</td>
+      </tr>
+      <tr>
+        <td>1.35</td>
+        <td>Added Heading and Paragraph Template</td>
+        <td>Template</td>
+        <td>Jul.9 2022</td>
+      </tr>
+      <tr>
+        <td>2.24</td>
+        <td>Added Present Option</td>
+        <td>Present</td>
+        <tD>Jul.10 2022</tD>
+      </tr>
+       <tr>
+        <td>2.3</td>
+        <td>Changed stop editing this slide to outside the slide.</td>
+        <td>Formating</td>
+        <td>Jul.10 2022</td>
+      </tr>
+      <tr>
+        <td>2.45</td>
+        <td>Added Heading and list Template</td>
+        <td>Template</td>
+        <td>Jul.10 2022</td>
+      </tr>
+       <tr>
+        <td>2.59</td>
+        <td>Added Heading and Image Template</td>
+        <td>Template</td>
+        <td>Jul.11 2022</td>
+      </tr>
+        <tr>
+        <td>2.75</td>
+        <td>Added Orientation for Image</td>
+        <td>Image - Orientation</td>
+        <td>Jul.11 2022</td>
+      </tr>
+         <tr>
+        <td>2.91</td>
+        <td>Added Resize for Image</td>
+        <td>Image - Resize</td>
+        <td>Jul.11 2022</td>
+      </tr>
+       <tr>
+        <td>3.09</td>
+        <td>Fixed image not showing in present mode</td>
+        <td>Fixed Problem</td>
+        <td>Jul.11 2022</td>
+      </tr>
+       <tr>
+        <td>3.29</td>
+        <td>Added Change Background option</td>
+        <td>Change background option</td>
+        <td>Jul.11 2022</td>
+      </tr>
+      <tr>
+        <td>3.49</td>
+        <td>Changed "Change Background" button background color from gray to yellow.</td>
+        <td>Formating</td>
+        <td>Jul.11 2022</td>
+      </tr>
+       <tr>
+        <td>3.7</td>
+        <td>Minor Changes</td>
+        <td>Icon for presenting, small glitches, and more.</td>
+        <td>Jul.11 2022</td>
+      </tr>
+       <tr>
+        <td>3.8</td>
+        <td>Added Heading and Video Template</td>
+        <td>Template</td>
+        <td>Jul.11 2022- 4pm CDT</td>
+      </tr>
+        <tr>
+        <td>3.93</td>
+        <td>Added Option to add additional elements along w/template</td>
+        <td>Option to add additional elements</td>
+        <td>Jul.12 2022</td>
+      </tr>
+       <tr>
+        <td>4.01</td>
+        <td>Added Table and heading template</td>
+        <td>Template</td>
+        <td>Jul.12 2022</td>
+      </tr>
+       <tr>
+        <td>4.09</td>
+        <td>Added option to add aditional table/image.</td>
+        <td>Additional Elements</td>
+        <td>Jul.12 2022</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="modal fade" id="versiontablecalc" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin TableCalc</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app to add text in multiple textboxes and then downloading them.</td>
+        <td>Tutorials</td>
+         <td>May. 2022</td>
+      </tr>
+      <tr>
+        <td>1.22</td>
+        <td>Added 7 columns..</td>
+        <td>More Columns</td>
+        <td>Jun.1 2022</td>
+      </tr>
+      <tr>
+        <td>1.37</td>
+        <td>Download as PDF</td>
+        <td>Download-PDF/td>
+        <tD>Jun.4 2022</tD>
+      </tr>
+       <tr>
+        <td>1.52</td>
+        <td>Added Background Image</td>
+        <td>Background Image.</td>
+        <td>Jun.4 2022</td>
+      </tr>
+      <tr>
+        <td>1.7</td>
+        <td>Download as Image</td>
+        <td>Download-Img.</td>
+        <td>Jun.5 2022</td>
+      </tr>
+       <tr>
+        <td>1.89</td>
+        <td>Added Formula Bar</td>
+        <td>Formula Bar</td>
+        <td>Jun.11 2022</td>
+      </tr>
+       <tr>
+        <td>1.97</td>
+        <td>Made Formula Bar Fixed</td>
+        <td>Formula Bar - Fixed</td>
+        <td>Jun.11 2022</td>
+      </tr>
+      <tr>
+        <td>2.0</td>
+        <td>Now it can do formulas, but it says result on formula bar, not cell.</td>
+        <td>Do Formulas</td>
+        <td>Jun.11 2022</td>
+      </tr>
+      <tr>
+        <td>2.9</td>
+        <td>It can do formulas with no errors, and also has formatting </td>
+        <td>Formating</td>
+        <td>Sep 2022</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+  
+<div class="modal fade" id="versionstories" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin Stories</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app to create stories.</td>
+        <td>Stories</td>
+         <td>Nov. 2019</td>
+      </tr>
+      <tr>
+        <td>1.4</td>
+        <td>Added a loader symbol</td>
+        <td>Loader</td>
+        <td>Feb. 2020</td>
+      </tr>
+      <tr>
+        <td>2.0</td>
+        <td>New Loader</td>
+        <td>New loader using bootstrap</td>
+        <tD>Jan. 2022</tD>
+      </tr>
+       <tr>
+        <td>2.7</td>
+        <td>Stories are Categerized.</td>
+        <td>Adds New Pills to Categerize the section.</td>
+        <td>Mar. 2022</td>
+      </tr>
+      <tr>
+        <td>3.0</td>
+        <td>Fixes slow loading problem which exceeds 17 seconds. Now it is 3 seconds.</td>
+        <td>Has a player and book button to open the book/ video.</td>
+        <td>Apr. 2022</td>
+      </tr>
+        <tr>
+        <td>3.2</td>
+        <td>Most Popular books are bolded.</td>
+        <td>The Title of the book is bolded.</td>
+        <td>Apr. 2022</td>
+      </tr>
+      <tr>
+        <td>4.1</td>
+        <td>Now has a reading list</td>
+        <td>Reading list</td>
+        <td>Oct.2022</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="modal fade" id="versionsentences" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin Sentences</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app to create sentences.</td>
+        <td>Sentences</td>
+         <td>Jan. 2020</td>
+      </tr>
+      <tr>
+        <td>1.2</td>
+        <td>Added a loader symbol</td>
+        <td>Loader</td>
+        <td>Feb. 2020</td>
+      </tr>
+      <tr>
+        <td>1.4</td>
+        <td>Added More Words</td>
+        <td>More Words</td>
+        <tD>March. 2020</tD>
+      </tr>
+       <tr>
+        <td>1.52</td>
+        <td>Changes link style</td>
+        <td>New Link Style</td>
+        <tD>June. 2022</tD>
+      </tr>
+        <tr>
+        <td>1.63</td>
+        <td>Container at the bottom of the page to show definition.</td>
+        <td>Container to show definition</td>
+        <tD>June. 2022</tD> 
+      </tr>
+       <tr>
+        <td>1.7</td>
+        <td>Enhanced word list look.</td>
+        <td>Enhancements</td>
+        <tD>June. 2022</tD>
+      </tr>
+       <tr>
+        <td>1.81</td>
+        <td>Changed background color to blue</td>
+        <td>Enhancements</td>
+        <tD>June. 2022</tD>
+      </tr>
+       <tr>
+        <td>1.9</td>
+        <td>Enhanced sentences list look</td>
+        <td>Enhancements</td>
+        <tD>June. 2022</tD>
+      </tr>
+    </tbody>
+  </table>
+</div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+     <div class="modal fade" id="versiongames" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin Games</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app to play games.</td>
+        <td>Sentences</td>
+         <td>Feb. 2020</td>
+      </tr>
+      <tr>
+        <td>1.2</td>
+        <td>Added a loader symbol</td>
+        <td>Loader</td>
+        <td>Feb. 2020</td>
+      </tr>
+      <tr>
+        <td>1.4</td>
+        <td>Added More Games</td>
+        <td>More Games</td>
+        <tD>Apr. 2020</tD>
+      </tr>
+        <tr>
+        <td>1.3</td>
+        <td>Added Educational Games</td>
+        <td>Educational Games</td>
+        <tD>May. 2020</tD>
+      </tr>
+        <tr>
+        <td>1.5</td>
+        <td>Change Background</td>
+        <td>None</td>
+        <tD>May. 2020</tD>
+      </tr>
+       <tr>
+        <td>1.8</td>
+        <td>Added Link Back to Home Page After you click on the Game link</td>
+        <td>Link to go back to home page</td>
+        <tD>June. 2020</tD>
+      </tr>
+        <tr>
+        <td>3.01/td>
+        <td>Fixed links are all missing</td>
+        <td>Fixes</td>
+        <tD>Aug. 2022</tD>
+      </tr>
+      <tr>
+        <td>3.1/td>
+        <td>Added Catch the frog game</td>
+        <td>Catch the frog</td>
+        <tD>Aug. 2022</tD>
+      </tr>
+    </tbody>
+  </table>
+</div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+    
+     <div class="modal fade" id="versioncalculator" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin Calculator</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app to use calculator.</td>
+        <td>Sentences</td>
+         <td>Feb. 2020</td>
+      </tr>
+      <tr>
+        <td>1.3</td>
+        <td>Adder clear button to basic calculator</td>
+        <td>Clear button</td>
+        <td>Feb. 2020</td>
+      </tr>
+      <tr>
+        <td>1.5</td>
+        <td>Added Loading icon</td>
+        <td>Loading Icon</td>
+        <tD>Apr. 2020</tD>
+      </tr>
+        <tr>
+        <td>1.67</td>
+        <td>Added Fraction calculator</td>
+        <td>Fraction Calculator</td>
+        <tD>Nov. 2021</tD>
+      </tr>
+        <tr>
+        <td>1.9</td>
+        <td>Added Percentage Calculator</td>
+        <td>Percentage Calculator</td>
+        <tD>Jan. 2022</tD>
+      </tr>
+       <tr>
+        <td>2.5</td>
+        <td>Major Changes happened</td>
+        <td>Removed loading text in standard calculator, remoldeled fraction calculator, and finalized percentage calculator.</td>
+        <tD>Mar. 2022</tD>
+      </tr>
+       
+    </tbody>
+  </table>
+</div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="modal fade" id="versionwriter" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin Writer</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app to write things.</td>
+        <td>Writer</td>
+         <td>Jul. 2020</td>
+      </tr>
+      <tr>
+        <td>1.45</td>
+        <td>Added bold, underline, italic format options.</td>
+        <td>Basic Formatting Options</td>
+        <td>Aug. 2020</td>
+      </tr>
+      <tr>
+        <td>1.5</td>
+        <td>Added Loading icon</td>
+        <td>Loading Icon</td>
+        <tD>Aug. 2020</tD>
+      </tr>
+        <tr>
+        <td>1.63</td>
+        <td>Added Strikethrough, heading</td>
+        <td>More Formating Options</td>
+        <tD>Sep. 2020</tD>
+      </tr>
+        <tr>
+        <td>1.83</td>
+        <td>Added Font Family, Size, and Color</td>
+        <td>Font Family, Size, and Color</td>
+        <tD>Oct. 2020</tD>
+      </tr>
+       <tr>
+        <td>2.01</td>
+        <td>Print Option</td>
+        <td>Print the document</td>
+        <tD>Jan. 2021</tD>
+      </tr>
+          <tr>
+        <td>2.23</td>
+        <td>Show the Result in Full Screen Option</td>
+        <td>Show Result in Full Screen</td>
+        <tD>Mar. 2021</tD>
+      </tr>
+       <tr>
+        <td>2.79</td>
+        <td>Download the PDF</td>
+        <td>Download</td>
+        <tD>Dec. 2021</tD>
+      </tr>
+       <tr>
+        <td>2.99</td>
+        <td>New Loading Icon </td>
+        <td>None</td>
+        <tD>Feb. 2022</tD>
+      </tr>
+      <tr>
+        <td>3.2</td>
+        <td>Added Animations, focused more on the result along with a fresh look. </td>
+        <td>Animation</td>
+        <tD>Mar. 2022</tD>
+      </tr>
+    </tbody>
+  </table>
+</div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="modal fade" id="versioncode" role="dialog">
+    <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin Code Editor</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app to write code and view the result.</td>
+        <td>Code</td>
+         <td>Jul. 2020</td>
+      </tr>
+      <tr>
+        <td>1.43</td>
+        <td>Added a loader symbol</td>
+        <td>Loader</td>
+        <td>Jul. 31 2020</td>
+      </tr>
+      <tr>
+        <td>1.78</td>
+        <td>Changed background color of code editor</td>
+        <td>Background - Black</td>
+        <tD>Aug. 2020</tD>
+      </tr>
+        <tr>
+        <td>1.99</td>
+        <td>Changed font color</td>
+        <td>Font Color - white to shade of light yellow</td>
+        <tD>Aug. 2020</tD>
+      </tr>
+        <tr>
+        <td>2.3</td>
+        <td>New loader icon</td>
+        <td>None</td>
+        <tD>Jan. 2022</tD>
+      </tr>
+       <tr>
+        <td>2.56</td>
+        <td>Code Editor and Result Side-By-Side</td>
+        <td>Code/Result Side-by-Side</td>
+        <tD>Apr. 2022</tD>
+      </tr>
+      <tr>
+        <td>2.99</td>
+        <td>New Responsive Design</td>
+        <td>Responsive</td>
+        <tD>May. 2022</tD>
+      </tr>
+       
+    </tbody>
+  </table>
+</div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="modal fade" id="versiondictionary" role="dialog">
+    <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin Dictionary</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app to look up word for their definitions.</td>
+        <td>Dictionary</td>
+         <td>Apr. 2020</td>
+      </tr>
+      <tr>
+        <td>1.24</td>
+        <td>Added a loader symbol</td>
+        <td>Loader</td>
+        <td>Aug. 2020</td>
+      </tr>
+      <tr>
+        <td>1.59</td>
+        <td>Added more words as requested</td>
+        <td>More Words</td>
+        <tD>Dec. 2020</tD>
+      </tr>
+        <tr>
+        <td>1.67</td>
+        <td>Added background to link</td>
+        <td>Background to link</td>
+        <tD>Jan. 2021</tD>
+      </tr>
+        <tr>
+        <td>1.75</td>
+        <td>New loader icon</td>
+        <td>None</td>
+        <tD>Jan. 2022</tD>
+      </tr>
+       <tr>
+        <td>1.78</td>
+        <td>More Words as requested</td>
+        <td>More Words</td>
+        <tD>Apr. 2022</tD>
+      </tr>
+      <tr>
+        <td>1.87</td>
+        <td>Changed from going to seperate links to be in the same link.</td>
+        <td>None</td>
+        <tD>May. 2022</tD>
+      </tr>
+        <tr>
+        <td>2.0</td>
+        <td>Made word list scrollable so that it doesn't overflow..</td>
+        <td>None</td>
+        <tD>May. 2022</tD>
+      </tr>
+    </tbody>
+  </table>
+</div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+      <div class="modal fade" id="versionultra" role="dialog">
+    <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin Ultra Director</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app to edit videos.</td>
+        <td>Edit Videos</td>
+         <td>Mar. 2022</td>
+      </tr>
+      <tr>
+        <td>1.35</td>
+        <td>Added a preview for the files uploaded</td>
+        <td>Preview for the files uploaded.</td>
+        <td>Apr.1 2022</td>
+      </tr>
+      <tr>
+        <td>1.72</td>
+        <td>Changed Bakground of the Web Page</td>
+        <td>Background - New</td>
+        <tD>Apr.3. 2022</tD>
+      </tr>
+        <tr>
+        <td>1.83</td>
+        <td>Added Main Video Section.</td>
+        <td>Main Video Section</td>
+        <tD>Apr.9 2022</tD>
+      </tr>
+        <tr>
+        <td>1.99</td>
+        <td>1st image shows in the video</td>
+        <td>None</td>
+        <tD>Apr.15 2022</tD>
+      </tr>
+       <tr>
+        <td>2.09</td>
+        <td>Shows amount of seconds for the whole video in total.</td>
+        <td>Amount of time</td>
+        <tD>Apr.17 2022</tD>
+      </tr>
+      <tr>
+        <td>2.33</td>
+        <td>Added duration per image.</td>
+        <td>Duration</td>
+        <tD>Apr.23 2022</tD>
+      </tr>
+        <tr>
+        <td>2.9</td>
+        <td>Added PLAY icon button to play the video</td>
+        <td>Play Icon</td>
+        <tD>May. 2022</tD>
+      </tr>
+    </tbody>
+  </table>
+</div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="modal fade" id="versionstar" role="dialog">
+    <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin Star Collage</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app to create collages.</td>
+        <td>Edit Videos</td>
+         <td>Feb. 2022</td>
+      </tr>
+      <tr>
+        <td>1.29</td>
+        <td>Image added in the collage section.</td>
+        <td>Image added in the collage section.</td>
+        <td>Feb.28 2022</td>
+      </tr>
+      <tr>
+        <td>1.84</td>
+        <td>You could add background, and borders to the collage.</td>
+        <td>Backgrounds and Borders.</td>
+        <tD>Mar. 2022</tD>
+      </tr>
+        <tr>
+        <td>1.9</td>
+        <td>You could drag the images wherever you want.</td>
+        <td>Image - Draggable</td>
+        <tD>Mar.21 2022</tD>
+      </tr>
+        <tr>
+        <td>2.07</td>
+        <td>You could actually "download" the collage you made.</td>
+        <td>Download</td>
+        <tD>Mar.31 2022</tD>
+      </tr>
+       <tr>
+        <td>2.13</td>
+        <td>You could now add text.</td>
+        <td>Text</td>
+        <tD>Apr. 2022</tD>
+      </tr>
+      <tr>
+        <td>2.43</td>
+        <td>Added bold, underline, italic, strikethrough.</td>
+        <td>Basic Formating Options</td>
+        <tD>Apr.15 2022</tD>
+      </tr>
+        <tr>
+        <td>2.67</td>
+        <td>Added a color picker for background of the collage.</td>
+        <td>Color Picker for Background</td>
+        <tD>Apr. 17 2022</tD>
+      </tr>
+       <tr>
+        <td>2.93</td>
+        <td>Added alignment.</td>
+        <td>Alignment</td>
+        <tD>Apr. 25 2022</tD>
+      </tr>
+         <tr>
+        <td>3.12</td>
+        <td>Responsive design for mobile.</td>
+        <td>Responsive</td>
+        <tD>Apr. 25 2022</tD>
+      </tr>
+       <tr>
+        <td>3.3</td>
+        <td>Added font family, size, and color.</td>
+        <td>Formating for Add Text</td>
+        <tD>Apr.29 2022</tD>
+      </tr>
+       <tr>
+        <td>3.5</td>
+        <td>Star Collage was finalized.</td>
+        <td>none</td>
+        <tD>May. 2022</tD>
+      </tr>
+    </tbody>
+  </table>
+</div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+     <div class="modal fade" id="versionfacts" role="dialog">
+    <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin Facts</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app for looking up facts and history.</td>
+        <td>Facts</td>
+         <td>Jan. 2019</td>
+      </tr>
+     
+    </tbody>
+  </table>
+   <CENTER><h2 STYLE="transform: rotate(20deg);">NO DATA</h2></CENTER>
+</div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+</body>
+</html>
+

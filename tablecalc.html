@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aswin's TableCalc</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!--Icons-->
+<script src="https://kit.fontawesome.com/3e2a93553e.js" crossorigin="anonymous"></script>
+<style>
+    body{
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQImUmFBn4DwCl9DUjDlls46CBDIWTOIUFi_w&usqp=CAU");
+    }
+    h1{
+        color:White;
+    }
+</style>
+  </head>
+  <body>
+     <center> <h1>Aswin's TableCalc<span class="badge badge-info">Under Development</span></h1></center>
+    <button class="btn btn-primary" data-toggle="collapse" data-target="#export">Export</button> 
+     <button class="btn btn-primary" data-toggle="collapse" data-target="#formating">Formating</button> 
+     <div class="custom-control custom-switch" style="text-align:right;">
+    <input type="checkbox" class="custom-control-input"  onclick="freezeheader()" id="switch1">
+    <label class="custom-control-label" for="switch1" style="color:white;" ><b>Freeze header</b></label>
+  </div>
+    <div id="export" class="collapse"><br>
+
+ &nbsp; &nbsp;
+     <Button colspan="3" type="button" onclick="savetopdf()" class="btn btn-primary"><i class="fa-solid fa-download"></i><br>Download-PDF</Button>     <Button onclick="savetoimg()" type="button" class="btn btn-primary"><i class="fa-solid fa-download"></i><br>Download-Image</Button><br>
+     </div>
+     <div id="formating" class="collapse">
+         <input type="text" id="columns" class="form-control" placeholder="Column Name">
+         <button onclick="bold()" class="btn btn-primary">Bold</button>
+         <button onclick="underline()" class="btn btn-light">Underline</button>
+         <button onclick="dottedunderline()" class="btn btn-light">Dotted Underline</button>
+         <button onclick="wavyunderline()" class="btn btn-light">Wavy Underline</button>
+         <button onclick="highlight()" class="btn btn-warning">Highlight</button>
+     </div>
+  <div class="input-group mb-3 sticky-top" style=" position: -webkit-sticky; /* Safari */position: sticky;top:0;">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><img src="https://cdn-icons-png.flaticon.com/512/51/51661.png" width="15" height="15"> </span>
+      <div class="scroll" style="overflow-y:scroll; height:40px;">
+            <span class="input-group-text">No Fx</span><br>
+        <span class="input-group-text"><button type="btn" class=" btn-primary" id="calc">=</button></span><br>
+          <span class="input-group-text"><button type="btn" class=" btn-primary" id="AVG">AVG</button></span>
+          </div>
+    </div>
+    <input type="text" id="functionbar" class="form-control" placeholder="function">
+  </div><br>
+     
+  <div  style="white-space: nowrap;" id="letters"> <bR><br><input type="text" value="A" ><input type="text" value="B" ><input type="text" value="C" ><input type="text" value="D" ><input type="text" value="E" ><input type="text" value="F" ><input type="text" value="G" >
+     </div>
+    <!-- (A) THE ORIGINAL, TO BE COPIED -->
+     <div class="result" onkeyup="elementfuction()" id="result">
+   
+    <div id="source" style="white-space: nowrap;">
+ <input type="text" style="display: inline-block;" class="A"><input type="text" style="display: inline-block;" class="B"><input type="text" style="display: inline-block;" class="C"><input type="text" style="display: inline-block;" class="D"><input type="text" style="display: inline-block;" class="E"><input type="text" style="display: inline-block;" class="F"><input type="text"style="display: inline-block;" class="G"><input type="text"style="display: inline-block;" class="H ">
+    </div>
+
+    <!-- (B) CLONE TO BE PLACED HERE -->
+    <div id="destination" style="white-space: nowrap;">
+      
+    </div>
+    </div>
+
+    <!-- (C) JAVASCRIPT -->
+    <script>
+    // (C1) GET THE SOURCE & DESTINATION ELEMENTS
+    var source = document.getElementById("source"),
+        destination = document.getElementById("destination");
+  for (let i=1; i<=100; i++) {
+    // (C2) CREATE & APPEND EVIL CLONE
+       
+    let evilclone = source.cloneNode(true);
+    evilclone.removeAttribute("id");
+    destination.appendChild(evilclone);
+  }
+  function savetopdf(){
+    var HTML_Width = $(".result").width();
+    var HTML_Height = $(".result").height();
+    var top_left_margin = 5;
+    var PDF_Width = HTML_Width + (top_left_margin * 2);
+    var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
+    var canvas_image_width = HTML_Width;
+    var canvas_image_height = HTML_Height;
+
+    var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+
+    html2canvas($(".result")[0]).then(function (canvas) {
+        var imgData = canvas.toDataURL("image/jpeg", 1.0);
+        var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
+        pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
+        for (var i = 1; i <= totalPDFPages; i++) { 
+            pdf.addPage(PDF_Width, PDF_Height);
+            pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
+        }
+
+        pdf.save("aswintablecalc.pdf");
+        
+        
+    });
+}
+   function savetoimg() {
+
+  domtoimage.toBlob(document.getElementById('result'))
+    .then(function(blob) {
+      window.saveAs(blob, 'aswintablecalc.png');
+    });
+}
+function elementfuction() {
+  const element = document.activeElement.value;
+
+  document.getElementById("functionbar").value = element;
+  
+}
+
+var clearButton = document.getElementById("calc");
+var previousActiveElement = null;
+
+clearButton.onmousedown = function() {
+      previousActiveElement = document.activeElement;
+};
+
+clearButton.onclick = function() {
+    var mathtodo = document.getElementById("functionbar");
+   mathtodo.value=eval(mathtodo.value);
+   document.activeElement.value=mathtodo.value;
+    if (previousActiveElement && previousActiveElement != this) {
+        previousActiveElement.value = mathtodo.value;
+    }
+};    
+var useprevious = null;
+var avgbutton = document.getElementById('AVG');
+avgbutton.onmousedown = function() {
+      useprevious = document.activeElement;
+};
+avgbutton.onclick = function() {
+    var mathtodo = document.getElementById("functionbar").value;
+   const average = array => array.reduce((a, b) => Number(a) + Number(b)) / array.length;
+   var finals = average(mathtodo.split(','))
+   document.getElementById('functionbar').value = finals;
+    if (useprevious && useprevious != this) {
+        useprevious.value = finals;
+    }
+};    
+var previouselements = null;
+var texts = document.getElementById('functionbar');
+texts.onmousedown = function() {
+      previouselements = document.activeElement;
+};
+
+   texts.onkeyup = function() {
+    var mathtodo = document.getElementById("functionbar");
+   
+   
+    if (previouselements && previouselements != this) {
+        previouselements.value = mathtodo.value;
+    }
+};
+
+function freezeheader(){
+    if(document.getElementById('switch1').checked){
+    document.getElementById('letters').style.position="-webkit-sticky";
+     document.getElementById('letters').style.position="sticky";
+      document.getElementById('letters').style.top="0";
+      document.getElementById("letters").className="sticky-top";
+    // position: -webkit-sticky; /* Safari */position: sticky;top:0;
+    }else{
+        document.getElementById('letters').style.position="";
+     document.getElementById('letters').style.position="";
+      document.getElementById('letters').style.top="";
+      document.getElementById("letters").className="";
+    }
+}
+function bold(){
+    var columns = document.getElementById('columns').value;
+    const collection = document.getElementsByClassName(columns);
+for (let i = 0; i < collection.length; i++) {
+  collection[i].style.fontWeight = "bold";
+}
+}
+function underline(){
+    var columns = document.getElementById('columns').value;
+    const collection = document.getElementsByClassName(columns);
+for (let i = 0; i < collection.length; i++) {
+  collection[i].style.textDecoration = "underline";
+}
+}
+function dottedunderline(){
+    var columns = document.getElementById('columns').value;
+    const collection = document.getElementsByClassName(columns);
+for (let i = 0; i < collection.length; i++) {
+  collection[i].style.textDecoration = "underline";
+   collection[i].style.textDecorationStyle = "dotted";
+}
+}
+function wavyunderline(){
+    var columns = document.getElementById('columns').value;
+    const collection = document.getElementsByClassName(columns);
+for (let i = 0; i < collection.length; i++) {
+  collection[i].style.textDecoration = "underline";
+   collection[i].style.textDecorationStyle = "wavy";
+}
+}
+function highlight(){
+    var columns = document.getElementById('columns').value;
+    const collection = document.getElementsByClassName(columns);
+for (let i = 0; i < collection.length; i++) {
+  collection[i].style.backgroundColor = "yellow";
+
+}
+}
+    </script>
+  </body>
+</html>

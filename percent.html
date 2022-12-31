@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Aswin's Percentage Calculator</title>
+    <style>
+        #head{
+            background-color: #90ee90;
+           
+            
+        }
+        h6{
+            font-size: 30px;
+        }
+    
+        input{
+            background-color: #2CEEF0;
+            font-size: 25px;
+        }
+        table{
+            border: 7px solid black;
+            background-color: yellow;
+        }
+        TD{
+            border: 4PX SOLID black;
+        }
+        h2{
+            font-size: 50px;
+        }
+        button{
+            font-size: 25px;
+            background-color: green;
+            color: white;
+        }
+        div{
+            font-size: 25px;
+        }
+      
+          body{
+         background-image: url('https://media.istockphoto.com/photos/an-abstract-blue-pattern-with-numbers-picture-id178895760?b=1&k=20&m=178895760&s=170667a&w=0&h=lfh8zl1AloSdEH63b-HQIN4t2zDTtN4oCpANGgwgIpA=');
+      
+        justify-content: center;
+    }
+    </style>
+</head>
+<body>
+    <script>
+    function go(){
+        var value1= document.getElementById('num').value;
+        var value2=document.getElementById('denom').value;
+        var result= value1 / value2 * 100+"%";
+        
+        document.getElementById('result').innerHTML= result;
+    }
+    </script>
+    <div id="head" colspan="5"><h6>Aswin®</h6><p style="text-align:right;">Percentage Calculator</p></div>
+    <center>
+   <table>
+       <tr><td><h2>
+        Aswin's Percentage calculator
+    </h2></td></tr>
+       <tr>
+           <td><center><input type="number" placeholder="numerator" id="num"></center></td>
+       </tr>
+       <tr><td><center><input type="number" id="denom" placeholder="denominator"></td></center></tr>
+       <tr style="justify-content:center;"><td><center><button type="btn" onclick="go()">Go!</button></center></td></tr>
+   </table>
+<br>
+
+
+<div id="result" class="jumbotron">
+    %
+</div>
+ </center>
+</body>
+</html>

@@ -1,0 +1,817 @@
+<html>
+<head>
+<title> Aswin Stories</title>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/3e2a93553e.js" crossorigin="anonymous"></script>
+<link rel = "icon" href = 
+"https://goodapps.w3spaces.com/storiesicon.png"
+		type = "image/x-icon">
+    <meta charset="utf-8">
+
+<style>
+body{
+background-color:blue;
+color:blue;
+}
+   #head{
+            background-color: #90ee90;
+            margin-top: -9px;
+            
+        }
+        h6{
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+a{
+font-size:25px;
+color:blue;
+text-decoration:none;
+font-size:25px;
+}
+li{
+    color:blue;
+}
+h2{
+font-size:50px;
+}
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 130px;
+  height: 130px;
+ 
+}
+
+
+
+
+#myDiv {
+  display: none;
+}
+ul{
+    list-style: none;
+    color:blue;
+}
+.toast-body{
+  color:black;
+}
+
+p{
+  font-size: 25px;
+}
+div{
+    color:black;
+    
+}
+.dot {
+  height:100px;
+  width: 100px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  color:white;
+}
+h2{
+  color:white;
+}
+</style>
+</head>
+<body onload="myFunction()" style="margin:0;">
+    <div  id="loader" class="spinner-border text-info"></div>
+    <div id="head" colspan="5">Aswin® 
+    <span style="text-align:right; display:block; margin-top:0px;">Stories</span>
+  </div>
+      
+    <center>
+      <H2>Beta</H2>
+      </CENTER>
+       <p style="text-align:right;color:white;" id="signin"> Not Logged In</p>
+    <script>
+      //for introduction
+      $(document).ready(function(){
+  $('.toast').toast('show');
+});
+        //this shows the loading symbol when the page is loading
+        var myVar;
+        
+        function myFunction() {
+          myVar = setTimeout(showPage, 3000);
+            document.getElementById("next").style.display = "none";
+  document.getElementById("final").style.display = "none";
+    var getinfo = localStorage.getItem("Name");
+  document.getElementById("signin").innerHTML ="Hello "+ getinfo +"!";
+ document.getElementById('watchlist').innerHTML=localStorage.getItem("readinglist");
+ if(document.getElementById("watchlist").innerHTML==""){
+     document.getElementById('watchlist').innerHTML="<h4> Reading List</h4>"
+ }
+        }
+        
+        function showPage() {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("loading").style.display="none";
+        }
+        function searchresult(){
+	//this line tells the html tags we have used
+	var input, filter, ul, li, a, i, txtValue;
+  //this collects the inputs id
+	input = document.getElementById("mysearch");
+    //this tells about the filter
+	filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+function go2(){
+  var toast1= document.getElementById('first');
+  var toast2 = document.getElementById('next');
+
+  toast2.style.display ="block"
+}
+function go3(){
+  var toastnxt = document.getElementById('next');
+  var toastfinl = document.getElementById('final');
+  toastnxt.style.display = "none";
+  toastfinl.style.display = "block";
+}
+function end(){
+    document.getElementById('final').style.display="none";
+}
+function animal(){
+      const iframe = document.createElement("iframe");
+      iframe.src ="https://drive.google.com/file/d/19J-H2arhUAeSocHWoe3rC3PTwjtzT5po/preview";
+      iframe.width="640";
+      iframe.height="480";
+      iframe.allow="autoplay";
+      document.getElementById('animalvideo').appendChild(iframe);
+document.getElementById('animaldot').style.display="none";
+}
+//"https://drive.google.com/file/d/19GO03u8LK3vKlCYGhW6QZXbzH7FwFXdS/preview"
+function textile(){
+      const iframe = document.createElement("iframe");
+      iframe.src ="https://drive.google.com/file/d/19GO03u8LK3vKlCYGhW6QZXbzH7FwFXdS/preview";
+      iframe.width="640";
+      iframe.height="480";
+      iframe.allow="autoplay";
+      document.getElementById('textilevideo').appendChild(iframe);
+document.getElementById('textiledot').style.display="none";
+}
+function democracy(){
+      const iframe = document.createElement("iframe");
+      iframe.src ="https://drive.google.com/file/d/19LWCdlBXQhV_tkAToYooLPzTa9-GsAd2/preview";
+      iframe.width="640";
+      iframe.height="480";
+      iframe.allow="autoplay";
+      document.getElementById('democracyvideo').appendChild(iframe);
+document.getElementById('democracydot').style.display="none";
+}
+function geothermal(){
+      const iframe = document.createElement("iframe");
+      iframe.src ="https://drive.google.com/file/d/1E7XO5eCz0tMNGgXGfSlDft0do3ggUUmA/preview";
+      iframe.width="600";
+      iframe.height="349";
+      iframe.allow="autoplay";
+      document.getElementById('geothermalvideo').appendChild(iframe);
+document.getElementById('geothermaldot').style.display="none";
+}
+function dix(){
+      const iframe = document.createElement("iframe");
+      iframe.src ="https://drive.google.com/file/d/19PUCu1O_yzWuqI89XU47s5Lc455MhyyC/preview";
+      iframe.width="600";
+      iframe.height="349";
+      iframe.allow="autoplay";
+      document.getElementById('dixvideo').appendChild(iframe);
+document.getElementById('dixdot').style.display="none";
+}
+   function NE(){
+      const iframe = document.createElement("iframe");
+      iframe.src ="https://drive.google.com/file/d/19ObU21dKoHhmVQcSdSb6vMZBULvw6m12/preview";
+      iframe.width="600";
+      iframe.height="349";
+      iframe.allow="autoplay";
+      document.getElementById('NEvideo').appendChild(iframe);
+document.getElementById('NEdot').style.display="none";
+}   
+function payne(){
+      const iframe = document.createElement("iframe");
+      iframe.src ="https://drive.google.com/file/d/1glqiLTULHmmvcYf_UcbfWAXwg5YEndBk/preview";
+      iframe.width="600";
+      iframe.height="349";
+      iframe.allow="autoplay";
+      document.getElementById('paynevideo').appendChild(iframe);
+document.getElementById('paynedot').style.display="none";
+}   
+function bill(){
+      const iframe = document.createElement("iframe");
+      iframe.src ="https://docs.google.com/presentation/d/e/2PACX-1vSgGVpy12O4oP1lsaZSg0jcvO3XMFfpZ75XD77txfuwZo022T10W0uFtrLxsqN6lw8dnhE4y8lmwKsM/embed?start=false&loop=false&delayms=3000";
+      iframe.width="480";
+      iframe.height="299";
+      iframe.frameborder="0";
+      iframe.allow="autoplay";
+      iframe.setAttribute('allowFullScreen', 'true');
+          iframe.setAttribute('mozallowfullscreen', 'true');
+    iframe.setAttribute('webkitallowfullscreen', 'true');
+      document.getElementById('billvideo').appendChild(iframe);
+document.getElementById('billdot').style.display="none";
+} 
+function buzzooka(){
+      const iframe = document.createElement("iframe");
+      iframe.src ="https://drive.google.com/file/d/1CjU3L9-5Hrgm7Yq6F_jFl2molhn-yTwP/preview";
+      iframe.width="480";
+      iframe.height="299";
+      iframe.frameborder="0";
+      iframe.allow="autoplay";
+      iframe.setAttribute('allowFullScreen', 'true');
+         
+      document.getElementById('buzzookavideo').appendChild(iframe);
+document.getElementById('buzzookadot').style.display="none";
+} 
+function loadanimalvideo(){
+    const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/vlUSv1vOSrI";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+iframe.setAttribute('autoplay', 'on');
+
+
+//frameborder="0"
+//width="500"
+//title="YouTube video player"
+//allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+// Append to body:
+document.getElementById('loadanimalvideo').appendChild(iframe);
+document.getElementById('loadanimalvideodot').style.display="none";
+}
+function loadgeothermal(){
+        const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/YZ83mXo9Yzo";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+iframe.setAttribute('autoplay', 'on');
+
+
+//frameborder="0"
+//width="500"
+//title="YouTube video player"
+//allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+// Append to body:
+document.getElementById('loadgeothermalvideo').appendChild(iframe);
+document.getElementById('loadgeothermalvideodot').style.display="none";
+}
+function loadbillvideo(){
+       const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/IJy99Za_N_g";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+iframe.setAttribute('autoplay', 'on');
+
+
+//frameborder="0"
+//width="500"
+//title="YouTube video player"
+//allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+// Append to body:
+document.getElementById('loadbillvideo').appendChild(iframe);
+document.getElementById('loadbillvideodot').style.display="none";
+}
+function loadbuzzookavideo(){
+     const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/ocv611ZEnjI";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+iframe.setAttribute('autoplay', 'on');
+
+
+//frameborder="0"
+//width="500"
+//title="YouTube video player"
+//allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+// Append to body:
+document.getElementById('loadbuzzookavideo').appendChild(iframe);
+document.getElementById('loadbuzzookavideodot').style.display="none";
+}
+function space(){
+         const iframe = document.createElement("iframe");
+      iframe.src ="https://drive.google.com/file/d/1PAmDTUK0zmyCj-4m8Kjo9psM5XEHdyFl/preview";
+      iframe.width="480";
+      iframe.height="299";
+      iframe.frameborder="0";
+      iframe.allow="autoplay";
+      iframe.setAttribute('allowFullScreen', 'true');
+      // Append to body:
+document.getElementById('spacevideo').appendChild(iframe);
+document.getElementById('spacedot').style.display="none";
+}
+function underground(){
+     const iframe = document.createElement("iframe");
+      iframe.src ="https://drive.google.com/file/d/19h9x7fwL8DEpBMyQ__881IHoVmqh_6lG/preview";
+      iframe.width="480";
+      iframe.height="299";
+      iframe.frameborder="0";
+      iframe.allow="autoplay";
+      iframe.setAttribute('allowFullScreen', 'true');
+      //append
+      document.getElementById('undergroundvideo').appendChild(iframe);
+document.getElementById('undergrounddot').style.display="none";
+}
+//https://www.youtube.com/embed/Si8Q7Mpnj1c
+function undergroundvid(){
+    const iframe = document.createElement("iframe");
+      iframe.src ="https://www.youtube.com/embed/Si8Q7Mpnj1c";
+      iframe.width="480";
+      iframe.height="299";
+      iframe.frameborder="0";
+      iframe.allow="autoplay";
+      iframe.setAttribute('allowFullScreen', 'true');
+      //append
+      document.getElementById('undergroundvideodot').appendChild(iframe);
+document.getElementById('undergrounddotvideo').style.display="none";
+}
+function copyitdown(tagname){
+    if(document.getElementById('signin').innerHTML== "Hello null!"){
+    document.getElementById('fornonmembers').className = "modal fade show";
+    document.getElementById('fornonmembers').style.display="block";
+    } else {
+var newelement= document.createElement('li');
+newelement.innerHTML= tagname.innerHTML;
+var btntoremove= document.createElement('button');
+btntoremove.setAttribute("onclick", "this.parentElement.style.display='none';localStorage.setItem('readinglist', document.getElementById('watchlist').innerHTML )");
+btntoremove.innerHTML="Remove from reading list";
+btntoremove.className="btn btn-danger";
+newelement.appendChild(btntoremove);
+document.getElementById('watchlist').appendChild(newelement);
+localStorage.setItem("readinglist", document.getElementById('watchlist').innerHTML )
+}
+}
+        </script>
+    <div class="modal fade" id="fornonmembers">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Option is available for members only</h4>
+        <button type="button" class="close"  onclick="document.getElementById('fornonmembers').style.display=null;">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+We're sorry, but this option is available for memebers only. <br>
+Have an account?  Visit the <a href="https://goodapps.w3spaces.com">Main Page<i class="material-icons">&#xe879;</i></a> to log in.<br>
+Don't have an account? Visit the <a href="https://goodapps.w3spaces.com">Main Page<i class="material-icons">&#xe879;</i></a> to sign up.It is completely free.
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+          <button type="button" class="btn btn-danger" onclick="document.getElementById('fornonmembers').style.display=null;">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+    <input type="text" placeholder="Search Stories..." style="margin-top: 8px;
+    margin-right: 100px;
+        padding: 14px;
+          float: right; " id="mysearch" onkeyup="searchresult()">
+           <div class="jumbotron" id="watchlist" style="display:inline-block;overflow-y: scroll; height:75px; width:1000px;" width="40px" height="50px"><h4>Reading List</h4></div>
+         
+          <div class="toast" data-autohide="false">
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">Welcome to Aswin Stories</strong>
+      <small class="text-muted">5 mins ago</small>
+      <button type="button" class="ml-2 mb-1 close" onclick="go2()" data-dismiss="toast">&times;</button>
+    </div>
+    <div class="toast-body">
+      Here you can find many stories
+    </div>
+  </div>
+  <ul class="nav nav-pills">
+     
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="pill" style="color:yellow;"  href="#home">All Stories</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" style="color:yellow;" href="#menu1">Videos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" style="color:yellow; " href="#menu2">Informational</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" style="color:yellow; " href="#menu3">Comic</a>
+  </li>
+</ul>
+  <div class="tab-content">
+      <div id="home" class="container tab-pane active"><br>
+<ul id="myUL" class="list-group"><li id="buzz" class="list-group-item"><b><a data-toggle="modal" href="#buzzooka" >Buzzooka Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('buzz'))">Add to Reading List </button></b>
+</li>
+            <div class="toast" data-autohide="false" id="next">
+  <div class="toast-header">
+      <strong class="mr-auto text-primary">Welcome to Aswin Stories</strong>
+      <small class="text-muted">5 mins ago</small>
+      <button type="button" class="ml-2 mb-1 close" onclick="go3()" data-dismiss="toast" >&times;</button>
+    </div>
+    <div class="toast-body">
+      This story, called Buzzooka, has a video with it. Like this, some stories include videos.
+    </div>
+  </div>
+
+<b><li id="spaces" class="list-group-item"><a data-toggle="modal" href="#space">From Boredom to Space Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('spaces'))">Add to Reading List </button></b>
+</li>
+<div class="toast" id="final"  data-autohide="false">
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">Welcome to Aswin Stories</strong>
+      <small class="text-muted">5 mins ago</small>
+      <button type="button" class="ml-2 mb-1 close" onclick="end() " data-dismiss="toast" >&times;</button>
+    </div>
+    <div class="toast-body">
+     More stories coming soon!
+    </div>
+    </div>
+ 
+<b><li id="tornado" class="list-group-item"><a  href="https://goodapps.w3spaces.com/Tornado_Warning.html">Tornado Warning Full Story(Video Form)</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('tornado'))">Add to Reading List </button></b>
+</li>
+
+<b><li class="list-group-item" id="textiles"><a data-toggle="modal" href="#textile">Let's Talk Textiles! Full Story</a></b>
+<button class="btn btn-success" onclick="copyitdown(document.getElementById('textiles'))">Add to Reading List </button></li>
+
+<b><li class="list-group-item" id="animal"><a data-toggle="modal" href="#myModal">Dangerous Animal Full Story</a>
+   <button class="btn btn-success" onclick="copyitdown(document.getElementById('animal'))">Add to Reading List </button></li></b>
+         <li class="list-group-item" id="democ">   <a data-toggle="modal" href="#democracy">Democracy in Action Full Story</a>
+          <button class="btn btn-success" onclick="copyitdown(document.getElementById('democ'))">Add to Reading List </button></li>  
+          
+          <li class="list-group-item" id="geo">  <a data-toggle="modal" href="#geothermal">Geothermal Energy Costs and Benefits Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('geo'))">Add to Reading List </button>
+          </li>  
+           
+           <li class="list-group-item" id="dd"> <a  data-toggle="modal" href="#dix">Dorethea Dix Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('dd'))">Add to Reading List </button>
+           </li> 
+                 <li class="list-group-item" id="oma">   <A data-toggle="modal" href="#NE" >Nebraska Full Story</A><button class="btn btn-success" onclick="copyitdown(document.getElementById('oma'))">Add to Reading List </button>
+                </li>  
+                    
+                  <li class="list-group-item" id="alex"> <a data-toggle="modal" href="#payne">Alexander Payne Full Story</a>
+                  <button class="btn btn-success" onclick="copyitdown(document.getElementById('alex'))">Add to Reading List </button>
+                   </li>
+                    
+                  <li class="list-group-item" id="superhero">  <a data-toggle="modal" href="#bill">Bill, The Strong Man Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('superhero'))">Add to Reading List </button>
+               </li> 
+                 <li class="list-group-item" id="city">  <a data-toggle="modal" href="#underground">Underground City Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('city'))">Add to Reading List </button>
+               </li> 
+               </ul>
+               
+                  </div>
+                  <div id="menu1" class="container tab-pane fade">
+                      <ul id="video" class="list-group"><li class="list-group-item"><b><a data-toggle="modal" href="#buzzooka">Buzzooka Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('buzz'))">Add to Reading List </button></b></li>
+                      <b><li class="list-group-item"><a  href="https://goodapps.w3spaces.com/Tornado_Warning.html">Tornado Warning Full Story(Video Form)</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('tornado'))">Add to Reading List </button></b>
+</li>
+<b><li class="list-group-item"><a data-toggle="modal" href="#myModal">>Dangerous Animal Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('animal'))">Add to Reading List </button>
+    </li></b>
+          <li class="list-group-item">  <a data-toggle="modal" href="#geothermal">Geothermal Energy Costs and Benefits Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('geo'))">Add to Reading List </button>
+          </li> 
+               
+                  <li class="list-group-item">  <a data-toggle="modal" href="#bill">Bill, The Strong Man Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('superhero'))">Add to Reading List </button>
+               </li> 
+               <li class="list-group-item">  <a data-toggle="modal" href="#underground">Underground City Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('city'))">Add to Reading List </button>
+               </li>
+               </ul>
+          </div>
+
+
+<div id="menu2" class="container tab-pane fade">
+     <ul id="info" class="list-group">
+         <li class="list-group-item">  <a data-toggle="modal" href="#geothermal">Geothermal Energy Costs and Benefits Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('geo'))">Add to Reading List </button>
+          </li>  
+          <li class="list-group-item"> <a data-toggle="modal" href="#dix">Dorethea Dix Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('dd'))">Add to Reading List </button>
+           </li> 
+           <li class="list-group-item">   <A data-toggle="modal" href="#NE">Nebraska Full Story</A><button class="btn btn-success" onclick="copyitdown(document.getElementById('oma'))">Add to Reading List </button>
+                </li>  
+                <li class="list-group-item"> <a data-toggle="modal" href="#payne">Alexander Payne Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('alex'))">Add to Reading List </button>
+                   </li>
+     </ul>
+</div>
+<div id="menu3" class="container tab-pane fade" >
+    <ul id="info" class="list-group">
+         <li class="list-group-item"><a data-toggle="modal" href="#textile">Let's Talk Textiles! Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('textiles'))">Add to Reading List </button>
+</li> 
+          
+          <li class="list-group-item">  <a  data-toggle="modal" href="#bill">Bill, The Strong Man Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('superhero'))">Add to Reading List </button>
+               </li> 
+               
+           <b><li class="list-group-item"><a data-toggle="modal" href="#myModal">Dangerous Animal Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('animal'))">Add to Reading List </button>
+    </li></b>
+              
+                    <li class="list-group-item">   <a  data-toggle="modal" href="#democracy">Democracy in Action Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('democ'))">Add to Reading List </button>
+          </li>  <li class="list-group-item"><b><a data-toggle="modal" href="#buzzooka">Buzzooka Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('buzz'))">Add to Reading List </button></b></li>
+  <li class="list-group-item"><a href="https://goodapps.w3spaces.com/From_Boredom_to_Space.html">From Boredom to Space Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('spaces'))">Add to Reading List </button></li>
+     </ul>
+     
+     </div>
+
+</div>
+<!--Modals for stories-->
+<!--dangerous animal-->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Dangerous Animal Full Story</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <button id="animaldot" class="dot" onclick="animal()"><i class="fa-solid fa-book-open fa-4x"></i></button>
+        <div id="animalvideo"></div>
+        <button id="loadanimalvideodot" class="dot" onclick="loadanimalvideo()"><i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+        <DIV ID="loadanimalvideo"></DIV>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!--TEXTILE-->
+  <div class="modal fade" id="textile" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Let's Take Textiles! Full Story</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <button id="textiledot" class="dot" onclick="textile()"><i class="fa-solid fa-book-open fa-4x"></i></button>
+        <div id="textilevideo"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!--democracy -->
+  <div class="modal fade" id="democracy" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Democracy in Action Full Story</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <button id="democracydot" class="dot" onclick="democracy()"><i class="fa-solid fa-book-open fa-4x"></i></button>
+        <div id="democracyvideo"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Geothermal-->
+  <div class="modal fade" id="geothermal" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Geothermal Costs and Benefits Full Story</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <button id="geothermaldot" class="dot" onclick="geothermal()"><i class="fa-solid fa-book-open fa-4x"></i></button>
+        <div id="geothermalvideo"></div>
+        <button id="loadgeothermalvideodot" class="dot" onclick="loadgeothermal()"><i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+             <div id="loadgeothermalvideo"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!--Dix-->
+   <div class="modal fade" id="dix" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Dorethea Dix Full Story</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <button id="dixdot" class="dot" onclick="dix()"><i class="fa-solid fa-book-open fa-4x"></i></button>
+        <div id="dixvideo"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!--NE-->
+     <div class="modal fade" id="NE" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Nebraska Full Story</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <button id="NEdot" class="dot"onclick="NE()"><i class="fa-solid fa-book-open fa-4x"></i></button>
+        <div id="NEvideo"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!--payne-->
+   <div class="modal fade" id="payne" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Alaxander Payne Full Story</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <button id="paynedot" class="dot" onclick="payne()"><i class="fa-solid fa-book-open fa-4x"></i></button>
+        <div id="paynevideo"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!--Bill-->
+    <div class="modal fade" id="bill" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Bill, The Strong Man Full Story</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <button id="billdot" CLASS="dot" onclick="bill()"><i class="fa-solid fa-book-open fa-4x"></i></button>
+        <div id="billvideo"></div>
+           <button id="loadbillvideodot" CLASS="dot" onclick="loadbillvideo()"><i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+           <div id="loadbillvideo"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!--popular Buzzooka-->
+   <div class="modal fade" id="buzzooka" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Buzzooka Full Story</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <button id="buzzookadot" CLASS="dot" onclick="buzzooka()"><i class="fa-solid fa-book-open fa-4x"></i></button>
+        <div id="buzzookavideo"></div>
+           <button id="loadbuzzookavideodot" CLASS="dot" onclick="loadbuzzookavideo()"><i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+           <div id="loadbuzzookavideo"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!--Space-->
+   <div class="modal fade" id="space" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">From Boredom to Space Full Story</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <button id="spacedot" CLASS="dot" onclick="space()"><i class="fa-solid fa-book-open fa-4x"></i></button>
+        <div id="spacevideo"></div>
+ 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!--Underground-->
+   <div class="modal fade" id="underground" role="dialog">
+    <div class="modal-dialog modal-xl">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Underground City Full Story</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <button id="undergrounddot" CLASS="dot" onclick="underground()"><i class="fa-solid fa-book-open fa-4x"></i></button>
+        <div id="undergroundvideo"></div>
+  <button id="undergrounddotvideo" CLASS="dot" onclick="undergroundvid()"><i class="fa fa-play fa-4x"></i></button>
+        <div id="undergroundvideodot"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!--undergroundvideodot-->
+    </div>
+  </div>
+                </body>
+</html>

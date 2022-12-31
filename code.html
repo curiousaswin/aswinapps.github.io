@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Aswin's Code Editor 
+        </title>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/3e2a93553e.js" crossorigin="anonymous"></script>
+        <style>
+            textarea{
+                width:100%;
+                height: 100%;
+                background-color: black;
+                color:blanchedalmond;
+                font-family:Courier New;
+                font-size: 15px;
+            }
+            h2{
+                background-color:yellow;
+                font-size:50px;
+            }
+            body{
+                background-color:rgba(255, 0, 255, 0.616);
+            }
+            #result{
+                background-color: white;
+                width:100%;
+                height: 250px;
+            }
+            #loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 130px;
+  height: 130px;
+
+ 
+  
+}
+
+
+#myDiv {
+  display: none;
+}
+
+p{
+  font-size:25px;
+}
+        </style>
+    </head>
+
+    
+    <body onload="myFunction()">
+        <div id="loader"  class="spinner-border text-danger">
+
+        </div>
+        
+        <script>
+           var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+   var getinfo = localStorage.getItem("Name");
+  document.getElementById("signin").innerHTML ="Hello "+ getinfo +"!";
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+
+
+}
+          
+            function showTextforResult()
+            {
+                let textToChange = document.getElementById('textToUse').value;
+                let resultDivElement =document.getElementById('result');
+                resultDivElement.innerHTML = textToChange ;    
+            }
+            function fullscreen(){
+                var prtContent = document.getElementById("result");
+var WinPrint = window.open('', '', 'left=0,top=0,width=2000,height=900,toolbar=0,scrollbars=0,status=0');
+WinPrint.document.write(prtContent.innerHTML);
+WinPrint.document.close();
+WinPrint.focus();
+
+            }
+        </script>
+      <center> <h2> Aswin's Code Editor</h2></center>
+      <p id="signin" style="text-align:right;">Not Logged In</p>
+       <div class="container-fluid">
+            <div class="container-fluid"> 
+    <div class="row">
+        <div class="col-sm-3 col-md-6 col-lg-4 bg-success" style="height:350px;">
+            <p>Code Editor</p>
+
+       <textarea id="textToUse" onkeyup="showTextforResult()">
+           <!DOCTYPE HTML>
+           <HTML>
+               <head>
+                   <style>
+                       h2{
+                           background-color: coral;
+                       }
+                       p{
+                           font-size:25px;
+                           font-family: Arial;
+                       }
+                   </style>
+                   
+               </head>
+               <body>
+                   
+                   
+                   <p>
+                    Welcome to Aswin's Code Editor. This is completely free. You can access your own desktop files and more.
+       
+                   </p>
+               </body>
+           </HTML> 
+       </textarea>
+       </div>
+       <div class="col-sm-9 col-md-6 col-lg-8 bg-warning">
+     <p> Result</p>
+       <div id="result">
+ 
+       </div>
+      <div style="text-align:right;">
+          <button type="btn" onclick="fullscreen()" class="btn btn-primary" style="text-align:right;"><i class="fa-solid fa-expand"></i></button>
+      </div>
+</div>
+</div>
+  </div>
+</div>
+      
+       
+
+    </body>
+</html>

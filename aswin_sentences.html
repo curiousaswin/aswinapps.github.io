@@ -1,0 +1,224 @@
+<html>
+    <head>
+        <title>
+            Aswin Sentences
+        </title>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+            h2{
+font-size:50px;
+}
+body{
+background-color:rgb(255, 222, 192);
+color:rgb(0, 128, 128);
+}
+
+
+
+#loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+z-index: 1;
+text-align: center;
+color:green;
+  background-color:yellow;
+  top: calc(50% - 45px);
+  left: calc(50% - 61px);
+  text-align: center;
+  font-weight: bold;
+}
+
+
+
+#myUL li a:hover:not(.header) {
+  background-color: purple;
+}
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 130px;
+  height: 130px;
+ 
+  
+}
+
+
+
+#myDiv {
+  display: none;
+}
+p{
+  font-size:25px;
+}
+        </style>
+    </head>
+    <body onload="myFunction()">
+        <script>
+            $(document).ready(function(){
+  $("#mysearch").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myUL li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  
+
+}
+        </script>
+        <center>
+            <h2>
+                Aswin Sentences
+            </h2>
+            <DIV ID="loader"  class="spinner-border text-info">
+
+            </DIV>
+           
+        </center>
+        <input type="text" id="mysearch" placeholder="Search Words..." class="form-control"
+			><br>
+            <ul id="myUL" alt="No rows to show" class="list-group" style="overflow-y: scroll; height:215px;">
+        <li  class="list-group-item"> <a class="btn btn-primary" data-toggle="collapse" data-target="#amount"><mark>Amount</mark> Sentence Examples</a>
+  </li>
+       <li  class="list-group-item"> <a class="btn btn-primary" data-toggle="collapse" data-target="#at"><mark>At</mark> Sentence Examples</a>
+  </li>      
+   <li  class="list-group-item">  <a class="btn btn-primary" data-toggle="collapse" data-target="#chapter"><mark>Chapter/Chapters</mark> Sentence Examples</a>
+  </li> 
+  <li  class="list-group-item">  <a class="btn btn-primary" data-toggle="collapse" data-target="#effort"><mark>Effort</mark> Sentence Examples</a>
+  </li> 
+   <li  class="list-group-item"> <a class="btn btn-primary" data-toggle="collapse" data-target="#microscope"><mark>Microscope</mark>Sentence Examples</a></li>
+    <li  class="list-group-item"> <a class="btn btn-primary" data-toggle="collapse" data-target="#pamphlet"><mark>Pamphlet</mark>Sentence Examples</a></li>
+      <li  class="list-group-item">  <a class="btn btn-primary" data-toggle="collapse" data-target="#telephone" ><mark>Telephone</mark> Sentence Examples</a>
+       </li> 
+      <li  class="list-group-item">  <a class="btn btn-primary" data-toggle="collapse" data-target="#tomato" ><mark>Tomato/Tomatoes</mark> Sentence Examples</a>
+       </li> 
+       <li  class="list-group-item">  <a class="btn btn-primary" data-toggle="collapse" data-target="#verb" ><mark>Verb</mark> Sentence Examples</a>
+       </li> 
+     </ul>
+  <div id="definitions" class="jumbotron">
+      <h4><center>Sentence Examples</center></h4>
+  <div id="at" class="collapse">
+      <button type="button" class="close"  data-toggle="collapse" data-target="#at">&times;</button>
+<h5><center>At</center></h5>
+<ol class="list-group" type="1">
+    <li class="list-group-item">There are many animals <b>at</b> the zoo.</li>
+    <li class="list-group-item">There are many toys <b>at</b> my house.</li>
+    <li class="list-group-item">Oh no! There are no heathers <b>at</b> my house.</li>
+    <li class="list-group-item">Where are we <b>at</b> right now?</li>
+</ol>
+</div>
+ <div id="tomato" class="collapse">
+           <button type="button"  class="close" data-toggle="collapse" data-target="#tomato">&times;</button>
+           <h5><Center>Tomato/Tomatoes</Center></h5>
+<ol class="list-group" type="1">
+    <li class="list-group-item">Wow!There are many <b>tomatoes</b> at the grocery store!</li>
+    <li class="list-group-item">Oh no!The rabbit ate a <b>tomato</b> from my garden!</li>
+    <li class="list-group-item">Do you now how much Roma <b>tomatoes</b> cost?</li>
+    <li class="list-group-item">Do you now how much pound this <b>tomato</b> is?</li>
+</ol>
+</div>
+ <div id="pamphlet" class="collapse">
+           <button type="button"  class="close" data-toggle="collapse" data-target="#pamphlet">&times;</button>
+           <h5><Center>Pamphlet</Center></h5>
+<ol class="list-group" type="1">
+    <li class="list-group-item">Do you know what is the <b>pamphlet</b> that Thomas Jeferson wrote?</li>
+    <li class="list-group-item">Do you want to publish the <b>pamphlet</b> that you made?</li>
+    <li class="list-group-item">Do you now how much this <b>pamphlet</b> costs?</li>
+    <li class="list-group-item">Do you know who wrote this awesome <b>pamphlet?</b></li>
+</ol>
+</div>
+<div id="chapter" class="collapse">
+           <button type="button"  class="close" data-toggle="collapse" data-target="#chapter">&times;</button>
+           <h5><Center>Chapter/Chapters</Center></h5>
+<ol class="list-group" type="1">
+    <li class="list-group-item">What <b>chapter</b> are you currently reading?</li>
+    <li class="list-group-item">I am reading the 7th <b>chapter</b> of this book.</li>
+    <li class="list-group-item">Oh no! I can't find the <b>chapter</b> book that I got from the library!</li>
+    <li class="list-group-item">Have you ever read a <b>chapter</b> book before?</li>
+    <li class="list-group-item">I have only read some of the <b>chapters</b> in this book.</li>
+    <li class="list-group-item">There are only a few <b>chapters</b> left in this book.</li>
+    <li class="list-group-item">There are many <b>chapter</b> books in this library.</li>
+</ol>
+</div>
+<div id="microscope" class="collapse">
+           <button type="button"  class="close" data-toggle="collapse" data-target="#microscope">&times;</button>
+           <h5><Center>Microscope</Center></h5>
+<ol class="list-group" type="1">
+    <li class="list-group-item">The <b>microscope</b> helped me see the small item much bigger.</li>
+    <li class="list-group-item">Where did my <b>microscope</b> go?</li>
+    <li class="list-group-item">Wow! This pencil is much bigger when I see the pencil through a <b>microscope</b>.</li>
+    <li class="list-group-item">I used the <b>microscope</b> to look at the items bigger.</li>
+  
+</ol>
+</div>
+<div id="telephone" class="collapse">
+           <button type="button"  class="close" data-toggle="collapse" data-target="#telephone">&times;</button>
+           <h5><Center>Telephone</Center></h5>
+<ol class="list-group" type="1">
+    <li class="list-group-item">Do you know when <b>telephones</b> were invented?</li>
+    <li class="list-group-item">You can make phone calls using a <b>telephone</b>.</li>
+    <li class="list-group-item">Do you know who invented the <b>telephone</b>?</li>
+    <li class="list-group-item">Do you know when people switched from <b>telephones</b> to cell phones?</li>
+  <li class="list-group-item"><B>Telephones</B> was a big addition to the way we communicate.</li>
+</ol>
+</div>
+<div id="verb" class="collapse">
+           <button type="button"  class="close" data-toggle="collapse" data-target="#verb">&times;</button>
+           <h5><Center>Verb</Center></h5>
+<ol class="list-group" type="1">
+    <li class="list-group-item">Can you please find the <b>verb</b> in the sentence?</li>
+    <li class="list-group-item">What is the action <b>verb</b> in the sentence?</li>
+    <li class="list-group-item">Please tell me the <b>verb</b> phrase in the sentence.</li>
+    <li class="list-group-item">Is the word sitting a <b>verb</b> or a noun?</li>
+  <li class="list-group-item">Please tell me what is a helping <B>verb</B>.</li>
+</ol>
+</div>
+<div id="effort" class="collapse">
+           <button type="button"  class="close" data-toggle="collapse" data-target="#effort">&times;</button>
+           <h5><Center>Effort</Center></h5>
+<ol class="list-group" type="1">
+    <li class="list-group-item">Wow! It looks like you have put in a lot of  <b>effort</b> for this project!</li>
+    <li class="list-group-item">You need to put in a lot of <b>effort</b> in your work in order to get a good grade.</li>
+    <li class="list-group-item">This person has put lots of <b>effort</b> in this awesome painting.</li>
+    <li class="list-group-item">Many people put in their best <b>effort</b> to create this huge and amazing building.</li>
+</ol>
+</div>
+<div id="amount" class="collapse">
+           <button type="button"  class="close" data-toggle="collapse" data-target="#amount">&times;</button>
+           <h5><Center>Amount</Center></h5>
+<ol class="list-group" type="1">
+    <li class="list-group-item">What is the <b>amount</b> of money you have right now?</li>
+    <li class="list-group-item">Please tell me the <b>amount</b> of guests that are going to come here.</li>
+    <li class="list-group-item">Can you please selected the <b>amount</b> of money you would like to donate.</li>
+  
+</ol>
+</div>
+</div>
+<div class="container p-3 my-3 bg-light text-black">
+  <p>These sentences are (C) Aswin.</p>       
+  <p>To add more words and more sentences, please <a href="mailto:aswin.arulvel@gmail.com@gmail.com?subject=Request More Words/Sentences">Contact Us.</a></p>
+</div>
+    </body>
+</html>

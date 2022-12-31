@@ -1,0 +1,2176 @@
+<HTML>
+<HEAD>
+<TITLE>Aswin Tutorials</title>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body{
+background-color:yellow;
+color:green;
+}
+h2{
+font-size:50px;
+}
+a{
+font-size:25px;
+color:green;
+text-decoration:none;
+}
+   #loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 130px;
+  height: 130px;
+  margin: -76px 0 0 -76px;
+   }
+.dot {
+  height:100px;
+  width: 100px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+</style>
+</HEAD>
+<BODY onload="myFunction()" style="margin:0;">
+<b><h2><center>
+    <div id="loader" class="spinner-border text-warning"></div>
+Aswin Tutorials(Beta Version)
+</b></center></h2>
+ <p style="text-align:right;" id="signin"> Not Logged In</p>
+<div class="toast" id ="first" data-autohide="false">
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">Welcome to Aswin Tutorials</strong>
+      <small class="text-muted">5 mins ago</small>
+      <button type="button" class="ml-2 mb-1 close" onclick="go2()" data-dismiss="toast">&times;</button>
+    </div>
+    <div class="toast-body">
+      Here you can find many tutorials.
+      
+    </div>
+    </div>
+<script>
+  
+
+function myFunction() {
+  myVar = setTimeout(showPage, 1000);
+  document.getElementById("next").style.display = "none";
+  document.getElementById("final").style.display = "none";
+  var getinfo = localStorage.getItem("Name");
+  document.getElementById("signin").innerHTML ="Hello "+ getinfo +"!";
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  
+ 
+}
+
+$(document).ready(function(){
+  $('.toast').toast('show');
+});
+function go2(){
+  var toast1= document.getElementById('first');
+  var toast2 = document.getElementById('next');
+  toast1.style.display = "none";
+  toast2.style.display ="block"
+}
+function go3(){
+  var toastnxt = document.getElementById('next');
+  var toastfinl = document.getElementById('final');
+  toastnxt.style.display = "none";
+  toastfinl.style.display = "block";
+}
+$(document).ready(function(){
+  $("#mySearch").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#FullList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+
+function loadaddtutorial(){
+    const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/1clq-WXcRVo";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+iframe.setAttribute('autoplay', 'on');
+
+
+//frameborder="0"
+//width="500"
+//title="YouTube video player"
+//allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+// Append to body:
+document.getElementById('test').appendChild(iframe);
+document.getElementById('adddot').style.display="none";
+}
+function loadcomictutorial(){
+    const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/vlwktkorNaM";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+iframe.setAttribute('autoplay', 'on');
+
+
+//frameborder="0"
+//width="500"
+//title="YouTube video player"
+//allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+// Append to body:
+document.getElementById('comicvideo').appendChild(iframe);
+document.getElementById('comicdot').style.display="none";
+}
+function loadcaptiontutorial(){
+    const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/yhvrUDqluQQ";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+iframe.setAttribute('autoplay', 'on');
+
+
+//frameborder="0"
+//width="500"
+//title="YouTube video player"
+//allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+// Append to body:
+document.getElementById('captionvideo').appendChild(iframe);
+document.getElementById('captiondot').style.display="none";
+}
+function loadelementtutorial(){
+    const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/6UJT32A4dVo";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+iframe.setAttribute('autoplay', 'on');
+
+
+//frameborder="0"
+//width="500"
+//title="YouTube video player"
+//allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+// Append to body:
+document.getElementById('elementvideo').appendChild(iframe);
+document.getElementById('elementdot').style.display="none";
+}
+function loadcompoundtutorial(){
+    const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/La7szbNnYZE";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+iframe.setAttribute('autoplay', 'on');
+
+
+//frameborder="0"
+//width="500"
+//title="YouTube video player"
+//allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+// Append to body:
+document.getElementById('compoundvieo').appendChild(iframe);
+document.getElementById('compounddot').style.display="none";
+}
+function loadlcmpart1(){
+      const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/TE-ZZqSPevI";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('lcmpart1vid').appendChild(iframe);
+document.getElementById('lcm1dot').style.display="none";
+}
+function loadlcmpart2(){
+      const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/aJiWqu0ixL4";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('lcmpart2vid').appendChild(iframe);
+document.getElementById('lcm2dot').style.display="none";
+}
+
+function loadsubtract(){
+      const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/PLKzDnC4c_E";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('subtractvid').appendChild(iframe);
+document.getElementById('subtractdot').style.display="none";
+}
+//
+function loadfraction(){
+      const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/Q0iWPBY5GSU";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('fractionvid').appendChild(iframe);
+document.getElementById('fractiondot').style.display="none";
+}
+//
+function loadearth(){
+      const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/CnNnSBBEUiw";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('earthvid').appendChild(iframe);
+document.getElementById('earthdot').style.display="none";
+}
+//https://www.youtube.com/embed/WtdRE1mb3mw
+function loadbioshydros(){
+      const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/WtdRE1mb3mw";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('biohydrovid').appendChild(iframe);
+document.getElementById('biohydrodot').style.display="none";
+}
+function loadhtmlstarttutorial(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/ZCukCjk_FJc";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('htmlstartvideo').appendChild(iframe);
+document.getElementById('htmlstartdot').style.display="none";
+
+}
+//loadgreekintro
+function loadgreekintro(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/MkqxdtHDDj8";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekintrovideo').appendChild(iframe);
+document.getElementById('greekintrodot').style.display="none";
+
+}
+//loadgreekphotos
+function loadgreekphotos(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/ITugxg4lgTY";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekphotosvideo').appendChild(iframe);
+document.getElementById('greekphotosdot').style.display="none";
+
+}
+//loadgraphgreek
+function loadgreekgraph(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/dsEYK32f2LU";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekgraphvideo').appendChild(iframe);
+document.getElementById('greekgraphdot').style.display="none";
+
+}
+function loadgreektele(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/SZ4aUsXH4oQ";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greektelevideo').appendChild(iframe);
+document.getElementById('greekteledot').style.display="none";
+
+}
+function loadgreekmetron(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/RsuEfLPfcl4";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekmetronvideo').appendChild(iframe);
+document.getElementById('greekmetrondot').style.display="none";
+
+}
+function loadgreektropos(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/ZWKVz8ANNrk";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greektroposvideo').appendChild(iframe);
+document.getElementById('greektroposdot').style.display="none";
+
+}
+function loadgreekphilia(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/HocbVZO2kzU";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekphiliavideo').appendChild(iframe);
+document.getElementById('greekphiliadot').style.display="none";
+}
+function loadgreekphobos(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/CaT-cQXMtCM";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekphobosvideo').appendChild(iframe);
+document.getElementById('greekphobosdot').style.display="none";
+}
+function loadgreeksyn(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/dWSW36MxVm8";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greeksynvideo').appendChild(iframe);
+document.getElementById('greeksyndot').style.display="none";
+}
+//https://www.youtube.com/embed/wgTki4p7nz8
+function loadgreekthesis(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/wgTki4p7nz8";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekthesisvideo').appendChild(iframe);
+document.getElementById('greekthesisdot').style.display="none";
+}
+function loadgreekkenesis(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/1Gb0WyimVEg";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekkenesisvideo').appendChild(iframe);
+document.getElementById('greekkenesisdot').style.display="none";
+}
+function loadgreekphone(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/NCbBD30lmag";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekphonevideo').appendChild(iframe);
+document.getElementById('greekphonedot').style.display="none";
+}
+function loadgreeksonus(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/vHtuyJlaVO0";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greeksonusvideo').appendChild(iframe);
+document.getElementById('greeksonusdot').style.display="none";
+}
+function loadgreekskopeo(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/vQVqitSLn-A";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekskopeovideo').appendChild(iframe);
+document.getElementById('greekskopeodot').style.display="none";
+}
+function loadgreekvideo(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/W7liOxiLDIU";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekvideovideo').appendChild(iframe);
+document.getElementById('greekvideodot').style.display="none";
+}
+function loadgreeklogos(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/XetXf7zOQVg";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greeklogosvideo').appendChild(iframe);
+document.getElementById('greeklogosdot').style.display="none";
+}
+function loadgreekverbum(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/wI1sHX9WWkg";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekverbumvideo').appendChild(iframe);
+document.getElementById('greekverbumdot').style.display="none";
+}
+function loadgreeknomen(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/qrBEH4f4Kxc";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greeknomenvideo').appendChild(iframe);
+document.getElementById('greeknomendot').style.display="none";
+}
+function loadmethane(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/KZXc6x_53yw";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('methanevideo').appendChild(iframe);
+document.getElementById('methanedot').style.display="none";
+}
+function loadvolume(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/hiPE7d36fic";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('volumevideo').appendChild(iframe);
+document.getElementById('volumedot').style.display="none";
+}
+function loadarea(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/pml8qSBJoxg";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('areavideo').appendChild(iframe);
+document.getElementById('areadot').style.display="none";
+}
+function loadorderofop1(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/qFQFcdL5HNw";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('orderofop1video').appendChild(iframe);
+document.getElementById('orderofop1dot').style.display="none";
+}
+function htmlintro(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/SPIqkBU3vOY";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('htmlintrovideo').appendChild(iframe);
+document.getElementById('htmlintrodot').style.display="none";
+}
+function htmlintroslides(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://docs.google.com/presentation/u/0/d/17eKIIjmo04zHyPQSpT6A161hcXmd-rkQPXBwtRomCjI/preview";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('htmlintroslidesvideo').appendChild(iframe);
+document.getElementById('htmlintroslidesdot').style.display="none";
+}
+function loadgreekplico(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/WwE5_IVJ_W4";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekplicovideo').appendChild(iframe);
+document.getElementById('greekplicodot').style.display="none";
+}
+function loadgreekdia(){
+  const iframe = document.createElement("iframe");
+//give it a source
+iframe.src="https://www.youtube.com/embed/to54RjxQjTc";
+//allow these things
+iframe.allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ;
+//set width
+iframe.width="500";
+//set height
+iframe.height="315";
+//set frameborder
+iframe.frameborder="0";
+//title
+iframe.title="Youtube video player";
+//allow full screen
+iframe.setAttribute('allowFullScreen', 'true');
+
+
+iframe.setAttribute('autoplay', 'on');
+document.getElementById('greekdiavideo').appendChild(iframe);
+document.getElementById('greekdiadot').style.display="none";
+}
+</script>
+<ul class="nav nav-pills" role="tablist" style="justify-content:center;">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="pill" href="#home">All Tutorials</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#menu1">Science</a>
+    </li>
+    <div  id="next" class="toast" data-autohide="false">
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">Welcome to Aswin Tutorials</strong>
+      <small class="text-muted">5 mins ago</small>
+      <button type="button" class="ml-2 mb-1 close" onclick="go3()" data-dismiss="toast">&times;</button>
+    </div>
+    <div class="toast-body">
+       You can find many tutorials in sections too.
+    </div>
+    </div>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#menu2">Math</a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#coding">Coding</a>
+    </li>
+         <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#greek">Greek & Latin</a>
+    </li>
+  </ul>
+<div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <h3>All Tutorials</h3>
+      <input type="text" class="form-control" placeholder="Search..." id="mySearch" name="text1">
+      <br>
+     <ul class="list-group" id="FullList">
+       
+  <li class="list-group-item"><a data-toggle="modal" href="#myModal">Comic on Google Slides Full Tutorial</a></li>
+  <li class="list-group-item"><a data-toggle="modal" href="#myModal1">How to add Captions to Youtube Videos Full Tutorial</a></li>
+  <li class="list-group-item"><a data-toggle="modal"  href="#myModal2">Elements on the Periodic Table Full Tutorial</a></li>
+<li class="list-group-item"><a data-toggle="modal"  href="#myModal3">Basic Compounds Full Tutorial</a>
+</li>
+<li class="list-group-item"><a data-toggle="modal"  href="#myModal4" >How to Find The LCM Full Tutorial</a></li>
+  <li class="list-group-item"><a a data-toggle="modal"  href="#subtract">How to subtract numbers with borrowing Full Tutorial</a></li>
+  <li class="list-group-item"><a data-toggle="modal" href="#add">Adding 2 or More Digit Numbers with Regrouping Full Tutorial</a></li>
+  <li class="list-group-item"><a data-toggle="modal" href="#fractions">Fractions from Least to Greatest Full Tutorial</a> </li>
+  <li class="list-group-item"><a data-toggle="modal"  href="#Earthmainparts">4 Main Parts of Earth-Geosphere,Hydrosphere,Atmosphere, Biosphere</a></li>
+  <li class="list-group-item"><a data-toggle="modal"  href="#bioshydros">The Biosphere and Hydrosphere </a></li>
+  <li class="list-group-item"><a data-toggle="modal"  href="#HTMLstart" >How to Build a Web Page Using HTML Full Tutorial |  h</a></li>
+  <li class="list-group-item"><a data-toggle="modal"  href="#introgreek" >Greek and Latin Introduction |   </a></li>
+           <li class="list-group-item"><a data-toggle="modal"  href="#photosgreek" >The Root Words Photos| Greek & Latin |   </a></li>
+           <li class="list-group-item"><a data-toggle="modal"  href="#graphgreek" >The Root Word Graph| Greek & Latin |   </a></li>
+         <li class="list-group-item"><a data-toggle="modal"  href="#telegreek" >The Root Word Tele| Greek & Latin |   </a></li>
+            <li class="list-group-item"><a data-toggle="modal"  href="#metrongreek" >The Root Word Metron| Greek & Latin |   </a></li>
+                        <li class="list-group-item"><a data-toggle="modal"  href="#troposgreek" >The Root Word Tropos| Greek & Latin |   </a></li>
+                             <li class="list-group-item"><a data-toggle="modal"  href="#philiagreek" >The Root Word Philia| Greek & Latin |   </a></li>
+                              <li class="list-group-item"><a data-toggle="modal"  href="#phobosgreek" >The Root Word Phobos| Greek & Latin |   </a></li>
+                               <li class="list-group-item"><a data-toggle="modal"  href="#syngreek" >The Root Word Syn| Greek & Latin |   </a></li>
+                                 <li class="list-group-item"><a data-toggle="modal"  href="#thesisgreek" >The Root Word Thesis| Greek & Latin |   </a></li>
+     <li class="list-group-item"><a data-toggle="modal"  href="#kenesisgreek" >The Root Word Kenesis| Greek & Latin |   </a></li>
+   
+     <li class="list-group-item"><a data-toggle="modal"  href="#phonegreek" >The Root Word Phone| Greek & Latin | ></a></li>
+      <li class="list-group-item"><a data-toggle="modal"  href="#sonusgreek" >The Root Word Sonus| Greek & Latin </a></li>
+            <li class="list-group-item"><a data-toggle="modal"  href="#skopeogreek" >The Root Word Skopeo| Greek & Latin </a></li>
+               <li class="list-group-item"><a data-toggle="modal"  href="#videogreek" >The Root Word Video, Visum| Greek & Latin </A></li>
+                <li class="list-group-item"><a data-toggle="modal"  href="#logosgreek" >The Root Word Logos| Greek & Latin | </a></li>
+                  <li class="list-group-item"><a data-toggle="modal"  href="#verbumgreek" >The Root Word Verbum| Greek & Latin |</a> </li>
+<li class="list-group-item"><a data-toggle="modal"  href="#nomengreek" >The Root Word Nomen, Nominis| Greek & Latin</a></li>
+<li class="list-group-item"><a data-toggle="modal"  href="#methane" >Methane Gas Full Tutorial </a></li>
+<li class="list-group-item"><a data-toggle="modal"  href="#plicogreek" > The Root Word Plico, Plicatum </a></li>
+      <li class="list-group-item"><a data-toggle="modal"  href="#diagreek" > The Root Word Dia <small class="text-muted"><b>New</b></small></a></li>    
+      <li class="list-group-item"><a data-toggle="modal"  href="#volume" > How to find the Volume of Cube/Rectangular Prism <small class="text-muted"><b>New</b></small></a></li>     
+    <li class="list-group-item"><a data-toggle="modal"  href="#area" > How to find the Perimeter and Area<small class="text-muted"><b>New</b></small></a></li> 
+ <li class="list-group-item"><a data-toggle="modal"  href="#orderofop1" > Order of Operations<small class="text-muted"><b>New</b></small></a></li> 
+ <li class="list-group-item"><a data-toggle="modal"  href="#htmlintro" > The Basics of HTML<small class="text-muted"><b>New</b></small></a></li>
+ <!--bioshydros-->
+ 
+</ul>
+    </div>
+
+    <div id="menu1" class="container tab-pane fade"><br>
+      <h3>Science Tutorials</h3>
+        <ul class="list-group">
+  <li class="list-group-item"><a data-toggle="modal"  href="#myModal2">Elements on the Periodic Table Full Tutorial</a></li>
+  <li class="list-group-item"><a data-toggle="modal"  href="#myModal3">Basic Compounds Full Tutorial</a>
+</li>
+  <li class="list-group-item"><a data-toggle="modal"  href="#myModal3">4 Main Parts of Earth-Geosphere,Hydrosphere,Atmosphere, Biosphere |   </a></li>
+    <li class="list-group-item"><a data-toggle="modal"  href="#bioshydros">The Biosphere and Hydrosphere |   </a></li>
+    <li class="list-group-item"><a data-toggle="modal"  href="#methane" >Methane Gas Full Tutorial   </a></li>
+</ul>
+    </div>
+    <div id="menu2" class="container tab-pane fade"><br>
+      <h3> Math Tutorials</h3>
+      <ul class="list-group">
+  <li class="list-group-item"><a data-toggle="modal"  href="#myModal4" >How to Find The LCM Full Tutorial</a></li>
+  <li class="list-group-item"><a data-toggle="modal"  href="#subtract">How to subtract numbers with borrowing Full Tutorial</a></li>
+  <li class="list-group-item"><a data-toggle="modal" href="#add">Adding 2 or More Digit Numbers with Regrouping Full Tutorial</a></li>
+  <li class="list-group-item"><a data-toggle="modal" href="#fractions">Fractions from Least to Greatest Full Tutorial</a> </li>
+    <li class="list-group-item"><a data-toggle="modal"  href="#volume" > How to find the Volume of Cube/Rectangular Prism <small class="text-muted"><b>New</b></small></a></li>     
+    <li class="list-group-item"><a data-toggle="modal"  href="#area" > How to find the Perimeter and Area<small class="text-muted"><b>New</b></small></a></li> 
+<li class="list-group-item"><a data-toggle="modal"  href="#orderofop1" > Order of Operations<small class="text-muted"><b>New</b></small></a></li> 
+</ul>
+    </div>
+    <div id="coding" class="container tab-pane fade">
+       <h3> Coding Tutorials |   
+       <ul>
+           <li class="list-group-item"><a data-toggle="modal"  href="#HTMLstart" >How to Build a Web Page Using HTML Full Tutorial |   </a></li>
+            <li class="list-group-item"><a data-toggle="modal"  href="#htmlintro" > The Basics of HTML<small class="text-muted"><b>New</b></small></a></li>
+         </ul>
+      </div> 
+      
+    <div id="greek" class="container tab-pane fade">
+       <h3> Greek & Latin Tutorials |   
+       <ul>
+           <li class="list-group-item"><a data-toggle="modal"  href="#introgreek" >Greek and Latin Introduction |   </a></li>
+           <li class="list-group-item"><a data-toggle="modal"  href="#photosgreek" >The Root Word Photos| Greek & Latin |   </a></li>
+              <li class="list-group-item"><a data-toggle="modal"  href="#graphgreek" >The Root Word Graph| Greek & Latin |   </a></li>
+              <li class="list-group-item"><a data-toggle="modal"  href="#telegreek" >The Root Word Tele| Greek & Latin |   </a></li>
+               <li class="list-group-item"><a data-toggle="modal"  href="#metrongreek" >The Root Word Metron| Greek & Latin |   </a></li>
+                 <li class="list-group-item"><a data-toggle="modal"  href="#troposgreek" >The Root Word Tropos| Greek & Latin |   </a></li>
+                  <li class="list-group-item"><a data-toggle="modal"  href="#philiagreek" >The Root Word Philia| Greek & Latin |   </a></li>
+                           <li class="list-group-item"><a data-toggle="modal"  href="#phobosgreek" >The Root Word Phobos| Greek & Latin |   </a></li>
+                                <li class="list-group-item"><a data-toggle="modal"  href="#syngreek" >The Root Word Syn| Greek & Latin |   </a></li>
+                        <li class="list-group-item"><a data-toggle="modal"  href="#thesisgreek" >The Root Word Thesis| Greek & Latin |   </a></li>
+                <li class="list-group-item"><a data-toggle="modal"  href="#kenesisgreek" >The Root Word Kenesis| Greek & Latin |   </a></li>
+                 <li class="list-group-item"><a data-toggle="modal"  href="#phonegreek" >The Root Word Phone| Greek & Latin |   </a></li>
+                      <li class="list-group-item"><a data-toggle="modal"  href="#sonusgreek" >The Root Word Sonus| Greek & Latin |   </a></li>
+                      <li class="list-group-item"><a data-toggle="modal"  href="#skopeogreek" >The Root Word Skopeo| Greek & Latin </a></li>
+                      <li class="list-group-item"><a data-toggle="modal"  href="#videogreek" >The Root Word Video, Visum| Greek & Latin |</a></li>
+                        <li class="list-group-item"><a data-toggle="modal"  href="#logosgreek" >The Root Word Logos| Greek & Latin </a></li>
+                        <li class="list-group-item"><a data-toggle="modal"  href="#verbumgreek" >The Root Word Verbum| Greek & Latin </a></li>
+               <li class="list-group-item"><a data-toggle="modal"  href="#nomengreek" >The Root Word Nomen, Nominis| Greek & Latin</a></li>
+               <li class="list-group-item"><a data-toggle="modal"  href="#plicogreek" > The Root Word Plico, Plicatum </a></li>
+                <li class="list-group-item"><a data-toggle="modal"  href="#diagreek" > The Root Word Dia <small class="text-muted"><b>New</b></small></a></li>
+         </ul>
+      </div> 
+  </div>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Comic on Google Slides Full Tutorial</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="comicdot" onclick="loadcomictutorial()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="comicvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!--HTMLstart-->
+  <div class="modal fade" id="HTMLstart">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">How to Build a Web Page Using HTML Full Tutorial</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="htmlstartdot" onclick="loadhtmlstarttutorial()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="htmlstartvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    <!--HTMLintro or basics-->
+  <div class="modal fade" id="htmlintro">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The basics of HTML Full Tutorial</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <h5>The Explainer Video </h5>
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="htmlintrodot" onclick="htmlintro()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="htmlintrovideo">
+              
+          </div>
+          <h5>The slides </h5>
+          <button class="dot" id="htmlintroslidesdot" onclick="htmlintroslides()"><i class="fa fa-file fa-4x" aria-hidden="true"></i></button>
+          </center>
+        </div>
+        <div id="htmlintroslidesvideo">
+              
+          </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!--methane-->
+  <div class="modal fade" id="methane">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Methane Gas Full Tutorial</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="methanedot" onclick="loadmethane()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="methanevideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    <div class="modal fade" id="volume">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">How to find the Volume of CUbe/Rectangular Prism Full Tutorial</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="volumedot" onclick="loadvolume()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="volumevideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="orderofop1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Order of Operations Full Tutorial</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="orderofop1dot" onclick="loadorderofop1()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="orderofop1video">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+   <div class="modal fade" id="area">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">How to find the Perimeter/Area</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="areadot" onclick="loadarea()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="areavideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<!--introgreek-->
+  <div class="modal fade" id="introgreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Greek & Latin Introduction</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekintrodot" onclick="loadgreekintro()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekintrovideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!--photosgreek-->
+  <div class="modal fade" id="photosgreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Photos</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekphotosdot" onclick="loadgreekphotos()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekphotosvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="kenesisgreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Kenesis</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekkenesisdot" onclick="loadgreekkenesis()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekkenesisvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+ <div class="modal fade" id="phonegreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Phone</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekphonedot" onclick="loadgreekphone()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekphonevideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+   <div class="modal fade" id="sonusgreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Sonus</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greeksonusdot" onclick="loadgreeksonus()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greeksonusvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+ <div class="modal fade" id="skopeogreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Skopeo</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekskopeodot" onclick="loadgreekskopeo()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekskopeovideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+ <div class="modal fade" id="videogreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Video, Visum</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekvideodot" onclick="loadgreekvideo()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekvideovideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="verbumgreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Verbum</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekverbumdot" onclick="loadgreekverbum()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekverbumvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+   <div class="modal fade" id="logosgreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Logos</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greeklogosdot" onclick="loadgreeklogos()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greeklogosvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="nomengreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Nomen, Nominis</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greeknomendot" onclick="loadgreeknomen()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greeknomenvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!--plicogreek-->
+    <div class="modal fade" id="plicogreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Plico, Plicatum</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekplicodot" onclick="loadgreekplico()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekplicovideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!--graphgreek-->
+  <div class="modal fade" id="graphgreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Graph</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekgraphdot" onclick="loadgreekgraph()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekgraphvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!--telegreek-->
+    <div class="modal fade" id="telegreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Tele</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekteledot" onclick="loadgreektele()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greektelevideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!--metrongreek-->
+    <div class="modal fade" id="metrongreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Metron</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekmetrondot" onclick="loadgreekmetron()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekmetronvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<!--tropos-->
+ <div class="modal fade" id="troposgreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Tropos</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greektroposdot" onclick="loadgreektropos()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greektroposvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!--philiagreek-->
+  <div class="modal fade" id="philiagreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Philia</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekphiliadot" onclick="loadgreekphilia()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekphiliavideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    <!--philiagreek-->
+  <div class="modal fade" id="philiagreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Philia</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekphiliadot" onclick="loadgreekphilia()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekphiliavideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    <!--phobosgreek-->
+  <div class="modal fade" id="syngreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Syn</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greeksyndot" onclick="loadgreeksyn()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greeksynvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+   <!--thesisgreek-->
+  <div class="modal fade" id="thesisgreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Thesis</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekthesisdot" onclick="loadgreekthesis()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekthesisvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    <!--phobosgreek-->
+  <div class="modal fade" id="phobosgreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Phobos</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekphobosdot" onclick="loadgreekphobos()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekphobosvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+      <!--diagreek-->
+  <div class="modal fade" id="diagreek">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">The Root Word Dia</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         <button class="dot" id="greekdiadot" onclick="loadgreekdia()"> <i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="greekdiavideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<div class="modal fade" id="myModal1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">How to add Captions to Youtube Videos Full Tutorial</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <center><button class="dot" id="captiondot" onclick="loadcaptiontutorial()"><i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="captionvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+<div class="modal fade" id="myModal2">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Elements on the Periodic Table Full Tutorial</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+        <div class="modal-body">
+          <center><button class="dot" id="elementdot" onclick="loadelementtutorial()"><i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="elementvideo">
+              
+          </div>
+          </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  </div>
+<div class="modal fade" id="myModal3">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Basic Compounds Full Tutorial</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+        
+          <center><button class="dot" id="compounddot" onclick="loadcompoundtutorial()"><i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="compoundvieo">
+              
+          </div>
+          </center>
+       
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="modal fade" id="myModal4">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">How to Find the LCM full tutorial</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <h4 class="modal-title">
+Part 1
+</h4>
+<center><button class="dot" id="lcm1dot" onclick="loadlcmpart1()"><i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="lcmpart1vid">
+              
+          </div>
+          </center>
+<h4 class="modal-title">
+Part 2
+</h4>
+<center><button class="dot" id="lcm2dot" onclick="loadlcmpart2()"><i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="lcmpart2vid">
+              
+          </div>
+        </center>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="modal fade" id="subtract">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">How to subtract numbers with borrowing</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+      <center><button class="dot" id="subtractdot" onclick="loadsubtract()"><i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="subtractvid">
+              
+          </div>
+        </center>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="add">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+         <h4>How to add 2 or More digit Numbers with regrouping</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+        <div style="text-align:center;background-color:white;">
+ <button class="dot" id="adddot" onclick="loadaddtutorial()"><center><i class="fa fa-play fa-4x " aria-hidden="true"></i></center></button>
+</div>
+
+<div id="test">
+    
+</div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+   <div class="modal fade" id="fractions">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+         <h4>Fractions from Least to Greatest</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+         
+  <center><button class="dot" id="fractiondot" onclick="loadfraction()"><i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="fractionvid">
+              
+          </div>
+        </center>
+
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+   <div class="modal fade" id="Earthmainparts">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+         <h4>4 Main Parts of Earth-Geosphere,Hydrosphere,Atmosphere, Biosphere</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+
+<center><button class="dot" id="earthdot" onclick="loadearth()"><i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="earthvid">
+              
+          </div>
+        </center>
+
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+     <div class="modal fade" id="bioshydros">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+         <h4>The biosphere and Hydrosphere</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" style="justify-content:center;">
+
+<center><button class="dot" id="biohydrodot" onclick="loadbioshydros()"><i class="fa fa-play fa-4x " aria-hidden="true"></i></button>
+          <div id="biohydrovid">
+              
+          </div>
+        </center>
+
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<div  id="final" class="toast" data-autohide="false">
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">Welcome to Aswin Tutorials</strong>
+      <small class="text-muted">5 mins ago</small>
+      <button type="button" class="ml-2 mb-1 close"  data-dismiss="toast">&times;</button>
+    </div>
+    <div class="toast-body">
+       More tutorials coming soon.
+    </div>
+    </div>
+</BODY>
+</HTML>

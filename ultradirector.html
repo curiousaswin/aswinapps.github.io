@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js" integrity="sha512-sn/GHTj+FCxK5wam7k9w4gPPm6zss4Zwl/X9wgrvGMFbnedR8lTUSLdsolDRBRzsX6N+YgG6OWyvn9qaFVXH9w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/3e2a93553e.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.6.2/RecordRTC.min.js" integrity="sha512-IMLquIKoKQeQ+kYuec3BvLYjy3yF2nH/ojHPkXQnQTeGKRliZcVed19I6E0t+WBt+9uPuEba0t2iyZAVP8mdlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.6.2/RecordRTC.js" integrity="sha512-ct9A+Fsq37O/MmhMrl0o5R8WoS0V1YS2fW69RGnpa4lIQvUhMOA3xbGQ8oy4UK6CeWb8JPu4QippagGlVu1c+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <title>Aswin's Ultra Director</title>
+        <style>
+            body{
+                background-image: url('https://wallpaperaccess.com/full/334517.jpg');
+            }
+            label {
+  background-color: BLUE;
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+img{
+    color:white;
+   
+}
+#preview{
+    width:450px;
+    height:250px;
+    text-align: center;
+}
+#btntoload{
+   border-radius: 50%;
+    background-color:#00008b;
+    color:white;
+    cursor:pointer;
+ 
+}
+h1{
+    color:white;
+    text-align:center;
+}
+span{
+    color:white;
+    text-align:center;
+    font-size:24px;
+}
+        </style>
+    </head>
+<body onload="loading()">
+    <DIV ID="VIDEO">
+        
+    </DIV>
+    
+    <h1>Aswin's Ultra Director<span class="badge badge-info">Under Development</span></h1>
+  
+    <div id="imagelanding"></div><button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#duration" alt="duration">                 <i class="fa-regular fa-clock"></i><br>Duration Per Image</button>
+    <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#theme" alt="theme"><i class="fa-brands fa-ethereum"></i><br>Theme</button>
+    <input id="file-input" type="file" hidden multiple>
+    <label for="file-input">Upload Files to Create a Video</label><br><br>
+
+    <div class="custom-file mb-3">
+      <input type="file" class="custom-file-input"   id="music" accept=".mp3" onchange="changeHandler()">
+      <label class="custom-file-label" for="music">Choose Background Music</label>
+    </div>
+<div id="preview" style="background-color:black;"><DIV ID="THEMEMAKER" style="  display: inline-block;
+  position:relative;" width="450px" height="250px" ><img width="450px" style="  width: 100%;
+  max-width: 100%;
+  border: 1px solid blue;" height="250px" id="videoplayer" alt="Your Video"></DIV><br>
+  <canvas id="myCanvas" width="450px" height="100"
+style="border:1px solid #d3d3d3;background-color:white;">
+Your browser does not support the canvas element.
+</canvas>
+</div><br><br><br>
+<br>
+  <button onclick="showprieview()" id="btntoload"><i style="font-size:24px;" class="fa-solid fa-play 10x"></i></button><button class="btn btn-primary" onclick="makeFullScreen()">Full Screen</button>
+<span id="sec"></span>
+<div class="modal" id="duration">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Duration Per Image</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+       <div class="input-group mb-3">
+      
+      <input type="number" min="1" max="15" id="timers" class="form-control" value="1">
+      <div class="input-group-prepend">
+        <span class="input-group-text">seconds</span>
+      </div>
+    </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="modal" id="theme">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Theme</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+       <div class="input-group mb-3">
+      
+     
+      <button class="btn btn-primary" type="btn" onclick="blackandwhitetheme()"><img width="95px" height="95px" src="https://i.pinimg.com/originals/c7/ab/59/c7ab593e903fb4b902d28bba554b1b2e.jpg"><br>Black and White</button>
+     <button class="btn btn-primary" onclick="birthdaytheme()">Birthday</button>
+     <button class="btn btn-primary" onclick="unicorntheme()">Unicorn</button>
+    </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<audio id="musicexecute"></audio>
+<script>
+
+function loading(){
+    
+}
+    function previewImages() {
+
+  var preview = document.querySelector('#imagelanding');
+  
+  if (this.files) {
+    [].forEach.call(this.files, readAndPreview);
+  }
+
+  function readAndPreview(file) {
+
+    // Make sure `file.name` matches our extensions criteria
+    if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+      return alert(file.name + " is not an image. We only accept jpg, png and gif. Please use the supported file types.");
+    } // else...
+    
+    var reader = new FileReader();
+    
+    reader.addEventListener("load", function() {
+      var image = new Image();
+      image.height = 100;
+      image.title  = file.name;
+      image.src    = this.result;
+      image.id = "imgtouse";
+      preview.appendChild(image);
+    });
+    
+    reader.readAsDataURL(file);
+    
+  }     
+
+}
+
+document.querySelector('#file-input').addEventListener("change", previewImages);
+
+/*function showprieview(){
+    document.getElementById('videoplayer').style.display="block";
+      var sourceforimage =document.querySelectorAll('img')[0].src;
+document.getElementById('videoplayer').src=sourceforimage;
+  var seconds = document.getElementById('timers').value;
+ setInterval(increase, seconds);
+}
+ */
+ function showprieview() {
+
+  var interval = document.getElementById("timers").value*1000;
+   myVar = setTimeout(increase, interval);
+
+var num = document.getElementById('imgCount').innerHTML*1;
+document.getElementById("videoplayer").src=document.querySelectorAll('img')[0].src;
+ document.getElementById('musicexecute').play();
+ }
+ function increase(){
+    let numbers = 1;
+ document.getElementById("videoplayer").src=document.querySelectorAll('img')[numbers].src;
+    var interval = document.getElementById("timers").value*1000;
+     setTimeout(increaser, interval);
+ }
+ function increaser(){
+     
+document.getElementById("videoplayer").src=document.querySelectorAll('img')[2].src;
+ }
+ function blackandwhitetheme(){
+     document.getElementById("videoplayer").style.filter="grayscale(100%)";
+ }
+   function requestFullScreen(element) {
+    // Supports most browsers and their versions.
+    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
+
+    if (requestMethod) { // Native full screen.
+        requestMethod.call(element);
+    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+        var wscript = new ActiveXObject("WScript.Shell");
+        if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+        }
+    }
+}
+function makeFullScreen() {
+    
+    var elem = document.getElementById('preview');
+    document.getElementById('videoplayer').style.width = "100%";
+     document.getElementById('videoplayer').style.height = "100%";
+     var interval = document.getElementById("timers").value*1000*(document.images.length -2 );
+     setTimeout(escapefullscreen,interval)
+    requestFullScreen(elem);
+}
+function escapefullscreen(){
+      document.getElementById('videoplayer').style.width = "450px";
+     document.getElementById('videoplayer').style.height = "250px"; 
+}
+function upanddown(){
+   $(document).ready(function(){
+  $("btntoload").click(function(){
+    $("#videoplayer").slideUp(1).slideDown(2000);
+  });
+});
+}
+function birthdaytheme(){
+    var birthdayimg= document.createElement('img');
+    birthdayimg.src="https://www.lovethispic.com/uploaded_images/372358-Sparkling-Happy-Birthday-Balloon-Gif.gif";
+      birthdayimg.style.width="100px";
+    birthdayimg.style.height="100px";
+    birthdayimg.style.right="10%";
+    birthdayimg.style.top="10%"
+    birthdayimg.style.position="absolute";
+    document.getElementById('THEMEMAKER').appendChild(birthdayimg);
+}
+function unicorntheme(){
+    var birthdayimg= document.createElement('img');
+    birthdayimg.src="https://i.postimg.cc/D09xWnf4/unicorntheme.gif";
+      birthdayimg.style.width="120px";
+    birthdayimg.style.height="100px";
+    birthdayimg.style.right="10%";
+    birthdayimg.style.top="10%"
+    birthdayimg.style.position="absolute";
+    document.getElementById('THEMEMAKER').appendChild(birthdayimg);
+}
+/*
+function counter() {
+  var i = 0;
+  // This block will be executed 100 times.
+  setInterval(function() {
+    if (i == 100) clearInterval(this);
+    else console.log('Currently at ' + (i++));
+  }, 1000);
+}*/
+setInterval(function(){ 
+    var countsecond = document.images.length -2;
+    var seconds = document.getElementById('timers').value;
+    var total = countsecond*seconds+" seconds";
+document.getElementById('sec').innerHTML = total; 
+}, 2000);
+/*  right: 10%;
+  top: 10%;
+  width: 25%;
+  max-width:25%;*/
+   function changeHandler() {
+     var musicer = document.getElementById('music');
+  // Make sure we have files to use
+  if (!musicer.files.length) return;
+
+  // Create a blob that we can use as an src for our audio element
+  const urlObj = URL.createObjectURL(musicer.files[0]);
+
+  // Create an audio element
+  const audio = document.getElementById('musicexecute');
+
+  // Clean up the URL Object after we are done with it
+  audio.addEventListener("load", () => {
+    URL.revokeObjectURL(urlObj);
+  });
+
+
+  // Allow us to control the audio
+ 
+  // Set the src and start loading the audio from the file
+  audio.src = urlObj;
+}
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.font = "italic 30px  'Sofia'";
+ctx.strokeStyle = "blue";
+ctx.textAlign = "left";
+let xPos=10, yPos=60;
+ctx.strokeText("Created with Aswin's Ultradirector.",10,50);
+let { width } = ctx.measureText("Created with Aswin's Ultradirector.");
+ 
+ctx.fillRect(xPos, yPos, width, 2);
+
+</script>
+<small id="imgCount">3</small>
+</body>
+</html>
