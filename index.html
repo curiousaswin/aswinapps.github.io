@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="FQMd4EN57iou4sl_-K4B7ZVCzUC7A0x17FIl_gn2WkE" />
+    
     <link rel = "icon" href = 
-"https://goodapps.w3spaces.com/AswinIcon.png"
+"/AswinIcon.png"
 		type = "image/x-icon">
+    <meta name="google-site-verification" content="52CoSMW3uJ_ATcYoeBO6aq7zthM7QyQKbbS-egiojEg" />
     <title>Aswin's Good Apps</title>
+    <meta name="google-site-verification" content="ZuIBSy1jNwRYqyhCZ4kQjzVM9GbQsXihCHHQ8FHu2Us" />
     <style>
        
 
@@ -92,7 +94,7 @@ function validate(){
     {
           document.getElementById("p1").innerHTML = "Hello Aswin";
    document.getElementById('goonthetrack').style.display='block';
-     document.getElementById("appviewer").style.display = "block" ;
+     document.getElementById("appmode").style.display = "block" ;
      document.getElementById("login1").style.display = "none" ;
      localStorage.setItem("Name", "Aswin");
     
@@ -103,7 +105,7 @@ function validate(){
        {
           document.getElementById("p1").innerHTML = "Hello Sathya!";
    document.getElementById('goonthetrack').style.display='block';
-     document.getElementById("appviewer").style.display = "block" ;
+     document.getElementById("appmode").style.display = "block" ;
      document.getElementById("login1").style.display = "none" ;
       localStorage.setItem("Name", "Sathya");
     }
@@ -113,7 +115,7 @@ function validate(){
    {
      document.getElementById("p1").innerHTML = "Hello Arulvel!";
    document.getElementById('goonthetrack').style.display='block';
-     document.getElementById("appviewer").style.display = "block" ;
+     document.getElementById("appmode").style.display = "block" ;
      document.getElementById("login1").style.display = "none" ;
      localStorage.setItem("Name", "Arulvel");
 }
@@ -124,7 +126,7 @@ else if(document.getElementById("text1").value == "mine@3478"
    document.getElementById("p1").innerHTML = "Hello Shreyan!";
     document.getElementById('goonthetrack').style.display='block';
    document.getElementById("login1").style.display = "none" ;
-   document.getElementById("appviewer").style.display = "block" ;
+   document.getElementById("appmode").style.display = "block" ;
    localStorage.setItem("Name", "Shreyan");
 }
 else if(document.getElementById("text1").value == "arnrcatr@gmail.com"
@@ -133,7 +135,7 @@ else if(document.getElementById("text1").value == "arnrcatr@gmail.com"
    document.getElementById("p1").innerHTML = "Hello Arun R!";
     document.getElementById('goonthetrack').style.display='block';
    document.getElementById("login1").style.display = "none" ;
-   document.getElementById("appviewer").style.display = "block" ;
+   document.getElementById("appmode").style.display = "block" ;
    localStorage.setItem("Name", "Arun R");
 }
 else if(document.getElementById("text1").value == "callely400@millardps.org"
@@ -142,7 +144,7 @@ else if(document.getElementById("text1").value == "callely400@millardps.org"
    document.getElementById("p1").innerHTML = "Hello Connor Allely!";
     document.getElementById('goonthetrack').style.display='block';
    document.getElementById("login1").style.display = "none" ;
-   document.getElementById("appviewer").style.display = "block" ;
+   document.getElementById("appmode").style.display = "block" ;
    localStorage.setItem("Name", "Connor Allely");
 }
 else if(document.getElementById("text1").value == "sbairagya920@millardps.org"
@@ -151,7 +153,7 @@ else if(document.getElementById("text1").value == "sbairagya920@millardps.org"
    document.getElementById("p1").innerHTML = "Hello Sreeja Bairagya!";
     document.getElementById('goonthetrack').style.display='block';
    document.getElementById("login1").style.display = "none" ;
-   document.getElementById("appviewer").style.display = "block" ;
+   document.getElementById("appmode").style.display = "block" ;
    localStorage.setItem("Name", "Sreeja Bairagya");
 }
 else
@@ -191,8 +193,10 @@ $(document).ready(function(){
   });
 });
 
+  
+    // Supports most browsers and their versions.
 
-    </script>
+  
     
     	<div class="spinner-border text-warning" id="loader"></div>
 
@@ -222,15 +226,21 @@ $(document).ready(function(){
       <a class="nav-link active" data-toggle="tab" href="#home"><i class="fa fa-home"></i>Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="appviewer" data-toggle="tab" style="display:none;" href="#menu1"><i class="material-icons">widgets</i>Good Apps(Pre-Release)</a>
+      <a class="nav-link" style="display:none" id="appmode" data-toggle="tab" href="#menu1"><i class="material-icons">apps</i>Good Apps(Pre-Release)</a>
     </li>
     <li class="nav-item" >
       <a class="nav-link" data-toggle="tab" id="login1"  href="#menu2"><i class="fas fa-sign-in-alt"></i>Login</a>
     </li>
-
+    
   
+
     </ul>
     <ul class="nav nav-tabs" style="justify-content:right;">
+          <li class="nav-item" style="text-align:right;">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#notifications">
+  <i class="fa fa-bell" aria-hidden="true"> </i>
+  </button>
+  </li>
     <li class="nav-item" style="text-align:right;">
         <button id="p1" type="button" style="background-color:white;" onclick="localStorage.clear();alert('done');" class="nav-link"> Not Logged In
         </button>
@@ -240,14 +250,11 @@ $(document).ready(function(){
   <!-- Tab panes -->
   <div class="tab-content">
     <div id="home" class="container tab-pane active"><br>
-      <h3>Aswin's Good Apps Pre-Release</h3>
-      <div id="button" style="text-align:center;">
-	      <a   data-toggle="tab" style="display:block;" href="#menu2" class="btn btn-primary">Log in To Continue</a>
-	    </div>
-     
+	    <h1><center>Aswin's Good Apps<b> Pre-Release</b></center></h1>
+	    <div style="text-align:center;"> <a data-toggle="tab" href="#menu2" class="btn btn-primary">Login to Continue</div>
     </div>
     <div id="menu1" class="container tab-pane fade"><br>
-      <h3>Good Apps Pre-Release</h3>
+      <h3>Good Apps (Pre-Release)</h3>
      <input type="text" id="myInput" class="form-control" placeholder="Search Apps...">
       <table class="table table-hover">
     <thead>
@@ -262,95 +269,107 @@ $(document).ready(function(){
     </thead>
     <tbody  id="appname">
       <tr>
-        <td><a href="https://goodapps.w3spaces.com/aswin_tutorials.html">Aswin's Tutorials</a></td>
+        <td><a href="/aswin_tutorials.html">Aswin's Tutorials</a></td>
         <td>A simple app for learning things.</td>
         <td>Beta</td>
         <td><a href="https://forms.gle/KC7KuzvVc9rky54WA">Feedback for Aswin Tutorials</a></td>
         <td><a data-toggle="modal" href="#versiontutorial">V.3.0</a></td>
       </tr>
       <tr>
-        <td><a href="https://goodapps.w3spaces.com/aswin_stories.html">Aswin's Stories</a></td>
+        <td><a href="/aswin_stories.html">Aswin's Stories</a></td>
         <td>A simple app for reading stories. Some stories come along with videos too.</td>
         <td>Beta</td>
         <td><a href="https://forms.gle/nuJzgyASVd43DHjK8">Feedback for Aswin's Stories</a></td>
         <td><a data-toggle="modal" href="#versionstories">V.4.1</a></td>
       </tr>
       <tr>
-        <td><a href="https://goodapps.w3spaces.com/aswin_sentences.html">Aswin's Sentences</a></td>
+        <td><a href="/aswin_sentences.html">Aswin's Sentences</a></td>
         <td>A simple app for looking at sentence examples for each word.</td>
         <td>Stable</td>
         <td>Coming Soon</td>
         <td><a data-toggle="modal" href="#versionsentences">V.1.9</a></td>
       </tr>
       <tr>
-        <td><a href="https://goodapps.w3spaces.com/aswingames.html">Aswin's Games</a></td>
+        <td><a href="/aswingames.html">Aswin's Games</a></td>
     <td>A simple app for looking at games along with learning games.</td>    
         <td>Stable</td>
         <td>Coming Soon</td>
          <td><a data-toggle="modal" href="#versiongames">V.3.1</a></td>
       </tr>
       <tr>
-        <td><a href="https://goodapps.w3spaces.com/calculater.html">Aswin's Calculator</a></td>
+        <td><a href="/calculater.html">Aswin's Calculator</a></td>
         <td>A app for calculating equations, along with fractions and percents.</td>
         <td>Stable</td>
         <td>Coming Soon</td>
-        <td><a data-toggle="modal" href="#versioncalculator">V.2.5</a></td>
+        <td><a data-toggle="modal" href="#versioncalculator">V.3.1</a></td>
       </tr>
             <tr>
-        <td><a href="https://goodapps.w3spaces.com/docs.html">Aswin's Writer</a></td>
+        <td><a href="/docs.html">Aswin's Writer</a></td>
         <td>An app for doing writing things and formating them, and downloading it.</td>
         <td>Stable</td>
         <td>Coming Soon</td>
-        <td><a data-toggle="modal" href="#versionwriter">V.3.2</a></td>
+        <td><a data-toggle="modal" href="#versionwriter">V.3.8</a></td>
       </tr>
        <tr>
-        <td><a href="https://goodapps.w3spaces.com/code.html">Aswin's Code Editor</a></td>
+        <td><a href="/code.html">Aswin's Code Editor</a></td>
         <td> An app for editing HTML code.</td>
         <td>Stable</td>
         <td><a href="https://forms.gle/erMpKWpGgdkraqXJ8">Give feedback for Aswin's Code Editor</a></td>
-         <td><a data-toggle="modal" href="#versioncode">V.2.99</a></td>
+         <td><a data-toggle="modal" href="#versioncode">V.3.09</a></td>
       </tr>
        <tr>
-        <td><a href="https://goodapps.w3spaces.com/dictonary.html">Aswin's Dictionary</a></td>
+        <td><a href="/dictonary.html">Aswin's Dictionary</a></td>
         <td>An app for finding the definition of words.</td>
         <td>Stable</td>
         <td>Coming Soon</td>
         <td><a data-toggle="modal" href="#versiondictionary">V.2.0</a></td>
       </tr>
       <tr>
-        <td><a href="https://goodapps.w3spaces.com/ultradirector.html"> Aswin's Ultra Director </a></td>
+        <td><a href="/ultradirector.html"> Aswin's Ultra Director </a></td>
         <td>An app for doing video editing.</td>
         <td>Under Development</td>
         <td>Coming Soon</td>
          <td><a data-toggle="modal" href="#versionultra">V.2.9</a></td>
       </tr>
          <tr>
-        <td><a href="https://goodapps.w3spaces.com/starcollage.html">Aswin's Star Collage</a></td>
+        <td><a href="/starcollage.html">Aswin's Star Collage</a></td>
        <td>An app for creating collages.</td>
         <td>Stable</td>
         <td><a href="https://forms.gle/AabU8fHyKGsb1Mxn9">Send Feedback for Star Collage</a></td>
         <td><a data-toggle="modal" href="#versionstar">V.3.5</a></td>
       </tr>
        <tr>
-        <td><a href="https://goodapps.w3spaces.com/facts.html">Aswin's Facts</a></td>
+        <td><a href="/facts.html">Aswin's Facts</a></td>
         <td>An app for looking up facts and history kind of stuff.</td>
         <td>Beta</td>
         <td>Coming Soon</td>
         <td><a data-toggle="modal" href="#versionfacts">V.1.0</a></td>
       </tr>
          <tr>
-        <td><a href="https://goodapps.w3spaces.com/tablecalc.html">Aswin's TableCalc</a></td>
+        <td><a href="/tablecalc.html">Aswin's TableCalc</a></td>
         <td>An app for adding text in multiple text boxes and then downloading them.</td>
         <td>Under Development</td>
         <td>Coming Soon</td>
         <td><a data-toggle="modal" href="#versiontablecalc">V.2.9</a></td>
       </tr>
       <tr>
-        <td><a href="https://goodapps.w3spaces.com/masterslides.html">Aswin's MasterSlide </a></td>
+        <td><a href="/masterslides.html">Aswin's MasterSlide </a></td>
         <td>An app for creating slideshows with templates and then presenting them.</td>
         <td>Beta</td>
         <td><td><a data-toggle="modal" href="#versionmasterslides">V.4.09</a></td></td>
         </tr>
+        <tr>
+          <td><a href="/certificate creator.html">Aswin's Certificate Creator </a></td>
+          <td>An app for creating certificates and downloading them.</td>
+          <td>Under Development</td>
+          <td><td><a data-toggle="modal" href="#versioncertificate">V.1.5</a></td></td>
+          </tr>
+          <tr>
+            <td><a href="/worksheet.html">Aswin's Worksheet Finder </a></td>
+            <td>An app for finding worksheets/study guides and printing them.</td>
+            <td>Under Development</td>
+            <td><td><a data-toggle="modal" href="#versionworksheet">V.1.0</a></td></td>
+            </tr>
     </tbody>
   </table>
 </div>
@@ -373,13 +392,33 @@ $(document).ready(function(){
         <p>You have succesfuly logged in.</p>
     </div>
     </div>
-   
-    <div id="docs" class="container tab-pane fade">
-        <h2>Docs(New)</h2>
-        <ul class="list-group">
-            <li class="list-group-item"><a href="https://sites.google.com/view/masterslidedocs/docs-home?authuser=0">Aswin's MasterSlide Docs</a></li>
-        </ul>
+    <div id="menu3" class="container tab-pane fade"><br>
+      <h3>Sign UP</h3>
+
+<form id="fs-frm" name="registration-form" accept-charset="utf-8" action="https://formspree.io/f/mpzboeok" method="post">
+  <fieldset id="fs-frm-inputs">
+    <label for="full-name">Full Name</label><br>
+    <input type="text" class="form-control"  name="name" id="full-name" placeholder="First or and Last Name" required=""><br>
+    <label for="email-address">Email Address</label><br>
+    <input type="email" class="form-control" name="email" id="email-address" placeholder="Your Email Address" required=""><br>
+    <label for="password">Password</label><br>
+    <input type="password" class="form-control" name="password" id="password" placeholder="Password" required=""><br>
+     <div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="confirm" name="check" value="checked" required>
+    <label for="confirm" class="custom-control-label">By Signing up, you agree to the terms of service.</label>
+   </div>
+ 
+    
+  </fieldset>
+   <center><p>Your account will be created within 7 days of signing up. If not, please contact us.</p></center>
+  <input type="submit" class="form-control" style="background-color:blue;color:white;" value="Sign Up!">
+ 
+</form>
+
+
+          
     </div>
+  
        <div id="quiz" class="container tab-pane fade"><br>
       <h3>Quizzes(New)</h3>
 <div class="container">
@@ -506,6 +545,49 @@ $(document).ready(function(){
       </div>
       
     </div>
+        
+    
+<div class="modal fade" id="versioncertificate" role="dialog">
+  <div class="modal-dialog modal-xl">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Version History for Aswin Certificate Creator</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+     <div class="container">
+         <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Version</th>
+      <th>Description</th>
+      <th>New Features</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.0</td>
+      <td>An app to create certificates.</td>
+      <td>Creating Certificates</td>
+       <td>Nov. 2022</td>
+    </tr>
+   <tr>
+   <td>1.5</td>
+   <td>Add option to switch between templates, added styling options</td>
+   <td>Template Switching</td>
+   <td>Now.23, 2022</td>
+   </tr>
+  </tbody>
+</table>
+</div>
+     </div>
+      </div>
+    </div>
+    
+  </div>
     <div class="modal fade" id="versionmasterslides" role="dialog">
     <div class="modal-dialog modal-xl">
     
@@ -998,7 +1080,18 @@ $(document).ready(function(){
         <td>Removed loading text in standard calculator, remoldeled fraction calculator, and finalized percentage calculator.</td>
         <tD>Mar. 2022</tD>
       </tr>
-       
+       <tr>
+        <td>2.9</td>
+        <td>Simplified results</td>
+        <td>Rounds fractions and percents</td>
+        <td>Nov.2022</td>
+       </tr>
+       <tr>
+        <td>3.1</td>
+        <td>Added Slope Calculator</td>
+        <td>Slope Calculator</td>
+        <td>Dec.2022</td>
+       </tr>
     </tbody>
   </table>
 </div>
@@ -1088,6 +1181,18 @@ $(document).ready(function(){
         <td>Animation</td>
         <tD>Mar. 2022</tD>
       </tr>
+      <tr>
+        <td>3.5</td>
+        <td>Added option to save online and retrieve them</td>
+        <td>Saving</td>
+        <td>Jan.2023</td>
+      </tr>
+      <tr>
+        <td>3.8</td>
+        <td>Added option to add image/video</td>
+        <td>Add image/video</td>
+        <td>Jan. 2023</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -1157,7 +1262,12 @@ $(document).ready(function(){
         <td>Responsive</td>
         <tD>May. 2022</tD>
       </tr>
-       
+       <tr>
+        <td>3.09</td>
+        <td>Added option to save online and fixed some problems</td>
+        <td>Save Online</td>
+        <td>jan.2023</td>
+       </tr>
     </tbody>
   </table>
 </div>
@@ -1443,6 +1553,40 @@ $(document).ready(function(){
      
     </tbody>
   </table>
+  </div>
+       </div>
+        </div>
+      </div>
+      
+    </div>
+  <div class="modal fade" id="versionworksheet" role="dialog">
+    <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Version History for Aswin Worksheet Finder</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+       <div class="container">
+           <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Description</th>
+        <th>New Features</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0</td>
+        <td>An app for finding worksheets for lods.</td>
+        <td>Worksheet</td>
+         <td>Dec. 2022</td>
+      </tr>
+     
+    </tbody>
+  </table>
    <CENTER><h2 STYLE="transform: rotate(20deg);">NO DATA</h2></CENTER>
 </div>
        </div>
@@ -1450,6 +1594,46 @@ $(document).ready(function(){
       </div>
       
     </div>
+    <!-- Button to Open the Modal -->
+
+
+<!-- The Modal -->
+<div class="modal" id="notifications">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title"><i class="fa fa-bell" aria-hidden="true"> </i>Notifications</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <div class="jumbotron">
+          <h5><i class="fa fa-bell" aria-hidden="true"> </i>Notifications</h5><span class="small font-italic">Updated as of 12/17/22 </span>
+          <ul>
+ 
+
+
+<li>Aswin's Fraction Calculator started giving Simplified fractions. <a href="/calculator/fractionscalc.html">Explore Now!</a></li>        
+<li>Aswin's Percentage Calculator Now rounds the percents to the nearest hundredth. <a href="/calculator/percent.html">Explore Now!</a></li>
+<li>Aswin's Calculator has a new calculator called slope calculator.<a href="/calculator/slope.html">Explore Now!</a></li>
+<li>Aswin's Calculator has a calculator to find x and y intercepts.<a href="/calculator/intercept.html">Explore Now</a></li>
+<li>We're Creating an app called Aswin's Worksheet Finder<a href="/worksheet.html">Explore Now</a></li>
+<li>Aswin's Writer has some new changes.<a href="/docs.html">Explore Now</a></li>
+
+</ul>
+      </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 </body>
 </html>
-
