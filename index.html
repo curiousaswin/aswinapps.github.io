@@ -92,7 +92,7 @@ function validate(){
     {
           document.getElementById("p1").innerHTML = "Hello Aswin";
    document.getElementById('goonthetrack').style.display='block';
-     document.getElementById("signup2").style.display = "none" ;
+     document.getElementById("appviewer").style.display = "block" ;
      document.getElementById("login1").style.display = "none" ;
      localStorage.setItem("Name", "Aswin");
     
@@ -103,7 +103,7 @@ function validate(){
        {
           document.getElementById("p1").innerHTML = "Hello Sathya!";
    document.getElementById('goonthetrack').style.display='block';
-     document.getElementById("signup2").style.display = "none" ;
+     document.getElementById("appviewer").style.display = "block" ;
      document.getElementById("login1").style.display = "none" ;
       localStorage.setItem("Name", "Sathya");
     }
@@ -113,7 +113,7 @@ function validate(){
    {
      document.getElementById("p1").innerHTML = "Hello Arulvel!";
    document.getElementById('goonthetrack').style.display='block';
-     document.getElementById("signup2").style.display = "none" ;
+     document.getElementById("appviewer").style.display = "block" ;
      document.getElementById("login1").style.display = "none" ;
      localStorage.setItem("Name", "Arulvel");
 }
@@ -124,7 +124,7 @@ else if(document.getElementById("text1").value == "mine@3478"
    document.getElementById("p1").innerHTML = "Hello Shreyan!";
     document.getElementById('goonthetrack').style.display='block';
    document.getElementById("login1").style.display = "none" ;
-   document.getElementById("signup2").style.display = "none" ;
+   document.getElementById("appviewer").style.display = "block" ;
    localStorage.setItem("Name", "Shreyan");
 }
 else if(document.getElementById("text1").value == "arnrcatr@gmail.com"
@@ -133,7 +133,7 @@ else if(document.getElementById("text1").value == "arnrcatr@gmail.com"
    document.getElementById("p1").innerHTML = "Hello Arun R!";
     document.getElementById('goonthetrack').style.display='block';
    document.getElementById("login1").style.display = "none" ;
-   document.getElementById("signup2").style.display = "none" ;
+   document.getElementById("appviewer").style.display = "block" ;
    localStorage.setItem("Name", "Arun R");
 }
 else if(document.getElementById("text1").value == "callely400@millardps.org"
@@ -142,7 +142,7 @@ else if(document.getElementById("text1").value == "callely400@millardps.org"
    document.getElementById("p1").innerHTML = "Hello Connor Allely!";
     document.getElementById('goonthetrack').style.display='block';
    document.getElementById("login1").style.display = "none" ;
-   document.getElementById("signup2").style.display = "none" ;
+   document.getElementById("appviewer").style.display = "block" ;
    localStorage.setItem("Name", "Connor Allely");
 }
 else if(document.getElementById("text1").value == "sbairagya920@millardps.org"
@@ -151,7 +151,7 @@ else if(document.getElementById("text1").value == "sbairagya920@millardps.org"
    document.getElementById("p1").innerHTML = "Hello Sreeja Bairagya!";
     document.getElementById('goonthetrack').style.display='block';
    document.getElementById("login1").style.display = "none" ;
-   document.getElementById("signup2").style.display = "none" ;
+   document.getElementById("appviewer").style.display = "block" ;
    localStorage.setItem("Name", "Sreeja Bairagya");
 }
 else
@@ -191,40 +191,7 @@ $(document).ready(function(){
   });
 });
 
-   function requestFullScreen(element) {
-    // Supports most browsers and their versions.
-    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
 
-    if (requestMethod) { // Native full screen.
-        requestMethod.call(element);
-    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
-        var wscript = new ActiveXObject("WScript.Shell");
-        if (wscript !== null) {
-            wscript.SendKeys("{F11}");
-        }
-    }
-}
-
-function makeFullScreen() {
-    document.getElementsByTagName("iframe")[0].className = "fullScreen";
-    var elem = document.getElementById('count');
-    requestFullScreen(elem);
-}
-function makeFullScreenphonics() {
-    document.getElementsByTagName("iframe")[0].className = "fullScreen";
-    var elem = document.getElementById('phonics');
-    requestFullScreen(elem);
-}
-function makeFullScreenlowerupper() {
-    document.getElementsByTagName("iframe")[0].className = "fullScreen";
-    var elem = document.getElementById('lowerUpper');
-    requestFullScreen(elem);
-}
-function makeFullScreenfb() {
-    document.getElementsByTagName("iframe")[0].className = "fullScreen";
-    var elem = document.getElementById('fb');
-    requestFullScreen(elem);
-}
     </script>
     
     	<div class="spinner-border text-warning" id="loader"></div>
@@ -255,7 +222,7 @@ function makeFullScreenfb() {
       <a class="nav-link active" data-toggle="tab" href="#home"><i class="fa fa-home"></i>Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#menu1"><i class="material-icons">widgets</i>Good Apps(Pre-Release)</a>
+      <a class="nav-link" id="appviewer" data-toggle="tab" style="display:none;" href="#menu1"><i class="material-icons">widgets</i>Good Apps(Pre-Release)</a>
     </li>
     <li class="nav-item" >
       <a class="nav-link" data-toggle="tab" id="login1"  href="#menu2"><i class="fas fa-sign-in-alt"></i>Login</a>
@@ -274,27 +241,13 @@ function makeFullScreenfb() {
   <div class="tab-content">
     <div id="home" class="container tab-pane active"><br>
       <h3>Aswin's Good Apps Pre-Release</h3>
-      <p>Welcome to Aswin.</p><h5>
-          Our Mission
-      </h5>
-      <p> Our mission is to give you the best experience for free so that you don't have to pay for anything. </p>
-      <h5>
-          Why you Should Sign Up
-      </h5>
-      <p> You should sign up to get a more personalized experience and to get the best possible experience of all.</p>
-      <div class="jumbotron">
-          <h5><i class="fa fa-bell" aria-hidden="true"> </i>Notifications</h5><span class="small font-italic">Updated as of 11/13/22 </span>
-          <ul>
- 
-  <li>Aswin's Facts has started to receive articles</li>
-  <li>Aswin's MasterSlide's tag is now Beta.</li>
-  <li>Aswin's Stories now has a reading list you could save it in! <a href="https://goodapps.w3spaces.com">Go check it out! </a></li>
-  <li>We are creating a game called Word Scrambler. The link will come here soon because it's in development. But it is accessible via Aswin's Games.</li>
-          </ul>
-      </div>
+      <div id="button" style="text-align:center;">
+	      <button type="btn" class="btn btn-primary">Log in To Continue</button>
+	    </div>
+     
     </div>
     <div id="menu1" class="container tab-pane fade"><br>
-      <h3>Good Apps</h3>
+      <h3>Good Apps Pre-Release</h3>
      <input type="text" id="myInput" class="form-control" placeholder="Search Apps...">
       <table class="table table-hover">
     <thead>
@@ -420,32 +373,7 @@ function makeFullScreenfb() {
         <p>You have succesfuly logged in.</p>
     </div>
     </div>
-    <div id="menu3" class="container tab-pane fade"><br>
-      <h3>Sign UP</h3>
-
-<form id="fs-frm" name="registration-form" accept-charset="utf-8" action="https://formspree.io/f/mpzboeok" method="post">
-  <fieldset id="fs-frm-inputs">
-    <label for="full-name">Full Name</label><br>
-    <input type="text" class="form-control"  name="name" id="full-name" placeholder="First or and Last Name" required=""><br>
-    <label for="email-address">Email Address</label><br>
-    <input type="email" class="form-control" name="email" id="email-address" placeholder="Your Email Address" required=""><br>
-    <label for="password">Password</label><br>
-    <input type="password" class="form-control" name="password" id="password" placeholder="Password" required=""><br>
-     <div class="custom-control custom-checkbox">
-    <input type="checkbox" class="custom-control-input" id="confirm" name="check" value="checked" required>
-    <label for="confirm" class="custom-control-label">By Signing up, you agree to the terms of service.</label>
-   </div>
- 
-    
-  </fieldset>
-   <center><p>Your account will be created within 7 days of signing up. If not, please contact us.</p></center>
-  <input type="submit" class="form-control" style="background-color:blue;color:white;" value="Sign Up!">
- 
-</form>
-
-
-          
-    </div>
+   
     <div id="docs" class="container tab-pane fade">
         <h2>Docs(New)</h2>
         <ul class="list-group">
