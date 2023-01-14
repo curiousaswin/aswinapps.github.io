@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -70,6 +71,7 @@ p{
   font-size:25px;
 }
         </style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     <body onload="myFunction()" style="margin:0;">
         <script>
@@ -219,12 +221,50 @@ function savetopdf(){
   });
 });
 
+function saveonline(){
+    if(document.getElementById('signin').innerHTML== "Hello null!"){
+        document.getElementById('fornonmembers').className = "modal fade show";
+    document.getElementById('fornonmembers').style.display="block";
+    }else{
+    var docname=document.getElementById('docname').value;
+    var contents= document.getElementById('forsaveuse').innerHTML;
+    localStorage.setItem(docname,contents)
+    var textarea= document.getElementById('textToUse').value;
+    var savename = docname + "txt";
 
+    localStorage.setItem(savename,textarea)
+}
+}
+function retrieve(){
+    var docnametoretrieve = document.getElementById('retrievename').value;
+    var x = localStorage.getItem(docnametoretrieve);
+    document.getElementById('forsaveuse').innerHTML = x;
+    var z= localStorage.getItem(docnametoretrieve+"txt");
+     var textarea= document.getElementById('textToUse').value = z;
+     document.getElementById('docname').value = docnametoretrieve;
+}
+function addimage(){
+    var textarea = document.getElementById('textToUse').value;
+    var media= document.getElementById('mediasrc').value;
+    var imageadding = "<img src='"+media+"' width='400px' height='500px'>"
+    var newtextarea= textarea + imageadding;
+    document.getElementById('textToUse').value=newtextarea;
+     document.getElementById('mediasrc').value="";
+}
+function addvideo(){
+        var textarea = document.getElementById('textToUse').value;
+    var media= document.getElementById('mediasrc').value;
+    var videoadding= "<video width='500px' height='400px' controls><source src='"+media+"'></video>"
+      var newtextarea= textarea + videoadding;
+       document.getElementById('textToUse').value=newtextarea;
+     document.getElementById('mediasrc').value="";
+}
         </script>
         
       <center> <h2> Aswin's Writer</h2></center>
       <span class="spinner-border text-success" id="loader"></span>
       <p style="text-align:right;" id="signin"> Not Logged In</p>
+      <input type="text" class="form-control" id="docname" placeholder="Document Name">
        <!-- this section defines the basic functions-->
        <button type="button" id="loadformat"class="btn btn-primary">View Formating Options</button>
        <div id="formating" class="bg-light">
@@ -314,9 +354,9 @@ function savetopdf(){
        </div>
        
        </div>
-             <button type="button" id="loadexport"class="btn btn-primary">Export</button>
+             <button type="button" id="loadexport" class="btn btn-primary">Export</button>
            <div id="export">
-       <button type="button" value="Show Result" id="pararesulting1" style="background-color: white;margin-top: 8px; padding: 14px;"onclick="showresultinnew()">Show Result</button>
+       <button type="button" value="Show Result" id="pararesulting1" style="background-color: white;margin-top: 8px; padding: 14px;" onclick="showresultinnew()">Show Result</button>
        <button type="button"  value="Print" ID="PT" style="background-color: white; margin-top: 8px;
       
            padding: 14px;" onclick="print()"><i class="fa-solid fa-print"></i></button>
@@ -324,26 +364,88 @@ function savetopdf(){
       
            padding: 14px;" onclick="savetopdf()"> <i class="fa-solid fa-download"></i></button>
            </div>
+           <button type="btn" class="btn btn-primary" data-toggle="collapse" data-target="#media"><i class="fa-solid fa-plus-minus"></i>Add Media</button>
+      <button type="btn" class="btn btn-success" onclick="saveonline()"><i class="fa-solid fa-floppy-disk"></i>Save Document Online</button>
+       <button type="btn" class="btn btn-warning"  data-toggle="modal" data-target="#retrieves"><span class="material-icons">
+file_open
+</span>Retrieve Saved Document</button>
+       
       
        
        
+       
       
-       
-       
-       
-       <!-- this is the spot where they need to enter the text-->
        <br>
+       <div id="media" class="collapse">
+<h4>Add Media</h4>
+<input type="text" id="mediasrc" class="form-control" placeholder="Source of the media(image/video)"><br><Small><i class="fa-solid fa-circle-info"></i>We don't support custom files yet. Get a url for the image/video and add the source.</Small>
+<button type="btn" class="btn btn-success" onclick="addimage()">Add Image</button><button type="btn" class="btn btn-success" onclick="addvideo()">Add Video</button>
+</div>
+ <!-- this is the spot where they need to enter the text-->
        <textarea id="textToUse" onkeyup="showTextforResult()">
            Welcome to Aswin's Writer. This is completely free. You can start typing here. Just Press show result or any of the buttons to try it.To go to the next line just write <br>, the break symbol in HTML.
        </textarea>
        <br/><!-- this is where you will see the result after click on any of the formatting buttons/ dropdown menus-->
-       Result
+     <b> The Document:</b> 
+       <div id="forsaveuse">
        <div id="result" class="result">
 
        </div>
 
-      
-       
+      </div>
+       <!-- Button to Open the Modal -->
+
+
+<!-- The Modal -->
+<div class="modal" id="retrieves">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Enter document name to retrieve document.</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+       <input type="text" id="retrievename" class="form-control">
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal" onclick="retrieve()">Done.</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="fornonmembers">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Option is available for members only</h4>
+        <button type="button" class="close"  onclick="document.getElementById('fornonmembers').style.display=null;">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+We're sorry, but this option is available for memebers only. <br>
+Have an account?  Visit the <a href="https://goodapps.w3spaces.com">Main Page<i class="material-icons">&#xe879;</i></a> to log in.<br>
+Don't have an account? Visit the <a href="https://goodapps.w3spaces.com">Main Page<i class="material-icons">&#xe879;</i></a> to sign up.It is completely free.
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+          <button type="button" class="btn btn-danger" onclick="document.getElementById('fornonmembers').style.display=null;">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
     </body>
 </html>
