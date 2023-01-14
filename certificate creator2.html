@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body{
+        background-image:url('https://static.vecteezy.com/system/resources/previews/002/538/581/original/abstract-geometric-yellow-background-free-vector.jpg');
+    }
+        #template1{
+            margin-top:0px;
+        }
+        #fortext{
+            font-size:24pt;
+            text-align:center;
+            width:500px;
+            font-family: 'Cinzel';
+        }
+        #forname{
+            font-size:24pt;
+            text-align:center;
+            width:400px;
+            font-family: 'Cinzel';
+            border:2px solid white;
+        }
+              #fordate{
+            font-size:24pt;
+            text-align:center;
+            width:200px;
+            font-family: 'Cinzel';
+            border:2px solid white;
+        }
+          #forsign{
+            font-size:24pt;
+            text-align:center;
+            width:200px;
+          
+            font-family: Comic Sans MS;
+            border:2px solid white;
+        }
+    </style>
+    <script>
+          
+    </script>
+</head>
+<body>
+    <script>
+        function download(){
+         domtoimage.toBlob(document.getElementById('template2'))
+    .then(function(blob) {
+      window.saveAs(blob, 'certicatecreator.jpg');
+    });
+    }
+ 
+  
+  function capitalize(coolments){
+      var vals = coolments.value;
+      var result=vals.toUpperCase();
+      coolments.value=result;
+  }
+       window.onload = function () {
+        // https://getbootstrap.com/docs/5.0/components/modal/#via-javascript
+        let myModal = new bootstrap.Modal(
+          document.getElementById("startup"),
+          {}
+      
+        );
+        // https://getbootstrap.com/docs/5.0/components/modal/#show
+        myModal.show();
+        
+      };
+      
+ function changecolor(){
+    var colors = document.getElementById('colors');
+    previouselements.style.color = colors.value;
+} 
+ 
+function changefamily(){
+    var family = document.getElementById('family');
+    fontfamilyelement.style.fontFamily = family.value;
+} 
+
+    </script>
+   
+   
+<div id="template2" width="650px" height="450px"  style="width:650px;height:450px;display:block;">
+<img src="https://i.ibb.co/HnwFvgG/canvas-2.png" width="650px" height="450px" alt="canvas" style="position:relative;"/>
+<input type="text" id="fortext" onchange="capitalize(this)" style="background-color:
+white; border:2px solid white;color:blue;position:absolute;  top: 100px;
+            left: 100px;" value="FOR">
+            
+            <input type="text" onchange="capitalize(this)" id="forname" style=" top: 200px;left: 125px;position:absolute;" value="NAME">
+          
+             
+             <input type="text"  id="forsign" style=" top:245px;left: 50px;position:absolute;" value=" Name">
+                          <input type="text"  id="forsign" style=" top:300px;left: 50px;position:absolute;" value=" Role">
+                          
+                          <input type="text"  id="forsign" style=" top:245px;left: 400px;position:absolute;" value=" Name">
+                          <input type="text"  id="forsign" style=" top:300px;left: 400px;position:absolute;" value=" Role">
+</div>
+<div id="styling" style="position:absolute;top:100px;left:670px;">
+    <h2>Font Color:</h2>
+<input type="color" onchange="changecolor()" id="colors" value="#ff0000">
+<h2>Font Family:</h2>
+<select id="family" onchange="changefamily()">
+    <option value="arial">Arial</option>
+    <option value="'Cinzel'" selected>Cinzel</option>
+    <option value="impact">Impact</option>
+    <option value="Georgia">Georgia</option>
+    <option value="cursive">Comic Sans Ms</option>
+</select>
+</div>
+<button onclick="download()" class="btn btn-success">Download</button>
+<button data-toggle="modal" data-target="#templateswitcher" class="btn btn-primary">Switch Template</button>
+<!-- Button to Open the Modal -->
+
+
+<!-- The Modal -->
+<div class="modal" id="templateswitcher">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Switch Template</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+   <a class="btn btn-light" href="/certificate creator.html">Template 1</a>
+    <button class="btn btn-primary" onclick="">Template 2</button>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Ok</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+
+var previouselements = null;
+var texts = document.getElementById('colors');
+texts.onmousedown = function() {
+      previouselements = document.activeElement;
+};
+
+
+var fontfamilyelement = null;
+var texts = document.getElementById('family');
+texts.onmousedown = function() {
+      fontfamilyelement = document.activeElement;
+};
+      
+</script>
+</body>
+</html>
