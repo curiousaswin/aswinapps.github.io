@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aswin's Fraction's Calculator</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    button{
+        background-color: #90ee90;
+        padding:5px;
+        margin-left: 7px;
+        padding-top: 8px;
+        padding-right: 8px;
+        
+        border-radius: 5px;
+        display: inline-block;
+    }
+    p{
+        
+    font-size: 25px;
+    color:black;
+    }
+    body{
+         background-image: url('https://media.istockphoto.com/photos/an-abstract-blue-pattern-with-numbers-picture-id178895760?b=1&k=20&m=178895760&s=170667a&w=0&h=lfh8zl1AloSdEH63b-HQIN4t2zDTtN4oCpANGgwgIpA=');
+      
+        justify-content: center;
+    }
+    h1{
+        font-size: 72px;
+        background-color:yellow;
+    }
+  TABLE {
+      
+      border: 7PX SOLID BLACK;
+      justify-content: CENTER;
+      background-color:yellow;
+  }
+   TD {
+      
+      border: 7PX SOLID BLACK;
+  }
+  h3{
+      color:black;
+  }
+</style>
+</head>
+<body>
+    <script>
+        function evaluatethefractionproblem(){
+        var firstbox= document.getElementById('box1').value;
+        var secondbox= document.getElementById('box2').value;
+        var thirdbox= document.getElementById('box3').value;
+        var fourthbox = document.getElementById('box4').value;
+        var  optiondropdown = document.getElementById('operator').value;
+        if (optiondropdown =="+"){
+            var result1= firstbox * fourthbox + secondbox * thirdbox;
+            var result2 = thirdbox*fourthbox;
+            var finalresult = result1 + "/"+result2;
+            document.getElementById('result').innerHTML = finalresult;
+            
+        }
+        else if(optiondropdown =="*"){
+            
+            var result1 = firstbox*secondbox;
+            var result2 = thirdbox*fourthbox;
+            var finalresult = result1 + "/"+result2;
+            document.getElementById('result').innerHTML = finalresult; 
+        }
+        else if (optiondropdown =="/"){
+            var result1 = firstbox * fourthbox;
+            var result2 = secondbox * thirdbox;
+            var finalresult = result1 + "/"+result2;
+            document.getElementById('result').innerHTML = finalresult; 
+        }
+        else if (optiondropdown =="-"){
+            var result1= firstbox * fourthbox - secondbox * thirdbox;
+            var result2 = thirdbox*fourthbox;
+            var finalresult = result1 + "/"+result2;
+             document.getElementById('result').innerHTML = finalresult; 
+        }
+        }
+    </script>
+    <center><h1>Aswin's Fraction Calculator</h1>
+    <table>
+       <tr>
+           <td colspan="5" style="text-align:center;">
+        <H2>
+            Calculator
+        </H2>
+        </td>
+        </tr>
+     <tr><td><input type="number" id="box1" style="font-size:25px; background-color:#ADD8E6; justify-content: center;"><br><input type="number" id="box3" style="font-size:25px;background-color:#ADD8E6;"></td><td><select id="operator" style="font-size:25px;">
+    
+    <option value="+" style="background-color:#90ee90;">+</option>
+        <option value="-" style="background-color:yellow;">-</option>
+        <option value="*" style="background-color:#90ee90;">*</option>
+        <option value="/" style="background-color:yellow;">/</option>
+    </select></td> <td><input type="number" id="box2" style="font-size:25px; background-color:#ADD8E6; " ><br><input type="number" id="box4" style="font-size:25px;background-color:#ADD8E6;\"></td></tr> <CENTER><tr><td colspan="5"> <button type="btn" value="Go!" onclick="evaluatethefractionproblem()">Go</button></td></tr></CENTER>
+    </table>
+
+
+
+<div class="mt-4 p-5 bg-light text-white rounded">
+    
+    <h3>Result:</h3>
+    
+    <p id ="result"></p></div> 
+</center>
+</body>
+</html>

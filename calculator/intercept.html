@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>X and Y Intercept Calculator-Aswin's Caclulator</title>
+    <style>
+        span{
+            font-weight:bold;
+            font-size:17pt;
+        }
+        body{
+         background-image: url('https://media.istockphoto.com/photos/an-abstract-blue-pattern-with-numbers-picture-id178895760?b=1&k=20&m=178895760&s=170667a&w=0&h=lfh8zl1AloSdEH63b-HQIN4t2zDTtN4oCpANGgwgIpA=');
+      
+
+    }
+    h2{
+        text-align:center;
+        background-color:yellow;
+    }
+    </style>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<h2>Aswin's X & Y Intercept Calculator</h2>
+<div class="jumbotron"><input type="number" style="width:60px;font-size:17pt;" id="xvar"><span>x+</span><input type="number" style="width:60px;font-size:17pt;" id="yvar"><span>y=</span><input type="number" id="nonvar" style="width:60px;font-size:17pt;"></div>
+<div class="jumbotron"><button type="btn" class="btn btn-primary" onclick="xintercepts()">X-Intercept</button><button type="btn" class="btn btn-primary" onclick="yintercepts()">Y-Intercept</button></div>
+<div class="jumbotron">
+    <h3>Result</h3>
+    <span id="result"></span>
+</div>
+<script>
+    function xintercepts(){
+        var number= document.getElementById('nonvar').value;
+        var intercept= document.getElementById('xvar').value;
+        var xintercept= number/intercept;
+        if (xintercept == Math.floor(xintercept)) {
+document.getElementById('result').innerHTML= "x-int.="+xintercept;
+} else{
+    document.getElementById('result').innerHTML= "x-int.="+number + "/"+intercept;
+}
+        
+    }
+       function yintercepts(){
+        var number= document.getElementById('nonvar').value;
+        var intercept= document.getElementById('yvar').value;
+        var yintercept= number/intercept;
+        document.getElementById('result').innerHTML= "y-int.="+yintercept;
+        if (yintercept == Math.floor(yintercept)) {
+    document.getElementById('result').innerHTML= "y-int.="+yintercept;
+} else{
+    document.getElementById('result').innerHTML= "y-int.="+number + "/"+intercept;
+}
+    }
+</script>
+</body>
+</html>

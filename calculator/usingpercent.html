@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using Percent Calculator | Aswin's Calculator</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+    td{
+        border:3px solid black;
+        font-size:25pt;
+        background-color:white;
+    }
+    h1{
+        background-color:yellow;
+        text-align:Center;
+    }
+    
+          body{
+         background-image: url('https://media.istockphoto.com/photos/an-abstract-blue-pattern-with-numbers-picture-id178895760?b=1&k=20&m=178895760&s=170667a&w=0&h=lfh8zl1AloSdEH63b-HQIN4t2zDTtN4oCpANGgwgIpA=');
+      
+        justify-content: center;
+    }
+</style>
+</head>
+<body>
+<h1>Using Percent Calculator</h1>
+<center>
+<table>
+    <tr><td><input type="number" id="percent">% of</td><td><input type="number" id="number"></td></tr>
+   <tr> <td colspan="2"><button type="btn" onclick="usepercent()" class="btn btn-success">FIND PERCENT!</button></td></tr>
+   </table>
+   </center>
+   <div class="jumbotron">
+       <h3><center>Result:</center></h3>
+       <p id="result" style="font-size:25pt;"></p>
+   </div>
+<script>
+function usepercent(){
+    var percenttouse= document.getElementById('percent').value;
+    var value = document.getElementById('number').value;
+    var percentnow = percenttouse/100;
+    var result= value*percentnow;
+      var finalresult= Math.round((result + Number.EPSILON) * 1000) / 1000
+    document.getElementById('result').innerHTML= finalresult;
+}
+</script>
+</body>
+</html>
