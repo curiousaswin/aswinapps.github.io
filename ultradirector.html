@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -17,6 +18,8 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https:////code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <title>Aswin's Ultra Director</title>
         <style>
             body{
@@ -63,11 +66,12 @@ span{
         
     </DIV>
     
-    <h1>Aswin's Ultra Director<span class="badge badge-info">Under Development</span></h1>
+    <h1>Aswin's Ultra Director<span class="badge badge-info">Pre-Release Version</span></h1>
   
     <div id="imagelanding"></div><button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#duration" alt="duration">                 <i class="fa-regular fa-clock"></i><br>Duration Per Image</button>
     <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#theme" alt="theme"><i class="fa-brands fa-ethereum"></i><br>Theme</button>
-    <input id="file-input" type="file" hidden multiple>
+    <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#transition"><i class="fa-solid fa-rotate"></i><br>Transitions</button>
+    <input id="file-input" type="file" accept="image/*" hidden multiple>
     <label for="file-input">Upload Files to Create a Video</label><br><br>
 
     <div class="custom-file mb-3">
@@ -78,13 +82,10 @@ span{
   position:relative;" width="450px" height="250px" ><img width="450px" style="  width: 100%;
   max-width: 100%;
   border: 1px solid blue;" height="250px" id="videoplayer" alt="Your Video"></DIV><br>
-  <canvas id="myCanvas" width="450px" height="100"
-style="border:1px solid #d3d3d3;background-color:white;">
-Your browser does not support the canvas element.
-</canvas>
+  
 </div><br><br><br>
 <br>
-  <button onclick="showprieview()" id="btntoload"><i style="font-size:24px;" class="fa-solid fa-play 10x"></i></button><button class="btn btn-primary" onclick="makeFullScreen()">Full Screen</button>
+  <button onclick="startpreview()" id="btntoload"><i style="font-size:24px;" class="fa-solid fa-play 10x"></i></button><button class="btn btn-primary" onclick="makeFullScreen()">Full Screen</button>
 <span id="sec"></span>
 <div class="modal" id="duration">
   <div class="modal-dialog">
@@ -115,6 +116,33 @@ Your browser does not support the canvas element.
     </div>
   </div>
 </div>
+<div class="modal" id="transition">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Select Transition that works with all images</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <Select id="transitions">
+          <option value="explode">Explode Transition</option>
+          <option value="fold">Fold Transition</option>
+      </Select>
+    </div>
+      
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 <div class="modal" id="theme">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -130,7 +158,7 @@ Your browser does not support the canvas element.
        <div class="input-group mb-3">
       
      
-      <button class="btn btn-primary" type="btn" onclick="blackandwhitetheme()"><img width="95px" height="95px" src="https://i.pinimg.com/originals/c7/ab/59/c7ab593e903fb4b902d28bba554b1b2e.jpg"><br>Black and White</button>
+      <button class="btn btn-primary" type="btn" onclick="blackandwhitetheme()"><i class="fa-brands fa-black-tie"></i><br>Black and White</button>
      <button class="btn btn-primary" onclick="birthdaytheme()">Birthday</button>
      <button class="btn btn-primary" onclick="unicorntheme()">Unicorn</button>
     </div>
@@ -145,6 +173,7 @@ Your browser does not support the canvas element.
   </div>
 </div>
 <audio id="musicexecute"></audio>
+
 <script>
 
 function loading(){
@@ -184,36 +213,39 @@ function loading(){
 
 document.querySelector('#file-input').addEventListener("change", previewImages);
 
-/*function showprieview(){
-    document.getElementById('videoplayer').style.display="block";
-      var sourceforimage =document.querySelectorAll('img')[0].src;
-document.getElementById('videoplayer').src=sourceforimage;
-  var seconds = document.getElementById('timers').value;
- setInterval(increase, seconds);
-}
- */
- function showprieview() {
-
-  var interval = document.getElementById("timers").value*1000;
-   myVar = setTimeout(increase, interval);
-
-var num = document.getElementById('imgCount').innerHTML*1;
-document.getElementById("videoplayer").src=document.querySelectorAll('img')[0].src;
- document.getElementById('musicexecute').play();
- }
- function increase(){
-    let numbers = 1;
- document.getElementById("videoplayer").src=document.querySelectorAll('img')[numbers].src;
-    var interval = document.getElementById("timers").value*1000;
-     setTimeout(increaser, interval);
- }
- function increaser(){
+   var changers;
+ function startpreview(){
+     var interval = document.getElementById("timers").value*1000;
+      changers=  setInterval(showprieview, interval);
+      document.getElementById('musicexecute').play()
      
-document.getElementById("videoplayer").src=document.querySelectorAll('img')[2].src;
  }
+   let numbers = 0;
+ function showprieview() {
+     var transition = document.getElementById('transitions').value;
+  $( "#videoplayer" ).toggle( transition );
+  setTimeout(stoptrans,500);
+ document.getElementById("videoplayer").src=document.querySelectorAll('img')[numbers].src;
+    
+     numbers= numbers+1;
+  
+if (numbers>document.images.length-2){
+    clearInterval(changers)
+    numbers=0;
+}
+
+ }
+function stoptrans(){
+    var transition = document.getElementById('transitions').value;
+      $( "#videoplayer" ).toggle( transition );
+}
+
+
+
  function blackandwhitetheme(){
      document.getElementById("videoplayer").style.filter="grayscale(100%)";
  }
+ 
    function requestFullScreen(element) {
     // Supports most browsers and their versions.
     var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
@@ -227,6 +259,7 @@ document.getElementById("videoplayer").src=document.querySelectorAll('img')[2].s
         }
     }
 }
+
 function makeFullScreen() {
     
     var elem = document.getElementById('preview');
@@ -277,10 +310,11 @@ function counter() {
   }, 1000);
 }*/
 setInterval(function(){ 
-    var countsecond = document.images.length -2;
+    var countsecond = document.images.length -1;
     var seconds = document.getElementById('timers').value;
-    var total = countsecond*seconds+" seconds";
-document.getElementById('sec').innerHTML = total; 
+    var value = countsecond*seconds;
+    var format= Math.floor(value / 60) + ":" + (value % 60 ? value % 60 : '00')
+document.getElementById('sec').innerHTML = format; 
 }, 2000);
 /*  right: 10%;
   top: 10%;
@@ -308,16 +342,7 @@ document.getElementById('sec').innerHTML = total;
   // Set the src and start loading the audio from the file
   audio.src = urlObj;
 }
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-ctx.font = "italic 30px  'Sofia'";
-ctx.strokeStyle = "blue";
-ctx.textAlign = "left";
-let xPos=10, yPos=60;
-ctx.strokeText("Created with Aswin's Ultradirector.",10,50);
-let { width } = ctx.measureText("Created with Aswin's Ultradirector.");
- 
-ctx.fillRect(xPos, yPos, width, 2);
+
 
 </script>
 <small id="imgCount">3</small>
