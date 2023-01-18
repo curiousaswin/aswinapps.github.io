@@ -1,5 +1,7 @@
-# aswinappsbeta
+# Aswin's Good Apps Pre-Release 
 
-Aswin's Good Apps
+Aswin's Good Apps look at features before they are releases.
 
-Never to be copied
+Go to site via aswinapps.com
+
+
