@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -71,6 +70,7 @@ span{
     <div id="imagelanding"></div><button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#duration" alt="duration">                 <i class="fa-regular fa-clock"></i><br>Duration Per Image</button>
     <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#theme" alt="theme"><i class="fa-brands fa-ethereum"></i><br>Theme</button>
     <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#transition"><i class="fa-solid fa-rotate"></i><br>Transitions</button>
+    <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#color"><i class="fa-solid fa-fill-drip"></i><br>Background</button>
     <input id="file-input" type="file" accept="image/*" hidden multiple>
     <label for="file-input">Upload Files to Create a Video</label><br><br>
 
@@ -129,8 +129,17 @@ span{
       <!-- Modal body -->
       <div class="modal-body">
       <Select id="transitions">
-          <option value="explode">Explode Transition</option>
-          <option value="fold">Fold Transition</option>
+          <option value="explode">&#128163; Explode Transition</option>
+          <option value="fold"> &#128193;Fold Transition</option>
+           <option value="blind">Blind Transition</option>
+             <option value="bounce">&#128372; Bounce Transition</option>
+             <option value="clip">	&#128206; Clip Transition</option>
+             <option value="drop">&#128167;Drop Transition</option>
+             <option value="puff">	&#128168; Puff Transition</option>
+               <option value="pulsate">&#128147; ;Pulsate Transition</option>
+                  <option value="scale">&#9878;Scale Transition</option>
+                    <option value="shake">&#129309;Shake Transition</option>
+            <option value="slide">&#127898;Slide Transition</option>
       </Select>
     </div>
       
@@ -161,6 +170,7 @@ span{
       <button class="btn btn-primary" type="btn" onclick="blackandwhitetheme()"><i class="fa-brands fa-black-tie"></i><br>Black and White</button>
      <button class="btn btn-primary" onclick="birthdaytheme()">Birthday</button>
      <button class="btn btn-primary" onclick="unicorntheme()">Unicorn</button>
+     <button class="btn btn-primary" onclick="firetheme()">Fire</button>
     </div>
       </div>
 
@@ -172,6 +182,36 @@ span{
     </div>
   </div>
 </div>
+<div class="modal" id="color">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Background</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+       <input type="color" value="#000000" id="colorofback">
+       <br><button type="button" class="btn btn-success" onclick="changebackcolor()" data-dismiss="modal">OK</button>
+       <h5>Gradients:</h5>
+       <input type="color" value="#000000" id="gradcolorone">
+       <input type="color" value="#000000" id="gradcolortwo">
+       <button type="button" class="btn btn-success" data-dismiss="modal" onclick="changegradient()">OK</button>
+    </div>
+      
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+          
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+      </div>
+</div>
+    </div>
+  </div>
+
 <audio id="musicexecute"></audio>
 
 <script>
@@ -223,7 +263,10 @@ document.querySelector('#file-input').addEventListener("change", previewImages);
    let numbers = 0;
  function showprieview() {
      var transition = document.getElementById('transitions').value;
-  $( "#videoplayer" ).toggle( transition );
+     
+         $( "#videoplayer" ).toggle( transition );
+     
+  
   setTimeout(stoptrans,500);
  document.getElementById("videoplayer").src=document.querySelectorAll('img')[numbers].src;
     
@@ -240,7 +283,20 @@ function stoptrans(){
       $( "#videoplayer" ).toggle( transition );
 }
 
-
+function changebackcolor(){
+    var background = document.getElementById('colorofback').value;
+    document.getElementById('preview').style.backgroundColor= background;
+}
+function firetheme(){
+    //https://media.tenor.com/PEDzvMlrdi0AAAAM/fire.gif
+    document.getElementById('preview').style.backgroundImage = "url('https://media.tenor.com/PEDzvMlrdi0AAAAM/fire.gif')";
+}
+function changegradient(){
+    var color1 = document.getElementById('gradcolorone').value;
+    var color2 = document.getElementById('gradcolortwo').value;
+    var background = "linear-gradient("+color1+","+ color2+")"
+     document.getElementById('preview').style.backgroundImage=background;
+}
 
  function blackandwhitetheme(){
      document.getElementById("videoplayer").style.filter="grayscale(100%)";
@@ -288,6 +344,7 @@ function birthdaytheme(){
     birthdayimg.style.right="10%";
     birthdayimg.style.top="10%"
     birthdayimg.style.position="absolute";
+    document.getElementById('preview').style.backgroundImage="url('https://www.lovethispic.com/uploaded_images/372358-Sparkling-Happy-Birthday-Balloon-Gif.gif')"
     document.getElementById('THEMEMAKER').appendChild(birthdayimg);
 }
 function unicorntheme(){
@@ -298,6 +355,8 @@ function unicorntheme(){
     birthdayimg.style.right="10%";
     birthdayimg.style.top="10%"
     birthdayimg.style.position="absolute";
+    document.getElementById('preview').style.backgroundImage= "url('https://i.postimg.cc/D09xWnf4/unicorntheme.gif')"
+    document.getElementById('preview').style.backgroundSize = "contain";
     document.getElementById('THEMEMAKER').appendChild(birthdayimg);
 }
 /*
