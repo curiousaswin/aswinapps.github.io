@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -19,6 +20,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https:////code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
         <title>Aswin's Ultra Director</title>
         <style>
             body{
@@ -67,12 +70,14 @@ span{
     
     <h1>Aswin's Ultra Director<span class="badge badge-info">Pre-Release Version</span></h1>
   
-    <div id="imagelanding"></div><button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#duration" alt="duration">                 <i class="fa-regular fa-clock"></i><br>Duration Per Image</button>
+    <h5  style="background-color:#D3D3D3;">Timeline:</h5>
+    <div id="imagelanding" style="background-color:#D3D3D3;"></div><button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#duration" alt="duration">                 <i class="fa-regular fa-clock"></i><br>Duration Per Image</button>
     <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#theme" alt="theme"><i class="fa-brands fa-ethereum"></i><br>Theme</button>
     <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#transition"><i class="fa-solid fa-rotate"></i><br>Transitions</button>
     <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#color"><i class="fa-solid fa-fill-drip"></i><br>Background</button>
+        <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#title"><i class="fa-solid fa-address-card"></i><br>Title Card</button>
     <input id="file-input" type="file" accept="image/*" hidden multiple>
-    <label for="file-input">Upload Files to Create a Video</label><br><br>
+    <label style="text-align:center;" for="file-input"><i  class="fa-solid fa-upload"></i><br>Upload Files to Create a Video</label><br><br>
 
     <div class="custom-file mb-3">
       <input type="file" class="custom-file-input"   id="music" accept=".mp3" onchange="changeHandler()">
@@ -211,10 +216,57 @@ span{
 </div>
     </div>
   </div>
+<div class="modal" id="title">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add Title Card</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <h5>Text</h5>
+          <input type="text" class="form-control" id="textitle">
+      <h5>Font Family:</h5>
+      <select id="fontfamily">
+          <option value="arial">Arial</option>
+          <option value="cursive">Cursive</option>
+          <option value="comic sans ms">Comic Sans Ms</option>
+          <option value="Impact">Impact</option>
+      
+      </select>
+          <h5>Font Size:</h5>
+          <select id="fontsize">
+              <option value="12pt">12</option>
+              <option value="24pt">24</option>
+              <option value="36pt">36</option>
+              <option value="48pt">48</option>
+              <option value="56pt">56</option>
+          </select>
+          <h5>Font Color:</h5>
+          <input type="color" id="fontcolor" value="#000000">
+          <h5>Background Color:</h5>
+          <input type="color" id="backcolor" value="#FFFFFF">
+    </div>
+      
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+          <button type="btn" class="btn btn-success" data-dismess="modal" onclick="createtitle()">Create Title</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+      </div>
+</div>
+    </div>
+  </div>
 <audio id="musicexecute"></audio>
 
 <script>
+Element.prototype.prependChild = function(newElement) {
+	return this.insertBefore(newElement, this.firstChild);
+};
 
 function loading(){
     
@@ -327,7 +379,7 @@ function makeFullScreen() {
 }
 function escapefullscreen(){
       document.getElementById('videoplayer').style.width = "450px";
-     document.getElementById('videoplayer').style.height = "250px"; 
+   
 }
 function upanddown(){
    $(document).ready(function(){
@@ -358,6 +410,41 @@ function unicorntheme(){
     document.getElementById('preview').style.backgroundImage= "url('https://i.postimg.cc/D09xWnf4/unicorntheme.gif')"
     document.getElementById('preview').style.backgroundSize = "contain";
     document.getElementById('THEMEMAKER').appendChild(birthdayimg);
+}
+function createtitle(){
+    var text= document.getElementById('textitle').value;
+    var back = document.getElementById('backcolor').value;
+    var family = document.getElementById('fontfamily').value;
+    var size= document.getElementById('fontsize').value;
+    var color = document.getElementById('fontcolor').value;
+    var canvas = document.createElement('canvas');
+        canvas.style.width="450px";
+        canvas.style.height="250px";
+       canvas.style.backgroundColor= back;
+    var context = canvas.getContext("2d");
+ 
+
+    context.font= size + " "+family;
+    context.fillStyle=color;
+    context.fillText(text,10,50);
+  
+    document.body.appendChild(canvas)
+      setTimeout(hidecanvas,5)
+    html2canvas(canvas).then(canvas => {
+    dataUrl = canvas.toDataURL(),
+    imageFoo = document.createElement('img');
+imageFoo.src = dataUrl;
+
+imageFoo.setAttribute("height", "100");
+document.getElementById('imagelanding').prependChild(imageFoo);
+});
+    
+}
+function hidecanvas(){
+    const collection = document.getElementsByTagName("canvas");
+for (let i = 0; i < collection.length; i++) {
+  collection[i].style.display = "none";
+}
 }
 /*
 function counter() {
