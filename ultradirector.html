@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -70,12 +69,13 @@ span{
     
     <h1>Aswin's Ultra Director<span class="badge badge-info">Pre-Release Version</span></h1>
   
-    <h5  style="background-color:#D3D3D3;">Timeline:</h5>
+    <h5  style="background-color:#D3D3D3;">Timeline:<span style="text-align:right;position:relative;"><button type="button" class="btn" style="background-color:#D3D3D3;"  data-toggle="modal" data-target="#change"><i class="fa-solid fa-pen-to-square"></i>Edit</button></span></h5>
     <div id="imagelanding" style="background-color:#D3D3D3;"></div><button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#duration" alt="duration">                 <i class="fa-regular fa-clock"></i><br>Duration Per Image</button>
     <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#theme" alt="theme"><i class="fa-brands fa-ethereum"></i><br>Theme</button>
     <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#transition"><i class="fa-solid fa-rotate"></i><br>Transitions</button>
     <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#color"><i class="fa-solid fa-fill-drip"></i><br>Background</button>
         <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#title"><i class="fa-solid fa-address-card"></i><br>Title Card</button>
+
     <input id="file-input" type="file" accept="image/*" hidden multiple>
     <label style="text-align:center;" for="file-input"><i  class="fa-solid fa-upload"></i><br>Upload Files to Create a Video</label><br><br>
 
@@ -86,12 +86,35 @@ span{
 <div id="preview" style="background-color:black;"><DIV ID="THEMEMAKER" style="  display: inline-block;
   position:relative;" width="450px" height="250px" ><img width="450px" style="  width: 100%;
   max-width: 100%;
-  border: 1px solid blue;" height="250px" id="videoplayer" alt="Your Video"></DIV><br>
-  
-</div><br><br><br>
-<br>
-  <button onclick="startpreview()" id="btntoload"><i style="font-size:24px;" class="fa-solid fa-play 10x"></i></button><button class="btn btn-primary" onclick="makeFullScreen()">Full Screen</button>
-<span id="sec"></span>
+  border: 1px solid blue;" height="250px" id="videoplayer" alt="Your Video">  </DIV>
+
+</div>
+ <div style="background-color: #5A5A5A;position:relative;width:450px;" width="450px"><button onclick="startpreview()" id="btntoload"><i style="font-size:24px;" class="fa-solid fa-play 10x"></i></button><button class="btn btn-primary" onclick="makeFullScreen()">Full Screen</button> <span id="sec"></span></div>
+ 
+<div class="modal" id="change">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Change Image Order</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+    Replace the <input type="number" id="imgtoreplace" min="1"> image with the <input type="number" id="imgtouses" min="1">image. 
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+          <button type="btn" class="btn btn-success" data-dismiss="modal" onclick="switched()">Switch</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 <div class="modal" id="duration">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -462,10 +485,17 @@ setInterval(function(){
     var format= Math.floor(value / 60) + ":" + (value % 60 ? value % 60 : '00')
 document.getElementById('sec').innerHTML = format; 
 }, 2000);
-/*  right: 10%;
-  top: 10%;
-  width: 25%;
-  max-width:25%;*/
+
+function switched(){
+    var imgtore = document.getElementById('imgtoreplace').value-1;
+    var imgtouse = document.getElementById('imgtouses').value*1-1;
+    var replacesource = document.images[imgtore].src;
+    var use = document.images[imgtouse].src;
+    document.images[imgtore].src=use;
+    document.images[imgtouse].src = replacesource;
+    
+}
+  
    function changeHandler() {
      var musicer = document.getElementById('music');
   // Make sure we have files to use
