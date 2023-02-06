@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mean Calculator | Aswin's Calculator</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<Style>
+    p{
+        font-size:25pt;
+    }
+    body{
+         background-image: url('https://media.istockphoto.com/photos/an-abstract-blue-pattern-with-numbers-picture-id178895760?b=1&k=20&m=178895760&s=170667a&w=0&h=lfh8zl1AloSdEH63b-HQIN4t2zDTtN4oCpANGgwgIpA=');
+    }
+    h1{
+        background-color:yellow;
+    }
+    h4{
+        background-color:white;
+    }
+
+    label{
+        background-color:white;
+    }
+</Style>
+</head>
+<body>
+<h1><Center>Mean Calculator</Center></h1>
+<h4>Enter numbers by seperating with a comma</h4>
+<div class="form-group">
+  <label for="numberstouse">Numbers seperated with comma:</label>
+  <textarea class="form-control" rows="3" id="numberstouse">1,2,3</textarea>
+</div>
+<button type="btn" class="btn btn-success" onclick="mean()">FIND MEAN!</button>
+<div class="jumbotron">
+    <h5><center>Result</center></h5>
+    <p id="result"><i>N/A</i></p>
+</div>
+<Script>
+function mean(){
+        var mathtodo = document.getElementById("numberstouse").value;
+   const average = array => array.reduce((a, b) => Number(a) + Number(b)) / array.length;
+   var finals = average(mathtodo.split(','))
+      document.getElementById('result').innerHTML = finals;
+    }
+    </Script>
+</body>
+</html>
