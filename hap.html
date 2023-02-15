@@ -17,6 +17,7 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.js" integrity="sha512-zPMZ/3MBK+R1rv6KcBFcf7rGwLnKS+xtB2OnWkAxgC6anqxlDhl/wMWtDbiYI4rgi/NrCJdXrmNGB8pIq+slJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://kit.fontawesome.com/3e2a93553e.js" crossorigin="anonymous"></script>
    <style>
        body{
            background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY0vftr689X8twoo8t2h74TJcrUUyvNMnpOA&usqp=CAU');
@@ -60,26 +61,41 @@
   </div>
   <div class="col">
       
-        <label for="bright">Brightness</label>
+        <label for="bright"><i class="fa-solid fa-sun"></i>Brightness</label>
   <input type="range" class="custom-range" onchange="brightness()" min="1" value="100" max="200" id="bright" >
   <br><p id="brightnumber">100%</p>
-          <label for="gray">GrayScale</label>
+          <label for="gray"><i class="fa-brands fa-black-tie"></i>GrayScale</label>
   <input type="range" class="custom-range" min="0" max="200" value="0" id="gray" onchange="grayscale()" >
   <br><p id="graynumber">0%</p>
-     <label for="constrast">Contrast</label>
+     <label for="constrast"><i class="fa-solid fa-circle-half-stroke"></i>Contrast</label>
   <input type="range" class="custom-range" min="0" max="200" value="100" id="contrast" onchange="contrast()" >
   <br><p id="contrastnumber">100%</p>
-     <label for="blur">Blur</label>
+     <label for="blur"><i class="fa-solid fa-compact-disc"></i>Blur</label>
   <input type="range" class="custom-range" min="0" max="100" value="0" id="blur" onchange="blurs()" >
   <br><p id="blurnumber">0 px</p>
   <button class="form-control btn-dark"  data-toggle="collapse" data-target="#more">
-      View More 🔽
+   <i class="fa-solid fa-eye"></i>   View More 🔽
   </button>
   <div id="more"  class="collapse">
          <label for="hue">Hue-Rotate</label>
   <input type="range" class="custom-range" min="0" max="360" value="0" id="hue" onchange="hue()" >
   <br><p id="huenumber">0 deg</p>
-  </div>
+    <label for="invert">Invert</label>
+  <input type="range" class="custom-range" min="0" max="100" value="0" id="invert" onchange="inverts()" >
+  <br><p id="invertnumber">0 deg</p>
+  <label for="opacity">Opacity</label>
+  <input type="range" class="custom-range" min="0" max="100" value="100" id="opacity" onchange="opacitys()" >
+  <br><p id="opacitynumber">100 %</p>
+  </div><br>
+<br>
+     
+  <button class="form-control btn-dark"  data-toggle="collapse" data-target="#flip">
+     <i class="fa-solid fa-camera-rotate"></i> Flip🔽
+  </button>
+  <div id="flip" class="collapse">
+      <button type="btn" class="btn btn-secondary" onclick="fliphorizontal()">Flip Horizontally</button>
+      <button type="btn" class="btn btn-secondary" onclick="flipvertical()">Flip Vertically</button>
+  
   </div>
   </div>
   <div class="modal" id="landscape">
@@ -112,8 +128,8 @@
     var contrast;
     var blur;
     var hues;
-    
-  
+    var invert;
+  var opacity;
           function preview(){
               var filename=document.getElementById('fileimage').value;
               document.getElementById('filename').innerHTML=filename;
@@ -151,6 +167,18 @@
          document.getElementById('imageedit').style.filter= document.getElementById('imageedit').style.filter+"hue-rotate("+hues+"deg)";
       
     }
+     function inverts(){
+         invert=document.getElementById('invert').value;
+        document.getElementById('invertnumber').innerHTML= invert+"%";
+         document.getElementById('imageedit').style.filter= document.getElementById('imageedit').style.filter+"invert("+invert+"%)";
+      
+    }
+     function opacitys(){
+         opacity=document.getElementById('opacity').value;
+        document.getElementById('opacitynumber').innerHTML= opacity+"%";
+         document.getElementById('imageedit').style.filter= document.getElementById('imageedit').style.filter+"opacity("+opacity+"%)";
+      
+    }
      function downloads(){
   
   domtoimage.toBlob(document.getElementById('imageedit'))
@@ -158,7 +186,13 @@
       window.saveAs(blob, 'hapeditor.png');
     });
      }
-  
+  function fliphorizontal(){
+      document.getElementById('imageedit').style.transform="scaleX(-1)";
+  }
+    function flipvertical(){
+      document.getElementById('imageedit').style.transform="scaleY(-1)";
+  }
+ 
   </script>
 </body>
 </html>
