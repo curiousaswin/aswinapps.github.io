@@ -1,3 +1,4 @@
+
 <HTML>
 <HEAD>
 <TITLE>Aswin Tutorials</title>
@@ -35,15 +36,37 @@ text-decoration:none;
   border-radius: 50%;
   display: inline-block;
 }
+h5{
+    color:grey;
+}
+h5:hover{
+    color:white;
+}
 </style>
 </HEAD>
 <BODY onload="myFunction()" style="margin:0;">
-<b><h2><center>
-    <div id="loader" class="spinner-border text-warning"></div>
-Aswin Tutorials(Beta Version)
-</b></center></h2>
- <p style="text-align:right;" id="signin"> Not Logged In</p>
-<div class="toast" id ="first" data-autohide="false">
+
+
+<ul class="nav  navbar navbar-expand-sm bg-dark navbar-dark " role="tablist" >
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="pill" href="#home"><h4 style="color:white;">Aswin Tutorials</h4></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#menu1"><h5>Science</h5></a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#menu2"><h5>Math</h5></a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#coding"><h5>Coding</h5></a>
+    </li>
+         <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#greek"><h5>Greek & Latin</h5></a>
+    </li>
+</ul>   
+   <p style="text-align:right;" id="signin"> Not Logged In</p>
+   <div class="toast" id ="first" data-autohide="false">
     <div class="toast-header">
       <strong class="mr-auto text-primary">Welcome to Aswin Tutorials</strong>
       <small class="text-muted">5 mins ago</small>
@@ -983,14 +1006,7 @@ document.getElementById('greekdiavideo').appendChild(iframe);
 document.getElementById('greekdiadot').style.display="none";
 }
 </script>
-<ul class="nav nav-pills" role="tablist" style="justify-content:center;">
-    <li class="nav-item">
-      <a class="nav-link active" data-toggle="pill" href="#home">All Tutorials</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="pill" href="#menu1">Science</a>
-    </li>
-    <div  id="next" class="toast" data-autohide="false">
+<div  id="next" class="toast" data-autohide="false">
     <div class="toast-header">
       <strong class="mr-auto text-primary">Welcome to Aswin Tutorials</strong>
       <small class="text-muted">5 mins ago</small>
@@ -1000,16 +1016,7 @@ document.getElementById('greekdiadot').style.display="none";
        You can find many tutorials in sections too.
     </div>
     </div>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="pill" href="#menu2">Math</a>
-    </li>
-     <li class="nav-item">
-      <a class="nav-link" data-toggle="pill" href="#coding">Coding</a>
-    </li>
-         <li class="nav-item">
-      <a class="nav-link" data-toggle="pill" href="#greek">Greek & Latin</a>
-    </li>
-  </ul>
+
 <div class="tab-content">
     <div id="home" class="container tab-pane active"><br>
       <h3>All Tutorials</h3>
