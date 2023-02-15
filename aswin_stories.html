@@ -1,3 +1,4 @@
+
 <html>
 <head>
 <title> Aswin Stories</title>
@@ -7,7 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/3e2a93553e.js" crossorigin="anonymous"></script>
 <link rel = "icon" href = 
-"https://goodapps.w3spaces.com/storiesicon.png"
+"/storiesicon.png"
 		type = "image/x-icon">
     <meta charset="utf-8">
 
@@ -79,17 +80,37 @@ div{
 h2{
   color:white;
 }
+h4{
+    color:white;
+}
+h5{
+    color:gray;
+}
+h5:hover{
+    color:white;
+}
+#re{
+    color:black;
+}
 </style>
 </head>
 <body onload="myFunction()" style="margin:0;">
     <div  id="loader" class="spinner-border text-info"></div>
-    <div id="head" colspan="5">Aswin® 
-    <span style="text-align:right; display:block; margin-top:0px;">Stories</span>
-  </div>
-      
-    <center>
-      <H2>Beta</H2>
-      </CENTER>
+      <ul class="nav  navbar navbar-expand-sm bg-dark navbar-dark" style="position:sticky;top:0;">
+     
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="pill" style="color:yellow;"  href="#home"><h4>Aswin Stories</h4></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" style="color:yellow;" href="#menu1"><h5>Videos</h5></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" style="color:yellow; " href="#menu2"><h5>Informational</h5></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" style="color:yellow; " href="#menu3"><h5>Comic</h5></a>
+  </li>
+</ul>
        <p style="text-align:right;color:white;" id="signin"> Not Logged In</p>
     <script>
       //for introduction
@@ -107,7 +128,7 @@ h2{
   document.getElementById("signin").innerHTML ="Hello "+ getinfo +"!";
  document.getElementById('watchlist').innerHTML=localStorage.getItem("readinglist");
  if(document.getElementById("watchlist").innerHTML==""){
-     document.getElementById('watchlist').innerHTML="<h4> Reading List</h4>"
+     document.getElementById('watchlist').innerHTML="<h4 style='color:black'> Reading List</h4>"
  }
         }
         
@@ -437,7 +458,7 @@ Don't have an account? Visit the <a href="https://goodapps.w3spaces.com">Main Pa
     margin-right: 100px;
         padding: 14px;
           float: right; " id="mysearch" onkeyup="searchresult()">
-           <div class="jumbotron" id="watchlist" style="display:inline-block;overflow-y: scroll; height:75px; width:1000px;" width="40px" height="50px"><h4>Reading List</h4></div>
+           <div class="jumbotron" id="watchlist" style="display:inline-block;overflow-y: scroll; height:75px; width:1000px;color:black" width="40px" height="50px"><span style="color:black"><h4>Reading List</h4></span></div>
          
           <div class="toast" data-autohide="false">
     <div class="toast-header">
@@ -449,21 +470,7 @@ Don't have an account? Visit the <a href="https://goodapps.w3spaces.com">Main Pa
       Here you can find many stories
     </div>
   </div>
-  <ul class="nav nav-pills">
-     
-  <li class="nav-item">
-    <a class="nav-link active" data-toggle="pill" style="color:yellow;"  href="#home">All Stories</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="pill" style="color:yellow;" href="#menu1">Videos</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="pill" style="color:yellow; " href="#menu2">Informational</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="pill" style="color:yellow; " href="#menu3">Comic</a>
-  </li>
-</ul>
+
   <div class="tab-content">
       <div id="home" class="container tab-pane active"><br>
 <ul id="myUL" class="list-group"><li id="buzz" class="list-group-item"><b><a data-toggle="modal" href="#buzzooka" >Buzzooka Full Story</a><button class="btn btn-success" onclick="copyitdown(document.getElementById('buzz'))">Add to Reading List </button></b>
