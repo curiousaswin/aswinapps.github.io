@@ -88,17 +88,63 @@ function showPage() {
 
 }
         </script>
-        <center>
-            <h2>
-                Aswin Sentences
-            </h2>
+       
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">Aswin's Sentences</a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="mailto:aswin.arulvel@gmail.com@gmail.com?subject=Request More Words/Sentences">Request More Words and Sentences</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="modal" data-target="#terms">Terms of Use</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Help</a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link" href="https://www.aswinapps.com">Back to Home</a>
+    </li>
+    
+   
+  </ul>
+  <Span style="text-align:right;"><div class="form-inline" style="text-align:right;">
+   <input type="text" id="mysearch" placeholder="Search Words..." class="form-control mr-sm-2"
+			>
+			</div>
+			</Span>
+</nav>
+<div class="modal" id="terms" style="color:black">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Terms of Use</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        All of these sentences are (C) Aswin's Good Apps and Sentences team. In case you copy the sentences, you would need to cite the source from Aswin's Sentences. These sentences are just for examples and would not be copied often. You could paraphrase these sentences and make them your sentence instead of copying sentences. These sentences are just few examples of sentences and not all of the sentences possible for that word. In case these sentences are inaccurate, don't feel free to contact us.
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
             <DIV ID="loader"  class="spinner-border text-info">
 
             </DIV>
            
         </center>
-        <input type="text" id="mysearch" placeholder="Search Words..." class="form-control"
-			><br>
+        <br>
             <ul id="myUL" alt="No rows to show" class="list-group" style="overflow-y: scroll; height:215px;">
         <li  class="list-group-item"> <a class="btn btn-primary" data-toggle="collapse" data-target="#amount"><mark>Amount</mark> Sentence Examples</a>
   </li>
@@ -216,9 +262,6 @@ function showPage() {
 </ol>
 </div>
 </div>
-<div class="container p-3 my-3 bg-light text-black">
-  <p>These sentences are (C) Aswin.</p>       
-  <p>To add more words and more sentences, please <a href="mailto:aswin.arulvel@gmail.com@gmail.com?subject=Request More Words/Sentences">Contact Us.</a></p>
-</div>
+
     </body>
 </html>
