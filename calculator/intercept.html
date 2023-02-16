@@ -31,7 +31,56 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<h2>Aswin's X & Y Intercept Calculator</h2>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="https://www.aswinapps.com/calculater.html">Aswin's Calculator</a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+
+
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" >
+       Simple Calculators
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/aswinappsbeta/calculator/standard_calculator.html">Standard Calculator</a>
+        <a class="dropdown-item" href="/aswinappsbeta/calculator/fractionscalc.html">Fraction Calculator</a>
+  
+      </div>
+    </li>
+     <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" >
+     Percent Calculators
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/aswinappsbeta/calculator/percent.html">Finding Percent Calculator</a>
+        <a class="dropdown-item" href="/aswinappsbeta/calculator/usingpercent.html">Using Percent Calculator</a>
+  
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" >
+     Intercept and Slope Calculators
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/aswinappsbeta/calculator/slope.html">Slope Calculator</a>
+        <a class="dropdown-item" href="/aswinappsbeta/calculator/intercept.html">X & Y Intercept Calculator</a>
+       <a class="dropdown-item" href="/aswinappsbeta/calculator/slopeany.html">Find Slope and Y Intercept Calculator</a>
+      </div>
+    </li>
+     <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" >
+     Average Calculators
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/aswinappsbeta/calculator/meancalc.html">Mean Calculator</a>
+    
+      </div>
+    </li>
+  </ul>
+</nav>
 <div class="jumbotron"><input type="number" style="width:60px;font-size:17pt;" id="xvar"><span>x+</span><input type="number" style="width:60px;font-size:17pt;" id="yvar"><span>y=</span><input type="number" id="nonvar" style="width:60px;font-size:17pt;"></div>
 <div class="jumbotron"><button type="btn" class="btn btn-primary" onclick="xintercepts()">X-Intercept</button><button type="btn" class="btn btn-primary" onclick="yintercepts()">Y-Intercept</button></div>
 <div class="jumbotron">
