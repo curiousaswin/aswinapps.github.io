@@ -67,8 +67,55 @@ span{
         
     </DIV>
     
-    <h1>Aswin's Ultra Director<span class="badge badge-info">Pre-Release Version</span></h1>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">Aswin's Ultra Director</a>
   
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-toggle="modal" data-target="#help">Help</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Documentation</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://www.aswinapps.com">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+  <br>
+  <div class="modal" id="help">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Help</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <ol>
+            <li>Your order of images will be in the order you update them.</li>
+            <li>To Change the order, press on the edit button near the timeline.</li>
+            <li>You can select themes.</li>
+            <li>The background button will change the background color instead of plain black.</li>
+            <li>Duration is how long images will last. </li>
+            <li>Transitions: The Transition you choose will apply to every image. It is required to have a duration per image of atleast 3 seconds.</li>
+            <li>Title card will create a title card which has the text you need and will defaultly go to the begining of the images.</li>
+        </ol>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
     <h5  style="background-color:#D3D3D3;">Timeline:<span style="text-align:right;position:relative;"><button type="button" class="btn" style="background-color:#D3D3D3;"  data-toggle="modal" data-target="#change"><i class="fa-solid fa-pen-to-square"></i>Edit</button></span></h5>
     <div id="imagelanding" style="background-color:#D3D3D3;"></div><button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#duration" alt="duration">                 <i class="fa-regular fa-clock"></i><br>Duration Per Image</button>
     <button type="btn" class="btn btn-primary" data-toggle="modal" data-target="#theme" alt="theme"><i class="fa-brands fa-ethereum"></i><br>Theme</button>
