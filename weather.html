@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Weather App</title>
+    <title>ForecastStar</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <style>
         #citytemp{
@@ -31,7 +31,23 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <h1>Aswin Weather</h1>
+       <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <a class="navbar-brand" href="#">ForecastStar</a>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Current</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Hourly</a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link " href="/aswinappsbeta/5day.html">5 day</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Alerts</a> 
+    </li>
+  </ul>
+</nav>
     <input type="text" id="city" class="form-control" placeholder="Enter City Name"><button type="btn" class="btn-success form-control" onclick="loadweather()">Get Weather</button>
     <div id="weatherdata" width="400px" height="300px">
         <p id="cityname"></p>
