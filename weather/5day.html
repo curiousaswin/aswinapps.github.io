@@ -5,6 +5,7 @@
     <title>Weather App</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <style>
+  
         #citytemp{
             font-size:36pt;
         }
@@ -28,6 +29,38 @@
         i{
             font-size:28pt;
         }
+     #loader {
+  position: absolute;
+  left: 42%;
+  top: 42%;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+
+ opacity:2;
+}
+  #loader2 {
+  position: absolute;
+  left: 42%;
+  top: 42%;
+  z-index: 1;
+  width: 215px;
+  height: 215px;
+
+ opacity:2;
+}
+#loading{
+     position: absolute;
+  left: 43%;
+  top: 75%;
+  font-size:20pt;
+  z-index: 1;
+  width: 275px;
+  height: 100px;
+border:5px solid green;
+font-family:Arial;
+font-weight:bold;
+}
     </style>
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -42,25 +75,32 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/3e2a93553e.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+<body onload="retrieve()" style="background-color:#98FB98;">
+    <img id="loader" src="https://www.aswinapps.com/iconforecaststar.png">
+    <div class="spinner-border text-success" id="loader2"></div>
+    <p id="loading">Loading...Please Wait</p>
+    <div id="content" style="opacity:0.5;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+         <a clss="navbar-brand"> <img \ src="https://www.aswinapps.com/iconforecaststar.png" style="width:40px"></a>
   <a class="navbar-brand" href="#">ForecastStar</a>
+ 
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="/aswinappsbeta/weather.html">Current</a>
+      <a class="nav-link" href="./weather.html">Current</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Hourly</a>
+      <a class="nav-link" href="./weather/hourly.html">Hourly</a>
     </li>
      <li class="nav-item">
-      <a class="nav-link active" href="#">5 day</a>
+      <a class="nav-link active" href="./weather/5day.html">5 day</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Alerts</a> 
+        <a class="nav-link" href="./weather/alerts.html">Alerts</a> 
     </li>
   </ul>
 </nav>
-    <input type="text" id="city" class="form-control" placeholder="Enter City Name"><button type="btn" class="btn-success form-control" onclick="findkey()">Get Weather</button>
+  <h1><Center>5 day weather</Center></h1>
+<h5><center><i>Accurate 5 day weather forecast</i></center></h5>
    <div class="day1 jumbotron">
        <div class="Date" id="day1date"></div>
        <h4>Day:</h4>
@@ -128,18 +168,19 @@
           <div id="day5night" class="desc"></div>
          <div id="day5prob"></div>
    </div>
+   </div>
 <script>
 var lockey= null;
-function findkey(){
-     var city=document.getElementById('city').value;
-     fetch('https://dataservice.accuweather.com/locations/v1/cities/search?apikey=MqX8AO5ER51bQES8vBEMhzKueEX9xsWs&q='+city)
-       .then(response => response.json())
-        .then(data => {
-      var key= data[0].Key;
-      alert(key)
-      lockey=key;
-      setTimeout(loadweather,1)
-     } )
+function retrieve(){
+        lockey = localStorage.getItem("keyoflocation");
+    setTimeout(loadweather,1);
+    setTimeout(stopload,3000)
+}
+function stopload(){
+    document.getElementById('content').style.opacity="1";
+    document.getElementById('loader').style.display="none";
+    document.getElementById('loader2').style.display="none";
+    document.getElementById('loading').style.display="none";
 }
  function loadweather(){
     
