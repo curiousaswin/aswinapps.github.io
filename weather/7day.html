@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7 day Forecast | ForecastStar</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+  
+        #citytemp{
+            font-size:36pt;
+        }
+        #weatherdesc{
+            font-size:24pt;
+        }
+        #weatherdata{
+            text-align:Center;
+        }
+        .Date{
+            font-weight:bold;
+            background-color:black;
+            text-align:center;
+            color:white;
+        }
+        .desc{
+            font-weight:bold;
+            font-size:28pt;
+            font-family:Arial;
+        }
+        i{
+            font-size:28pt;
+        }
+     #loader {
+  position: absolute;
+  left: 42%;
+  top: 42%;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+
+ opacity:2;
+}
+  #loader2 {
+  position: absolute;
+  left: 42%;
+  top: 42%;
+  z-index: 1;
+  width: 215px;
+  height: 215px;
+
+ opacity:2;
+}
+#loading{
+     position: absolute;
+  left: 43%;
+  top: 75%;
+  font-size:20pt;
+  z-index: 1;
+  width: 275px;
+  height: 100px;
+border:5px solid green;
+font-family:Arial;
+font-weight:bold;
+}
+table{
+    background-color:white;
+}
+.weatherdata{
+    text-align:Center;
+}
+.col{
+    border:3px solid #98FB98;
+    text-align:Center;
+    margin:3px;
+}
+.collapsing{
+    color:#98FB98;
+}
+.form-control{
+    text-align:left;
+    font-size:24pt;
+   
+}
+button{
+    font-size:24pt;
+   text-align:Center;
+}
+span{
+
+}
+b{
+    background-color:yellow;
+}
+.close{
+    font-size:96pt;
+}
+    </style>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/3e2a93553e.js" crossorigin="anonymous"></script>
+</head>
+<body onload="retrieve()" style="background-color:#98FB98;">
+    
+    <img id="loader" src="https://www.aswinapps.com/iconforecaststar.png">
+    <div class="spinner-border text-success" id="loader2"></div>
+    <p id="loading">Loading...Please Wait</p>
+    <div id="content" style="opacity:0.5;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+         <a clss="navbar-brand"> <img \ src="https://www.aswinapps.com/iconforecaststar.png" style="width:40px"></a>
+  <a class="navbar-brand" href="#">ForecastStar</a>
+ 
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="https://aswinapps.com/weather.html">Current</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./hourly.html">Hourly</a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link active" href="./7day.html">7 day</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="./alerts.html">Alerts</a> 
+    </li>
+  </ul>
+</nav>
+  <h1><Center>7 day weather</Center></h1>
+<h5><center><i>Accurate 7 day weather forecast</i></center></h5>
+<div class="row">
+    <div class="col" ><button id="collapse1" type="button" style="font-size:24pt" class="form-control" data-toggle="collapse" data-target=".day1"> </button></div>
+    <div class="col" ><button id="collapse2" type="button" style="font-size:24pt" class="form-control" data-toggle="collapse" data-target=".day2"></button></div>
+       <div class="col" >  <button type="button" id="collapse3" style="font-size:24pt" class="form-control" data-toggle="collapse" data-target=".day3"> </button> </div>
+          <div class="col" >  <button type="button" id="collapse4" style="font-size:24pt" class="form-control" data-toggle="collapse" data-target=".day4"></button></div>
+             <div class="col" >    <button type="button" id="collapse5" style="font-size:24pt" class="form-control" data-toggle="collapse" data-target=".day5"> </button></div>
+                <div class="col" >    <button type="button" id="collapse6" style="font-size:24pt" class="form-control" data-toggle="collapse" data-target=".day6"> </button></div>
+                   <div class="col" >    <button type="button" id="collapse7" style="font-size:24pt" class="form-control" data-toggle="collapse" data-target=".day7"> </button></div>
+</div>
+
+   <div class="day1 jumbotron collapse">
+     
+       <div class="Date" id="day1date"></div>
+         <div style="text-align:right;"><button type="btn" class="btn"  data-toggle="collapse" style="font-size:36pt"  class="close" data-target=".day1">&times;</button> </div>
+       <Div class="weatherdata"> <div class="desc" id="day1day"></div>
+          <i class="" id="day1icon"></i></Div>
+       <div class="row">
+           <Div class="col">
+       <h4>Day:</h4>
+         <div  id="day1max" style="font-size:25pt;"></div>
+         <div id="feelsd1" style="font-style:italic"></div>
+         <div class="desc" id="day1day"></div>
+          <i class="" id="day1icon"></i>
+             <div class="descmain" id="day1daymain"></div>
+              
+              </Div><div class="col">
+         <h4>Night:</h4>
+       <div id="day1min" style="font-size:25pt;"></div>
+     <div id="day1night" class="desc"></div>
+
+     </div>
+     </div>
+     <table class="table">
+         <thead><tr><th>Chance of Precipitation</th><th>Snow Amount</th><th>Rain Amount</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day1probd"></div></td><td><div id="day1snow"></div></td><td><div id="day1rain"></div></td></tr>
+         </tbody>
+     </table>
+      <table class="table">
+         <thead><tr><th>Wind Gusts</th><th>Wind Speed</th><th>Wind Chill</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day1wg"></div></td><td><div id="day1ws"></div></td><td><div id="day1wc"></div></td></tr>
+         </tbody>
+     </table>
+   </div>
+
+    <div class="day2 jumbotron collapse">
+         <div class="Date" id="day2date"></div>
+          <div style="text-align:right;"><button type="btn" class="btn"  data-toggle="collapse" style="font-size:36pt"  class="close" data-target=".day2">&times;</button> </div>
+         <div class="weatherdata">  <div id="day2day"  class="desc"></div>
+          <i class="" id="day2icon"></i></div>
+         <div class="row">
+             <div class="col">
+        <h4>Day:</h4>
+        <div id="day2max" style="font-size:25pt;"></div>
+             <div id="feelsd2" style="font-style:italic"></div>
+       
+         <div class="descmain" id="day2daymain"></div>
+             
+                </div>
+                <div class="col">
+          <h4>Night:</h4>
+           <div id="day2min" style="font-size:25pt;"></div>
+            <div id="day2night" class="desc"></div>
+      
+           <div id="day2prob"></div>
+         
+           </div>
+           </div>
+            <table class="table">
+         <thead><tr><th>Chance of Precipitation</th><th>Snow Amount</th><th>Rain Amount</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day2probd"></div></td><td><div id="day2snow"></div></td><td><div id="day2rain"></div></td></tr>
+         </tbody>
+     </table>
+     <table class="table">
+         <thead><tr><th>Wind Gusts</th><th>Wind Speed</th><th>Wind Chill</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day2wg"></div></td><td><div id="day2ws"></div></td><td><div id="day2wc"></div></td></tr>
+         </tbody>
+     </table>
+   </div>
+  
+    <div class="day3 jumbotron collapse">
+      
+         <div class="Date" id="day3date"></div>
+            <div style="text-align:right;"><button type="btn" class="btn"  data-toggle="collapse" style="font-size:36pt"  class="close" data-target=".day3">&times;</button> </div>
+         <Div class="weatherdata">          <div id="day3day"  class="desc"></div>
+                     <i class="" id="day3icon"></i></Div>
+         <div class="row">
+             <div class="col">
+        <h4>Day:</h4>
+                   <div id="day3max"  style="font-size:25pt;"></div>
+                        <div id="feelsd3" style="font-style:italic"></div>
+          
+                    <div class="descmain" id="day3daymain"></div>
+                          
+                           </div><div class="col">
+                     <h4>Night:</h4>
+           <div id="day3min"  style="font-size:25pt;"></div>
+            <div id="day3night" class="desc"></div>
+  
+           </div>
+         </div>
+           <table class="table">
+         <thead><tr><th>Chance of Precipitation</th><th>Snow Amount</th><th>Rain Amount</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day3probd"></div></td><td><div id="day3snow"></div></td><td><div id="day3rain"></div></td></tr>
+         </tbody>
+     </table>
+     <table class="table">
+         <thead><tr><th>Wind Gusts</th><th>Wind Speed</th><th>Wind Chill</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day3wg"></div></td><td><div id="day3ws"></div></td><td><div id="day3wc"></div></td></tr>
+         </tbody>
+     </table>
+   </div>
+  
+    <div class="day4 jumbotron collapse">
+          <div class="Date" id="day4date"></div>
+             <div style="text-align:right;"><button type="btn" class="btn"  data-toggle="collapse" style="font-size:36pt"  class="close" data-target=".day4">&times;</button> </div>
+          <div class="weatherdata"><div id="day4day"  class="desc"></div>
+         <div class="descmain" id="day4daymain"></div>
+          <i class="fa-solid fa-cloud-moon" id="day4icon"></i></div>
+        <div class="row">
+       
+         <div class="col">
+        <h4>Day:</h4>
+        <div id="day4max" style="font-size:25pt;"></div>
+             <div id="feelsd4" style="font-style:italic"></div>
+         
+                
+                </div><div class="col">
+          <h4>Night:</h4>
+    <div id="day4min"  style="font-size:25pt;"></div>
+     <div id="day4night" class="desc"></div>
+
+    </div>
+    </div>
+       <table class="table">
+         <thead><tr><th>Chance of Precipitation</th><th>Snow Amount</th><th>Rain Amount</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day4probd"></div></td><td><div id="day4snow"></div></td><td><div id="day4rain"></div></td></tr>
+         </tbody>
+     </table>
+     <table class="table">
+         <thead><tr><th>Wind Gusts</th><th>Wind Speed</th><th>Wind Chill</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day4wg"></div></td><td><div id="day4ws"></div></td><td><div id="day4wc"></div></td></tr>
+         </tbody>
+     </table>
+   </div>
+
+    <div class="day5 jumbotron collapse">
+         <div class="Date" id="day5date"></div>
+            <div style="text-align:right;"><button type="btn" class="btn"  data-toggle="collapse" style="font-size:36pt"  class="close" data-target=".day5">&times;</button> </div>
+         <div class="weatherdata">       <div id="day5day"  class="desc"></div>
+             <i class="" id="day5icon"></i>
+            <div class="descmain" id="day5daymain"></div></div>
+         <div class="row">
+             <div class="col">
+        <h4>Day:</h4>
+           <div id="day5max"  style="font-size:25pt;"></div>
+                <div style="font-style:italic" id="feelsd5"></div>
+     
+                   
+             </div><div class="col"><h4>Night:</h4>
+         <div id="day5min"  style="font-size:25pt;"></div>
+          <div id="day5night" class="desc"></div>
+         
+         </div>
+   </div>
+   <table class="table">
+         <thead><tr><th>Chance of Precipitation</th><th>Snow Amount</th><th>Rain Amount</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day5probd"></div></td><td><div id="day5snow"></div></td><td><div id="day5rain"></div></td></tr>
+         </tbody>
+     </table>
+     <table class="table">
+         <thead><tr><th>Wind Gusts</th><th>Wind Speed</th><th>Wind Chill</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day5wg"></div></td><td><div id="day5ws"></div></td><td><div id="day5wc"></div></td></tr>
+         </tbody>
+     </table>
+   </div>
+    <div class="day6 jumbotron collapse">
+         <div class="Date" id="day6date"></div>
+            <div style="text-align:right;"><button type="btn" class="btn"  data-toggle="collapse" style="font-size:36pt"  class="close" data-target=".day6">&times;</button> </div>
+         <div class="weatherdata">       <div id="day6day"  class="desc"></div>
+             <i class="" id="day6icon"></i>
+            <div class="descmain" id="day6daymain"></div></div>
+         <div class="row">
+             <div class="col">
+        <h4>Day:</h4>
+           <div id="day6max"  style="font-size:25pt;"></div>
+                <div style="font-style:italic" id="feelsd6"></div>
+     
+                   
+             </div><div class="col"><h4>Night:</h4>
+         <div id="day6min"  style="font-size:25pt;"></div>
+          <div id="day6night" class="desc"></div>
+         
+         </div>
+   </div>
+   <table class="table">
+         <thead><tr><th>Chance of Precipitation</th><th>Snow Amount</th><th>Rain Amount</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day6probd"></div></td><td><div id="day6snow"></div></td><td><div id="day6rain"></div></td></tr>
+         </tbody>
+     </table>
+     <table class="table">
+         <thead><tr><th>Wind Gusts</th><th>Wind Speed</th><th>Wind Chill</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day6wg"></div></td><td><div id="day6ws"></div></td><td><div id="day6wc"></div></td></tr>
+         </tbody>
+     </table>
+   </div>
+    <div class="day7 jumbotron collapse">
+         <div class="Date" id="day7date"></div>
+            <div style="text-align:right;"><button type="btn" class="btn"  data-toggle="collapse" style="font-size:36pt"  class="close" data-target=".day7">&times;</button> </div>
+         <div class="weatherdata">       <div id="day7day"  class="desc"></div>
+             <i class="" id="day7icon"></i>
+            <div class="descmain" id="day7daymain"></div></div>
+         <div class="row">
+             <div class="col">
+        <h4>Day:</h4>
+           <div id="day7max"  style="font-size:25pt;"></div>
+                <div style="font-style:italic" id="feelsd7"></div>
+     
+                   
+             </div><div class="col"><h4>Night:</h4>
+         <div id="day7min"  style="font-size:25pt;"></div>
+          <div id="day7night" class="desc"></div>
+         
+         </div>
+   </div>
+   <table class="table">
+         <thead><tr><th>Chance of Precipitation</th><th>Snow Amount</th><th>Rain Amount</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day7probd"></div></td><td><div id="day7snow"></div></td><td><div id="day7rain"></div></td></tr>
+         </tbody>
+     </table>
+     <table class="table">
+         <thead><tr><th>Wind Gusts</th><th>Wind Speed</th><th>Wind Chill</th></tr></thead>
+         <tbody>
+             <tr><td><div id="day7wg"></div></td><td><div id="day7ws"></div></td><td><div id="day7wc"></div></td></tr>
+         </tbody>
+     </table>
+   </div>
+    </Div>
+ 
+<script>
+var lockey= null;
+  var nightphrase= "";
+function retrieve(){
+        cityname = localStorage.getItem("cityname");
+    setTimeout(loadweather,1);
+    setTimeout(stopload,3000)
+}
+function stopload(){
+    document.getElementById('content').style.opacity="1";
+    document.getElementById('loader').style.display="none";
+    document.getElementById('loader2').style.display="none";
+    document.getElementById('loading').style.display="none";
+}
+function scroll(){
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+function scrollToBottom(){
+    
+}
+ function loadweather(){
+    
+     
+      fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/forecast?locations='+cityname+'&aggregateHours=24&unitGroup=us&key=2ASQ7TVJSGDFN6RL4RBAACDAR&contentType=json&locationMode=single')
+      .then(response => response.json())
+      .then(data => {
+
+      for (let i = 0; i <7; i++){
+               var dailymin= data.location.values[i].mint+"°"; 
+              var dailymax=data.location.values[i].maxt+"°" ;
+              var averagetemp =data.location.values[i].temp+"°" 
+               var probofprecip = data.location.values[i].pop;
+               var phrase=data.location.values[i].conditions;
+               var snowamount=data.location.values[i].snow;
+               var rainamount = data.location.values[i].precip;
+               var windgust = data.location.values[i].wgust+" mph";
+               var windchill = data.location.values[i].windchill+" mph"
+               var windspeed = data.location.values[i].wspd+" mph"
+               document.getElementById('day'+[i+1]+'min').innerHTML = dailymin;
+               document.getElementById('day'+[i+1]+'max').innerHTML = dailymax;
+               document.getElementById('day'+[i+1]+'day').innerHTML = phrase;
+                 document.getElementById('day'+[i+1]+'snow').innerHTML = snowamount+" in";
+                 document.getElementById('day'+[i+1]+'rain').innerHTML = rainamount+" in";
+                document.getElementById('day'+[i+1]+'wg').innerHTML = windgust;
+                    document.getElementById('day'+[i+1]+'wc').innerHTML = windchill;
+                 document.getElementById('day'+[i+1]+'ws').innerHTML = windspeed;
+                   document.getElementById('day'+[i+1]+'probd').innerHTML=probofprecip+"%";
+                 
+                   //if statement
+                
+                
+                   
+                   
+                    if(phrase==="Overcast"){
+                       document.getElementById('day'+[i+1]+'icon').className="fa-solid fa-cloud-sun";
+                   }  else if(phrase==="Partially cloudy"){
+                       document.getElementById('day'+[i+1]+'icon').className="fa-solid fa-cloud-sun";
+                   }else if(phrase==="Cloudy"){
+                       document.getElementById('day'+[i+1]+'icon').className="fa-solid fa-cloud";
+                   }else if(phrase==="Intermittent clouds"){
+                       document.getElementById('day'+[i+1]+'icon').className="fa-solid fa-cloud-sun";
+                   }else if(phrase==="Rain and snow"){
+                       document.getElementById('day'+[i+1]+'icon').className="fa-solid fa-snowflake";
+                   }else if(phrase.includes("Snow")){
+                       document.getElementById('day'+[i+1]+'icon').className="fa-solid fa-snowflake";
+                   }else if(phrase==="Flurries"){
+                       document.getElementById('day'+[i+1]+'icon').className="fa-solid fa-snowflake";
+                   }else if(phrase==="Clear"){
+                       document.getElementById('day'+[i+1]+'icon').className="fa-solid fa-sun";
+                   }else if(phrase.includes('Rain')){
+                       document.getElementById('day'+[i+1]+'icon').className="fa-solid fa-cloud-rain";
+                   }else if(phrase.includes('t-storms')){
+                       document.getElementById('day'+[i+1]+'icon').className="fa-solid fa-cloud-bolt";
+                   }else if(phrase.includes('Showers')){
+                       document.getElementById('day'+[i+1]+'icon').className="fa-solid fa-cloud-showers-heavy";
+                   }
+                   
+                 
+               const d = new Date();
+              var  date=  (d.getMonth()*1+1)+"/"+(d.getDate()+i);
+               document.getElementById('day'+[i+1]+'date').innerHTML =date;;
+                 document.getElementById('collapse'+[i+1]).innerHTML = "<b>"+date+"</b><br>"+averagetemp+"<br>"+phrase;
+                 document.getElementById('collapse'+[i+1]).style.height= "250px";
+                   document.getElementById('collapse'+[i+1]).style.textAlign= "center";
+                     document.getElementById('collapse'+[i+1]).style.border= "2px solid black";
+      }
+     } )
+      }
+      
+      
+ 
+ 
+</script>
+</body>
+</html>
